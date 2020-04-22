@@ -21,7 +21,7 @@ public class ArrayEx4 {
 		System.out.println();
 		
 		
-		int arr2[] = new int [7];
+		int arr2[] = new int [4];
 		
 		// 임의의 수를 생성하여 배열에 저장 (중복  X )
 		// 중복되지 않아야 하므로 3번이상 돌릴 수 도있으므로 
