@@ -1,0 +1,62 @@
+﻿< < 코드 짤 때 원하는 기능 상세히 
+
+1.학생 정보 추가 기능 
+- 학생의 학년,반, 번호, 이름을 입력받음
+- 과목정보를 입력할 것인지를 묻는 안내문을 출력
+- 과목정보를 입력한다고 대답하면 몇과목을 입력할  것인지를 물어봄
+- 입력 받은 횟수만큼 과목명, 중간, 기말, 수행평가, 출석 점수 
+
+2. 학생 정보 수정 기능 
+- 수정할 학생의 학년 반, 번호를 입력받음
+- 검색해서 없으면 없다고 하고 종료 
+- 있으면 학생의 수정할 이름을 입력
+- 과목을 수정할지, 추가할지, 그냥 넘어갈지 물음
+- 과목을 수정한다고 선택하면 과목명을 입력해서 검색
+- 없으면 종료, 있으면 중간, 기말,수행 평가 출석 점수를 입력
+- 과목을 추가한다고 했으면 추가할 과목의 과목명, 중간, 기말, 수행평가 , 출석 점수를 입력
+
+3, 학생 정보 삭제 기능 
+- 삭제할 학생의 학년, 반, 번호를 입력받음
+- 없으면 없다고 출력, 있으면 삭제하고 삭제되었다고 알려줌
+
+4.학생 정보 출력 기능
+- 전체 학생 정보를 출력 
+
+
+for(int i = 0; i<sub.length; i++ ) {
+				if(sub[i] == del) {
+					for(int j = 0; j<sub.length-1; j++) { //이거 내일 질문하긔 
+						sub[j] = sub[j+1];
+					}
+				}
+			}
+
+/*  Student s1 = new Student(); // 이때 객체 s1은 학생 1명의 정보값을 넣기위한 객체 
+s1.setScore(new Subjcet("국어",40,40,10,10), // 이때 생성자 발생  public (복사생성자X) 하고 setScore로간다. 컨트롤 하고 코드 누르면 코드로 간다 
+		new Subjcet("영어",30,30,10,10),
+		new Subjcet("수학",10,20,10,10));
+		
+s1.printScore(); */
+
+			System.out.print("입력할 과목의 수 : ");
+					int subjectCnt = scan.nextInt();
+					subjectList = new Subjcet[subjectCnt];
+					//여러 과목 정보를 입력 받아야 
+					for(int i =0; i<subjectCnt;i++) {
+						System.out.println("과목명 :");
+						title = scan.next();
+						System.out.println("중간고사 :");
+						midscore = scan.nextInt();
+						System.out.println("기말고사 :");
+						finalscore = scan.nextInt();
+						System.out.println("수행평가 :");
+						performance = scan.nextInt();
+						System.out.println("출석점수 :");
+						attendace = scan.nextInt();
+						subjectList[i] = new Subjcet(title, midscore, finalscore, performance, attendace);
+					}
+					std[cnt].setScore(subjectList);
+
+
+
+>학년 , 반, 번호 를 3번이나 입력받야하기 때문에 이것을 메소드로 만드는것이 더 코드를 줄일 수 있다. 
