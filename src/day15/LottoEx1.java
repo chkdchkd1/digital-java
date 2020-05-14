@@ -61,7 +61,7 @@ public class LottoEx1 {
 	public static int random(int min, int max ) {
 		if (max < min )
 			throw new ArithmeticException("예외 : 최소값과 최대값 순서가 바뀌었습니다");
-		return new Random().nextInt(max-min) + min;
+		return new Random().nextInt(max-min+1) + min;
 	} // static main 에서 호출 할거면 static을 붙여야 객체 생성 없이 편하게 쓸 수 있다.
 	
 	/* 기능 : 배열에 정수 num의 값이 있는지 없는지 알려주는 메소드 
