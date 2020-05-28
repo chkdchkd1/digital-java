@@ -1,0 +1,5 @@
+﻿use DB명;
+해당 디비명을 선택한것 
+column ->속성
+erd 그려놓은 전체가 database 
+mysql은 cmd의 gui
