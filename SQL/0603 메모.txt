@@ -1,0 +1,42 @@
+﻿html + css + jquery/javascripts
+
+1.올리브영 - (사창사거리)화장솜 필리미리 1/2
+2.쥬시- 스쥬, 키쥬
+3. gitkraken 
+4. 시험공부 
+5. erd 설계 
+
+DDL,
+- create, alter, drop, truncate
+- 기본키 : 후보키중에서 선택된 속성 
+- 슈퍼키 : 속성으로 검색했을 때 무조건 0개 또는 1개만 데이터가 나오는 속성
+- 후보키 : 슈퍼키에서 불필요한 속성을 제거한 속성 
+- 대체키 : 후보키 중에서 기본키로 선택되지 않은 속성 
+- 외래키 : 두 테이블을 결합하기 위한 키로, 주로 다른 테이블의 기본키 
+- unique : 중복되지 않게하는 제약조건, 기본키를 의미하는 건 X 
+- not null : 속성의 값으로 null 값이 들어 올수 없게하는 제약조건
+
+슈퍼키는 후보키를 포함하고 
+후보키 = 기본키 +대체키 
+
+DML
+- select , insert, update, delete
+
+DCL 
+-권한 부여/회수 
+TCL
+
+인덱스 : 데이터를 빠르게 찾을 수 있는 수단 => 조회속도
+	테이블의 속성이 많고, 데이터가 매우 많은 경우 다양한 인덱스를 등록해놓는 것이 좋다 .
+
+create index 인덱스명 on 테이블명 (속성1, 속성2);
+select * from 테이블명 where 속성 1 = A and 속성 2 =B;
+
+
+생성한 DB와 테이블 확인법
+mysql 8.0 command line client 실행
+show databases;
+입력하여 생성된 DB 확인후 캡쳐 후 저장 
+use db명
+show tables;
+입력하여 생성된 테이블 확인 후 캡쳐 후 저장 
