@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>박스 예제</title>
+    <style>
+        div{
+            background-color: green;
+            margin-top: 50px;
+            margin-left: 50px;
+            margin-right: 50px;
+            margin-bottom: 50px;
+            border-width: 1px; /*border-top-width ~ right width ~ 를 한꺼번에 = 모든 테두리의 굵기를 1px로 */
+            
+            border-width: 10px 20px 30px 40px; /*위를 기준으로 시계방향으로 굵기 설정 top 10px right 20px bottom 30px left 40px*/
+            border-width: 1px 2px 3px ; /*top 1px rigth 2px bottom 3px left 2px(반대편 대칭)*/
+            border-color: hotpink; /*color도 top right bottom left 각각의 색상을 별도로 지정 할 수 있다. */
+            border-style: inset; /*style도 각각의 스타일을 별도로 지정 할 수 있다. solid, dotted, double, --- MDN REFERENCE */ 
+            border : 10px dotted red; 
+        }
+
+    </style>
+</head>
+<body>
+    <div>hello<br><br><br><br><br><br></div>
+    안녕하세요
+</body>
+</html>
