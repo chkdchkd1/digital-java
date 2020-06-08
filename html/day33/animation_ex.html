@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        @keyframes move{
+        0%{
+            left: 0px;
+        }
+        50%{
+             left: calc(100vw - 100px);  /* = 100% - 100px*/
+        }
+        100%{
+            left:0px;
+        }
+        /* left right를 같이 쓰면 X  같은 속성의 값을 덮어쓰면서 움직이는것처럼 보이는것 = 같은 속성을 써줘야
+            left를 기준으로 ~  */
+    }
+    
+     .box{
+        background-color: yellow;
+        width: 100px;
+        height: 100px;
+        /* position: relative;  */
+        position : absolute;
+        animation-name: move;
+        animation-duration:5s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+     }
+     .box2{
+         /*일반적으로 left와 right를 top과 bottom을 같이 쓰지 않지만 width가 지정되어 있지않은 경우는 left와 right를 같이 써서 width를 결정해준다.
+            마찬가지로 height가 지정되어 있지않은경우는 top과 bottom을 같이써서 height를 결정해준다.
+            포지션이 absolute인 경우 가로와 세로의 길이가 주어지지 않으면 자동으로 할당되지 않는다. */
+         position: absolute;
+         bottom: 0;
+         height: 100px;
+         left: 0;
+         right:0;
+         background-color: #ff0000;
+     }
+
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <div class="box2"></div>
+</body>
+</html>
