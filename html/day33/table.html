@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>table css</title>
+    <style>
+        table{
+            border-collapse: collapse; /*합치기*/   
+        }
+        tr{
+            border: 1px solid black;
+            border-right: none;
+            border-left: none;
+        }
+        /* tr>td:nth-child(1),
+        tr>th:nth-child(1){
+            width: 500px;
+        } */
+
+        .name{
+            width: 500px;
+        }
+        .score{
+            width: 100px;
+        }
+       
+        
+        thead>tr{
+            background-color: darkgray
+        }
+        tbody>tr:nth-child(even){
+            /* even = 2n : 짝수번째 */
+            background-color :khaki;
+        } 
+ 
+        /* tbody>tr:first-child{
+            /* = nth-child(1) 
+            /* even = 2n : 짝수번째 
+            background-color: khaki;
+        } */
+
+
+        tbody>tr:hover{
+            /* 동일한 우선순위는 순서를 맞춰야 함  */
+            background-color:darkseagreen
+        } 
+
+        
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th class="name">게시글</th>
+                <th class="score">작성일</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>홍길동</td>
+                <td>20.06.08</td>
+            </tr>
+            <tr>
+                <td>임꺽정</td>
+                <td>20.06.07</td>
+            </tr>
+            <tr>
+                <td>이순신</td>
+                <td>20.06.07</td>
+            </tr>
+            <tr>
+                <td>허준</td>
+                <td>20.06.06</td>
+            </tr>
+         </tbody>
+    </table>
+    
+</body>
+</html>
