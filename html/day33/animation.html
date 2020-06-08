@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> CSS :: animation</title>
+    <style>
+        /*  1. 애니메이션을 등록
+            2. 등록한 애니메이션을 호출
+            */
+        /*1. 애니메이션 등록
+            - 0% > from , 100% > to 로 대체 가능
+            @keyframes 애니메이션명{
+                시간비율(%){
+                    스타일'
+                }
+
+                시간비율{
+                스타일;
+                }
+           
+            }*/
+
+    @keyframes zoomin{
+        0%{
+            font-size: 16px;
+        }
+        100%{
+            font-size: 40px;
+        }
+    }
+    @keyframes inout{
+        0%{
+            font-size: 16px;
+        }
+        50%{
+            font-size: 40px;
+        }
+        100%{
+            font-size:16px;
+        }
+    }
+    /*2. 애니메이션 호출 */
+    .zoomin{
+        /* zoomin 애니메이션을 선택 */
+        animation-name: zoomin;
+        /* 애니메이션 실행시간 : 5초 = 애니메이션이 0% 에서 100%가 될 때까지 진행 시간  */
+        animation-duration: 5s;
+        /* 애니메이션 iteration-count = 애니메이션 반복 횟수 */
+        animation-iteration-count: infinite;
+    }
+    .inout1{
+        animation-name: inout;
+        animation-duration:5s;
+        animation-iteration-count: infinite;
+    }
+    .inout2,.inout3,.inout4,.inout5{
+        animation-name: inout;
+        animation-duration:5s;
+        animation-iteration-count: infinite;
+    }
+    .inout2{
+        animation-timing-function: ease-in-out;
+    }
+    .inout3{
+        animation-timing-function: linear;
+    }
+    .inout4{
+        animation-timing-function: step-start;
+    }
+    .inout5{
+        animation-timing-function: ease-in;
+    }
+    div{
+        height: 60px;
+    }
+    </style>
+</head>
+<body>
+    <!-- <span class="zoomin">꽝!</span> <br> -->
+    <div>
+        <span class="inout1">꽝!</span>
+    </div>
+    <div>
+        <span class="inout2">꽝!</span>
+    </div>
+    <div>
+        <span class="inout3">꽝!</span>
+    </div>
+    <div>
+        <span class="inout4">꽝!</span>
+    </div>
+    <div>
+        <span class="inout5">꽝!</span>
+    </div>
+
+    
+    
+</body>
+</html>
