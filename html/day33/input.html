@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>input style</title>
+    <style>
+
+        *{
+            margin: 0;
+        }
+        input{
+            /* input = inlineblock */
+            width: 100%;  
+            /* 
+            컨텐츠의 가로를 계산할 때는 box-sizing 속성이냐 border-box이나 content-box냐에 따라 방식이다르다.
+            기본: content-box (테두리를 제외하고 계산하기때문에 컨텐츠+테두리 =  스크롤이 생김) */
+            height: 50px;
+            border: 1px solid goldenrod;
+            border-radius: 10px;
+            box-sizing: border-box;
+        }
+        input[type=text]{
+            color: red;
+        }
+        input[type=password]{
+            color: seagreen;
+        }
+        *[name=name]{
+            text-decoration: underline;
+        }
+        input:focus{
+            background-color: green;
+            color: white;
+        }
+        /* 속성들 중에서 
+            속성명 : 익스플로러 
+            -webkit- 속성명 : 크롬에 최적화 
+            -moz- 속성명 : firefox에 최적화 */
+    
+    </style>
+</head>
+<body>
+    <input type="text" name="name" id="" placeholder="텍스트">
+    <input type="password" name="" id="" placeholder="비밀번호">
+    <input type="text" name="" id="" placeholder="텍스트2">
+    <input type="password" name="" id="" placeholder="비밀번호2">
+    
+</body>
+</html>
