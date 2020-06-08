@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>menu_ex </title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            height: 50px;
+            overflow: hidden;
+            background-color: cornflowerblue;
+        }
+        li{
+            list-style-type: none;
+            box-sizing: border-box;
+            width: calc(100% / 3);
+            float: left;
+            line-height: 50px;
+            text-align: center;
+            height: 100%;
+        }
+       
+        a{
+            text-decoration: none;
+            color : black;
+            box-sizing: border-box;
+            width: 100%;
+            display: block; /* a태그는 inline태그라서 크기를 지정할 수 없기 때문에 block으로 바꿔줌 */
+            border: 1px solid darkblue;
+            height: 100%;
+        }
+
+        li:nth-of-type(1)>a,
+        li:nth-of-type(2)>a{
+            border-right:none;
+        }
+
+        nav li>a:hover{
+            background-color:royalblue;
+            color: mediumblue; 
+        }
+    </style>
+</head>
+<body>
+    <!-- 기능은 div랑 똑같. 메뉴를 만들 때 많이 사용  -->
+    <nav>
+        <ul>
+            <li><a href="#">메뉴1</a> </li>
+            <li><a href="#">메뉴2</a> </li>
+            <li><a href="#">메뉴3</a> </li>
+        </ul>
+    </nav>
+</body>
+</html>
