@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 40%;
+            background-color: yellow;
+            height: 50px;
+            display: block;
+            float: left;
+            /* block은 새 줄에서 시작하는게 맞지만 float를 이용하면 한줄에 같이 있게 된다 */
+        }
+        body:after{
+            clear: both;
+            content: '';
+            display: block;
+        }
+        
+        .box:nth-of-type(2){
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <div class="box"></div>
+</body>
+</html>
