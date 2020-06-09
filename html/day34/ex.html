@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입 CSS</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            background-color: #f5f6f7
+        
+        }
+        
+    
+        .box{
+            margin: 0 auto;
+            width: 470px;
+            line-height: 50px;
+            margin-bottom: 10px;
+        }
+
+        input{
+            width: 80%;  
+            height: 30px;
+            border: 1px solid transparent;
+            background-color: transparent;
+            box-sizing: border-box;
+        }
+
+        input[type=radio]{
+            width: 10px;
+        }
+
+        input[type=submit]{
+            width: 100%;
+            color: white;
+            background-color: #03c75a;;
+        }
+        .form{
+            width: 470px;
+            height: 50px;
+            border: 1px solid #dadada;
+            background-color: white;
+            box-sizing: border-box;
+            padding: 5px;
+        }
+
+        .id:focus{
+            border-color:#03c75a; ;
+            
+        }
+        
+        .top{
+            margin-top: 50px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 40px;
+            color: #00c850;
+        }
+        .m{
+            line-height: 30px;
+            margin-top: 30px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+
+    </style>
+</head>
+<body></body>
+    <div class="box">
+        <div class="top">
+            <h2>NAVER</h2>
+        </div>
+        <div class="m">
+            <form>
+                아이디<br>
+                <div class="form"><input type="text" name="id"></div> <br>
+                비밀번호 <br>
+                <div class="form"><input type="password" name="pw"></div> <br>
+                비밀번호 재확인 <br>
+                <div class="form"><input type="password" name="pw"></div> <br>
+                이름<br>
+                <div class="form"><input type="text" name="id"></div><br>
+                생년월일<br>
+                <div class="form"><input type="date"></div><br>
+                성별<br>
+                <input type="radio" name="gener" id="male" checked> <label for="male">남성</label> 
+                <input type="radio" name="gener" id="female"> <label for ="female">여성</label> <br><br>
+
+                본인 확인 이메일 <br>
+                <div class="form"><input type="email" name="email"></div><br>
+                
+                휴대전화<br>
+                <div class="form"><input type="number" name="phone1"> </div>
+                <input type="number" name="phone2"> <button >인증번호 받기</button>
+                <input type="number" name="phone3"> <br>
+                <input type="submit" value="가입하기">
+                <br>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
