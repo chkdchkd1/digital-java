@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반응형 예제</title>
+    <script src="https://kit.fontawesome.com/c2a1b202c0.js" crossorigin="anonymous"></script>
+    <style>
+       
+        body{
+            font-family: Helvetica,'돋움',sans-serif;
+        }
+        .container{
+            width: 100%;
+            margin-bottom: 300px;
+        }
+        .box-head{
+            margin-top: 5px;
+            width: 100%;
+            height: 50px;
+            background: #97a5c1;
+        }
+        .h-logo{
+            width: 100px;
+            height: 50px;
+            box-sizing: border-box;
+            line-height: 50px;
+            color: white;
+            float: left;
+            padding-left: 5px;
+        }
+        .h-menu{
+            width: 100px;
+            height: 50px;
+            box-sizing: border-box;
+            line-height: 50px;
+            color: white;
+            float: left;
+            text-align: center;
+            display: none;
+        }
+        .h-search{
+            width: 215px;
+            height: 50px;
+            box-sizing: border-box;
+            line-height: 50px;
+            float: right;
+        }
+    
+        .box-menu{
+            width: 150px;
+            float: left;
+            margin-top: 15px;
+            margin-left: 5px;
+    
+        }
+        .menu{
+            box-sizing: border-box;
+            width: 100%;
+            height: 45px;
+            border: 1px solid black;
+            color: white;
+            background-color: #97a5c1;
+            text-align: center;
+            line-height: 45px;
+        }
+        .menu:nth-child(1),.menu:nth-child(2){
+            border-bottom: none;
+        }
+        .main{
+            box-sizing: border-box;
+            margin-top: 15px;
+            width: calc(100% - 200px);
+            border: 1px solid black;
+            height: 500px;
+            float: right;
+        }
+        .h-ham{
+            width: 40px;
+            height: 50px;
+            box-sizing: border-box;
+            border: 1px solid #97a5c1;
+            cursor: pointer;
+            float: right;
+            display: none;
+
+        }
+
+        @media (max-width: 700px){
+            .box-menu{
+                display: none;
+            }
+            .h-menu{
+                display: block;
+            }
+            .main{
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 650px){
+            .box-menu,.h-menu{
+                display: none;
+            }
+            .main{
+                width: 100%;
+            }
+            .h-ham{
+                display: block;
+                text-align: center;
+            }
+            .h-ham>i{
+                font-size: 25px;
+                line-height: 50px;
+                color: white;
+            }
+        } 
+
+    
+
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box-head">
+            <div class="h-logo">로고</div>
+            <div class="h-menu">메뉴1</div>
+            <div class="h-menu">메뉴2</div>
+            <div class="h-menu">메뉴3</div>
+            <div class="h-ham">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="h-search">
+                <div class="search">
+                    <input type="text">
+                    <button class="btn-search">검색</button>
+                </div>
+            </div>
+        </div>
+        <div class="box-bottom">
+            <div class="box-menu">
+                <div class="menu">메뉴1</div>
+                <div class="menu">메뉴2</div>
+                <div class="menu">메뉴3</div>
+            </div>
+            <div class="main"></div>
+</div>
+</body>
+</html>
