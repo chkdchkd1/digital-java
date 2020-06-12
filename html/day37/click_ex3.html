@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>클릭하면 해당 숫자 구구단 출력 </title>
+    <script src = "//code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+<body>
+    <input type="text" id="input1">
+    <button id="btn1">클릭</button>
+    <div id ="k"></div>
+    <script>
+        /* input태그에서 val()을 통해 가져온 값들은 문자열로 가져온다. = 그래서 계산 하려면 parseInt()를 해주어야 */
+        // 2를 넣으면 2단이 출력 되도록 
+        $('#btn1').click(function(){
+            var tmp = $('#input1').val();
+            tmp = parseInt(tmp);
+            var str = '';
+            for(var i = 1;i<=9;i++){
+                str += tmp+'x'+i+'='+(tmp*i)+ '<br>';
+            }
+            $('#k').html(str);
+            
+        })
+
+    </script>
+</body>
+</html> 
+
