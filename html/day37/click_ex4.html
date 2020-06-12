@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="//code.jquery.com/jquery-3.4.1.js"></script>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+
+        body{
+            font-family: Helvetica,'돋움',sans-serif;
+        }
+        .nav{
+            height: 50px;
+            background-color: #9ecdd8;
+        }
+        ul{
+            list-style: none;
+        }
+        .box-menu{
+            display: flex;
+        }
+        .menu{
+            width: 100%;
+        }
+     
+        li:nth-child(1), li:nth-child(2){
+            border-right: none;
+        }
+        .menu>a {
+            display: block;
+            height: 50px;
+            width: 100%;
+            line-height: 50px;
+            font-size: 25px;
+            text-decoration: none;
+            color: black;
+            text-align: center;
+            border: 1px solid black;
+            box-sizing: border-box;
+        }
+        .bg{
+            background-color: #c8d2d4;
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <ul class="box-menu">
+            <li class="menu"><a href="#">메뉴1</a></li>
+            <li class="menu"><a href="#">메뉴2</a></li>
+            <li class="menu"><a href="#">메뉴3</a></li>
+        </ul>
+    </nav>
+    
+    <script>
+       $(function(){
+            $('.menu').click(function(){
+                $('.menu').removeClass('bg');
+                $(this).addClass('bg');
+            })
+        })
+    </script>
+
+</body>
+</html>
