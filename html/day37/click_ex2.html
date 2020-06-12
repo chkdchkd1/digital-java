@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery 예제2</title>
+    <script src="//code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+<body>
+    <button id="btn1">증가</button>
+    <button id="btn2">바꿈</button>
+    <div id="res">0</div>
+    <script>
+        var cnt = 0; 
+        var add = true;
+        
+        // cnt = 전역변수 
+        // 함수 안에 들어가면 카운트 ++ 되지 않는다 클릭 발생할때만 생기고 사라지기 때문에 
+
+        // 버튼을 클릭하면 콘솔에 출력되는 값이 증가하도록 
+        // $('#btn1').click(function(){
+        //     console.log(cnt);
+        //     cnt++;
+        // })
+        
+        // 버튼을 클릭하면 밑에 출력되는 숫자가 증가 하도록 
+        $('#btn1').click(function(){
+            if(add)
+                cnt++;
+            else
+                cnt--;
+             $('#res').text(cnt);
+        })
+
+        //'바꿈'버튼을 클릭했을 때 '증가' 버튼의 이름이 '감소'버튼으로 바뀌도록
+        $('#btn2').click(function(){
+            var str;
+            if(add) {
+               str = '감소'
+            } else{
+                str = '증가'
+            }
+            // = str = add?'감소':'증가'
+             $('#btn1').text(str);
+             add = !add; 
+        }) 
+        
+        // $('#btn2').click(function(){
+        //     if(add){
+        //         $('#btn1').text('감소');
+        //         add = false;
+        //     } else {
+        //         $('#btn1').text('증가');
+        //         add = true;
+        //     }
+        //  })
+
+
+       
+
+        
+    </script>
+</body>
+</html>
