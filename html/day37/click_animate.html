@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="//code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://kit.fontawesome.com/c2a1b202c0.js" crossorigin="anonymous"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .ham{
+            width: 40px;
+            height: 40px;
+            box-sizing: border-box;
+            float:right;
+            border:none;
+            text-align: center;
+            font-size: 30px;
+            line-height: 38px;
+        }
+        
+        .box{
+            height: 300px;
+            position: relative;
+        }
+        .sub-box{
+            position:absolute;
+            background-color: #84aa9f;
+            top:50px;
+            right:-300px;
+            width: 300px;
+            height: 500px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="ham">
+        <i class="fas fa-bars"></i>
+    </div>
+    <div class="sub">
+        <div class="sub-box"></div>
+    </div>
+
+    <script>
+         var a = true;
+        $('.ham').click(function(){
+            if(a)
+            $('.sub-box').stop().animate({'right':'0px'},1000);
+            else
+            $('.sub-box').stop().animate({'right':'-300px'},1000);
+            a = !a;
+        }) 
+
+    </script>
+</body>
+</html>
