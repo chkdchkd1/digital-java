@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery.js"></script>
+    
+</head>
+<body>
+    <div class="container">
+        <button id="add">추가</button>
+    </div>
+    <div class="box">
+    </div>
+
+    <script>
+        /* 1. 버튼 클릭 이벤트 등록
+           1 - 1 . 특정 위치의 html 코드를 가져옴 ( = input 태그가 들어갈 자리 )
+           1 - 2 . 가져온 html 코드에 input 태그 코드를 이어 붙임
+           1 - 3 . 이어붙여진 코드를 특정 위치에 html로 설정 */
+        $(function(){
+            $('#add').click(function(){
+               //$('.box').append('<br><input type="text">');
+               var a = $('.box').html();  
+               // .box 클래스 요소 안에 있는 html 코드를 가져옴 
+               // 값을 가져오고 그걸 활용하려면 변수에 저장해야한다.  var a = ''; ==> var a = $('.box').html();
+                a = a + 
+                '<div>' + 
+                '<input type="text" id="num">'+
+                '<button>클릭</buttion><br>'
+               // 기존의 .box 를 읽고 거기에 추가를 해서 새로 싹 덮어쓰는것 (기존 이벤트 무시해도 된다.) , 그냥 바로 .html(<input type="text"><br>)로 넣으면 하나만 덮어쓰기만 됨 
+                $('.box').html(a);
+                //여기에서 이벤트를 등록하는 코드를 추가해야한다.
+                registerBtn();
+                // registerBtn($('.box button').last()) <- 이런식으로 써주지 않아도 ㄱㅊ 이벤트가 중첩되지 않기때문에 append랑 다름 
+                // ( = 추가 될때마다 새로 싹밀고 덮어쓰기 이벤트 등록 X )
+                // 스크립트로 태그를 구성하면, 해당 태그에는 이벤트가 자동으로 등록되지 않는다, 새로 추가된 요소에는 이벤트를 따로 등록 해주어야한다. 
+            })
+
+            function registerBtn(){
+                $('.box button').click(function(){
+                var tmp = $(this).prev().val();
+                console.log(tmp);
+            })
+            }
+            // 선택자가 . box button = 모든 box 안에 있는 버튼에 이벤트가 등록됨 
+            // 해당 버튼이 있는 input의 값을 가져오고 싶 = 형제 
+            // 위 클릭 이벤트를 단독으로 주면 이 클릭이벤트가 돌아갈때 버튼이 생성되기전이라서 먹히지 않는다. 따로 function을 만들어줘서 위처럼 해야 
+            // == > 스크립트로 태그를 구성하면, 해당 태그에는 이벤트가 자동으로 등록되지 않는다, 새로 추가된 요소에는 이벤트를 따로 등록 해주어야한다. 
+            // == > 스크립트로 태그를 구성하면 ~ ex) $('.box').html('<button>버튼<button>') 의 '<button>버튼<button>'
+
+
+
+        })
+    </script>
+</body>
+</html>
