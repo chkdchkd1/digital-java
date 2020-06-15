@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery.js"></script>
+    <style>
+        .box{
+            width: 50px;
+            height: 50px;
+            border:1px solid black;
+            box-sizing: border-box;
+            display: inline-block;
+        }
+
+        .border-red{
+            border: 2px solid red;
+        }
+    </style>
+</head>
+<body>
+    <button id="prev">이전</button>
+    <button id="next">다음</button>
+    <div class="res">
+        <div class="box box1"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+
+    <script>
+         
+        
+
+        $(function(){
+            
+            // $('.res').children().first()
+            // // .css({'border-color':'red','border-width':'2px'})
+            // //css()메소드에서 여러 속성의 값을 한번에 변경하려면 {'속성':'값', '속성':'값'}의 형태로 넣어준다. 
+            // .addClass('border-red')
+
+            $('html').find('.box1').addClass('border-red');
+            
+            var index = 0;
+
+            $('#next').click(function(){
+                $('.box').eq(index).removeClass('border-red');
+                ++index ;  
+                var cnt = $('.box').length;
+                if(index == cnt){
+                    index = cnt -1
+                }
+                $('.box').eq(index).addClass('border-red');
+            })
+
+            $('#prev').click(function(){
+                $('.box').eq(index).removeClass('border-red');
+                --index ;  
+                var cnt = $('.box').length;
+                if(index == - 1){
+                    index = 0;
+                }
+                $('.box').eq(index).addClass('border-red');
+            })
+
+        })
+        
+
+        /* 전위 연산자 : 1. int i = 1; 2. int j = ++i; j = 2 , i = 2 가 된다.
+           후위 연산자 : 1. 1. int i = 1;  2. int j = i++; j = 1 , i = 2 가 된다.
+            전위 증감 연산자는 변수 자체의 값을 1 증가/감소해서 반환하지만 
+            후위 증감 연산자는 다른 변수에 현재 변수 값을 저장하고 변수 값을 1 증가/감소하고 이전에 저장된 값을 반환한다.
+          증감 연산자를 사용할 때 전위나 후위 모두 사용해도 될 경우에는 전위 증감 연산자를 사용하면 성능상 이득*/
+    </script>
+</body>
+</html>
