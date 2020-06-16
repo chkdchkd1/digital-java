@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>설문지 예제(off)</title>
+    <script src="../js/jquery.js"></script>
+    <style>
+      *{
+          border: 1px solid black;
+      }
+    </style>
+</head>
+<body>
+    <h1>설문지</h1>
+    <div class="question">
+        <div class="main-q">
+            <div>질문1</div>
+            <div class="sub-q">
+                <span>질문1-1</span>
+                <input type="text">
+                <button>확인</button> 
+            </div>
+            <button class="sub-btn">서브질문 추가</button>
+        </div>
+    </div>
+    <button class="main-btn">메인 질문 추가</button>
+    <script>
+        $(function(){
+            var num = 1;
+            var index = 1
+            $('.main-btn').click(function(){
+                ++num;
+                var str = 
+                '<div class="main-q">'+
+                    '<div>질문'+num+'</div>' +
+                        '<div class="sub-q">'+
+                            '<span>질문'+num+'-1</span>' +
+                            '<input type="text"> ' +
+                            '<button>확인</button> '+
+                        '</div>'+ 
+                        '<button class="sub-btn">서브질문 추가</button>'+
+                '</div>';
+                $('.question').append(str);
+                $('.main-q').last().find('button').click(function(){
+                    var str =
+                        '<div class="sub-q">'+
+                        '<span>질문'+num+'-'+index+'</span>' +
+                        '<input type="text"> ' +
+                        '<button>확인</button> '+
+                        '</div>';
+                    $(this).before(str);
+                })
+
+                
+
+                // registerBtn($('.sub-btn').last());
+            })
+
+            $('.sub-btn').click(function(){
+                        var str =
+                        '<div class="sub-q">'+
+                        '<span>질문'+num+'-'+index+'</span>' +
+                        '<input type="text"> ' +
+                        '<button>확인</button> '+
+                        '</div>';
+                    $(this).before(str);
+
+                // registerBtn($('.sub-btn').last());
+            })
+
+            // registerBtn($('.sub-btn'));
+
+            //     function registerBtn(){
+            //         $('.sub-btn').click(function(){
+            //             var str =
+            //             '<div class="sub-q">'+
+            //             '<span>질문'+num+'-'+index+'</span>' +
+            //             '<input type="text"> ' +
+            //             '<button>확인</button> '+
+            //             '</div>';
+            //         $(this).before(str);
+            //     })
+            // }
+            
+        })
+    </script>
+</body>
+
+</html>
