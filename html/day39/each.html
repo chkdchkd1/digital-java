@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>each 예제</title>
+    <script src="../js/jquery.js"></script>
+    <style>
+        .box{
+            border: 1px solid black;
+            width: 100px;
+            height: 100px;
+            display: inline-block;
+            line-height: 100px;
+            font-size: 35px;
+            text-align: center;
+            float: left;
+            /* 컨텐츠가 입력되면 밀리는 현상이 발생, 그걸 방지하고자 float : left   */
+            margin-right: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+
+    <script>
+        $(function(){
+            /* 
+            each는 이벤트가 아니다. 
+            each  : 요소가 여러개일 경우 각 요소를 하나하나 가져오는 작업 (반복문을 통해 가져오는 작업을 )
+            $(선택자).each(function(){
+                구현;
+            })*/
+            var index = 1;
+            $('.box').each(function(){
+                $(this).text(index);
+                index++;
+            })
+
+
+            // each를 안쓰면 반복문으로 이런식으로 
+            // var list = $('.box');
+            // for(var i = 0; i<=list.length; i++){
+            //     list.eq(i).text(index);
+            //      index++;
+            // }
+
+            
+        })
+    </script>
+</body>
+</html>
+
+
+<!-- <ul>
+    <li>에스프레소</li>
+    <li>아메리카노</li>
+    <li>카페라떼</li>
+</ul>
+아래 예제는 문서 내의 모든 <li>요소를 선택하여 변수에 저장하고, 그 해당 변수를 사용하여 요소의 갯수를 구하고 있다.
+
+var coffees = $("li");
+$("#length").text("커피의 종류는 총 " + coffees.length + "가지 입니다."); -->
+
