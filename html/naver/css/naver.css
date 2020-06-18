@@ -7,6 +7,8 @@
 }
 a{
     text-decoration: none;
+    color: inherit;
+
 }
 body{
     min-width: 1190px;
@@ -19,8 +21,11 @@ body{
     box-sizing: border-box;
     position: relative;
     height: 100%;
-   
 }
+.box-container-main .container{
+    padding: 20px 30px;
+}
+
 /* whale 박스 관련 css */
 .box-whale{
     height: 49px;
@@ -103,9 +108,10 @@ body{
     margin-top: 11px;
 
 }
+
 /* 검색창 관련 css  */
 .box-container-search{
-    height: 161px;
+    height: 160px;
 }
 
 /*검색창 상단 css*/
@@ -149,6 +155,9 @@ body{
     margin: 3px;
     background-position: -348px -260px;
 }
+.link-jr:hover > .ico-jr{
+    background-position: -214px -308px;
+}
 
 .ico-happybin {
     display: inline-block;
@@ -156,6 +165,9 @@ body{
     height: 11px;
     margin: 3px 3px 2px;
     background-position: -253px -323px;
+}
+.link-happybin:hover > .ico-happybin {
+    background-position: -214px -323px;
 }
 
 /*로고 관련 css */
@@ -233,6 +245,8 @@ body{
     top : 0;
     right: 84px;
     display: block;
+    z-index: 301;
+
 }
 .icon-v-keyboard{
     width: 20px;
@@ -245,6 +259,32 @@ body{
     background-position: -400px -276px;
 }
 
+
+.btn-v-keyboard .msg-keyboard {
+    position: absolute;
+    top: 42px;
+    left: -16px;
+    display: none;
+    width: 68px;
+    height: 37px;
+    vertical-align: top;
+    background-position: -161px -115px;
+    
+}
+
+.btn-v-keyboard:hover .msg-keyboard {
+    display: block;
+} 
+
+.btn-v-keyboard:hover .icon-v-keyboard {
+    display: inline-block;
+    width: 20px;
+    height: 12px;
+    vertical-align: top;
+    background-position: -64px -404px;
+}
+
+
 .btn-autocomplete{
     position: absolute;
     top: 0;
@@ -252,6 +292,7 @@ body{
     bottom: 0;
     width: 22px;
 }
+
 
 .ico-complete {
     display: inline-block;
@@ -264,13 +305,290 @@ body{
     margin: -2px 0 0 -5px;
 }
 
+.ico-complete.active {
+     vertical-align: top;
+    background-position: -361px -308px;
+}
+
+.autowindow{
+    background-color: rgb(225,225,225);
+    position: absolute;
+    z-index: 300;
+    top: 54px;
+    left: 0;
+    width: 586px;
+    display: none;
+}
+.auto-box{
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #bec8d8;
+    background-color: #fff;
+    color: #666;
+    zoom: 1;
+}
+.word,.footer{
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+    line-height: 18px;
+    font-family: '돋움';
+}    
+
+.word .info-word {
+    padding: 17px 15px 15px;
+    font-size: 12px;
+    line-height: 23px;
+}
+
+.footer{
+    overflow: hidden;
+    clear: both;
+    width: 100%;
+    padding: 8px 0;
+    border: 1px solid #ebeef3;
+    border-width: 1px 0 0;
+    background: #f9fafc;
+    color: #666;
+    font-size: 11px;
+    line-height: 1.3em;
+    letter-spacing: -1px;
+}   
+
+.footer a {
+    margin: 0 3px;
+    color: #666;
+}
+
+.ft-1 {
+    float: left;
+    padding: 2px 0 0 12px;
+}
+
+
+.footer-bar {
+    float: none;
+    padding: 0;
+    display: inline-block;
+    height: 10px;
+    margin: -1px 4px 1px;
+    border-left: 1px solid #e3e7ee;
+    background: transparent none;
+    vertical-align: middle;
+}
+
+.footer .report {
+    color: #00a617;
+}
+
+.off {
+    float: right;
+    padding: 2px 12px 0 0
+}
+
+
 /*메뉴 관련 css */
 .box-container-menu{
     border-top:1px solid #ececec;
     height: 50px;
-    border-bottom: 1px solid #ececec;
+    /* border-bottom: 1px solid #ececec; */
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,.12);
 }
 
+.group-menu {
+    position: relative;
+    overflow: hidden;
+    padding: 11px 220px 11px 0;
+}
+
+.type-color{
+    color:#03c75a;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+
+.list-nav {
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 30px;
+    float: left;
+    letter-spacing: -.3px;
+    color: #000;
+
+}
+.list-nav:after {
+    display: table;
+    clear: both;
+    table-layout: fixed;
+    content: '';
+}
+
+.list-nav+.list-nav {
+    margin-left: 18px;
+}
+
+.nav-item {
+    float: left;
+}
+
+.type-color .nav{
+    color:#03c75a;
+}
+
+.list-nav .nav-item+.nav-item {
+    margin-left: 18px;
+}
+
+.ico-mail{
+    display: inline-block;
+    width: 21px;
+    height: 21px;
+    margin: 3px 9px 0 0;
+    vertical-align: top;
+    background-position: -429px -227px;
+}
+
+.ico-tv{
+    display: inline-block;
+    width: 12px;
+    height: 14px;
+    margin: 9px 2px 0 0;
+    vertical-align: top;
+    background-position: -458px -80px;
+}
+
+.btn-more{
+    font-size: 13px;
+    line-height: 30px;
+    float: left;
+    min-width: 70px;
+    margin-left: 17px;
+    text-align: right;
+    color: #202020;
+}
+
+.btn-more:after {
+    display: inline-block;
+    width: 11px;
+    height: 7px;
+    margin-left: 7px;
+    content: '';
+    vertical-align: top;
+    vertical-align: 2px;
+    background-position: -458px -432px;
+}
+
+.groupkeyword {
+    position: absolute;
+    top: 11px;
+    right: 30px;
+    overflow: hidden;
+    width: 210px;
+    height: 30px;
+}
+
+.groupkeyword:after {
+    position: absolute;
+    top: 11px;
+    right: 0;
+    display: inline-block;
+    width: 14px;
+    height: 9px;
+    content: '';
+    vertical-align: top;
+    background-position: -389px -211px;
+}
+
+.keyword-area {
+    font-size: 13px;
+    line-height: 30px;
+    position: relative;
+    z-index: 1;
+    height: 30px;
+}
+.link-keyword{
+    
+    display: block;
+    width: 190px;
+    padding-right: 20px;
+    text-decoration: none;
+
+}
+.link-keyword::after{
+    display: table;
+    clear: both;
+    table-layout: fixed;
+    content: '';
+}
+
+.ico-error{
+    display: inline-block;
+    float: left;
+    width: 14px;
+    height: 14px;
+    margin: 8px 5px 0 0;
+    vertical-align: top;
+    background-position: -39px -427px;
+}
+
+.ico-error+.keyword {
+    font-size: 12px;
+    letter-spacing: -.5px;
+    text-overflow: clip;
+    color: #505050;
+}
+
+.keyword{
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+/*메뉴 더보기 관련 css */
+.ly-service{
+    position: absolute;
+    top: 52px;
+    right: 0;
+    left: 0;
+    /* display: none; */
+    padding: 20px 30px 22px;
+    border-top: 1px solid #e4e8eb;
+    background-color: #fff;
+    box-shadow: 0 4px 4px 0 rgba(0,0,0,.12);
+    z-index: 302;
+}
+
+.group-service {
+    display: table;
+    overflow: hidden;
+    width: 1128px;
+    margin: 0 auto;
+    table-layout: fixed;
+    border-width: 0 1px;
+    border-style: solid;
+    border-color: #e4e8eb;
+}
+
+.list-service {
+    font-size: 13px;
+    line-height: 26px;
+    display: table-cell;
+    padding: 0 18px 0 19px;
+}
+
+.list-service .service-title{
+    font-weight: 700;
+    margin-bottom: 3px;
+    color: #000;
+}
+
+
+/*메인창 관련 css */
 .box-container-main{
     height: 2685px;
     
@@ -302,6 +620,9 @@ body{
 
 /*배경 이미지 클래스 */
 
+
+.btn-more:after,
+.groupkeyword:after,
 .bg-44265f{
 
     background-image: url(https://s.pstatic.net/static/www/img/uit/2020/sp_main.44265f.png);
@@ -309,3 +630,17 @@ body{
     background-size: 471px 442px;
 
 }
+.display-none{
+    display: none !important;
+}
+.display-block{
+    display: block !important;
+}
+
+
+/* float 는 block에서 많이 쓰이고 사용하면 부모의 높이가 안잡힘, 이걸 해결하기 위해서 float를 자식으로 가진 부모 쪽에 after~ 위 코드를 넣어주면 
+body::after{
+    clear: both;
+    content: "";
+    display: block;
+} */
