@@ -54,7 +54,7 @@
                     <a class="btn-autocomplete">
                         <i class="ico-complete bg-44265f"></i>
                     </a>
-                    <div class="autowindow">
+                    <div class="autowindow display-none">
                         <div class="auto-box">
                             <div class="word">
                                 <p class="info-word">
@@ -79,7 +79,252 @@
                     
         </div>
     </div>
-    <div class="box-container-menu">
+    <div id="box-container-menu">
+        <div class="ly-service">
+            <div class="group-service fav-all-ly ">
+                <dl class="list-service">
+                    <dt class="service-title">ㄱ-ㄷ</dt>
+                      <dd class="service-data"><a href="https://www.grafolio.com/">그라폴리오</a></dd>
+                      <dd class="service-data"><a href="https://weather.naver.com/">날씨</a></dd>
+                      <dd class="service-data"><a href="https://booking.naver.com/booked/list">네이버 예약</a></dd>
+                      <dd class="service-data"><a href="https://cloud.naver.com/">네이버 클라우드</a></dd>
+                      <dd class="service-data"><a href="https://post.naver.com/">네이버 포스트</a></dd>
+                      <dd class="service-data"><a href="https://news.naver.com/">뉴스</a></dd>
+                      <dd class="service-data"><a href="https://datalab.naver.com/">데이터랩</a></dd>
+                    </dl>
+                    <dl class="list-service">
+                        <dt class="service-title">ㄹ-ㅅ</dt>
+                        <dd class="service-data"><a href="https://comic.naver.com/">만화/웹툰</a></dd>
+                        <dd class="service-data"><a href="https://memo.naver.com/">메모</a></dd>
+                        <dd class="service-data"><a href="https://vibe.naver.com/?from=naver_main">뮤직</a></dd>
+                        <dd class="service-data"><a href="https://band.us/">밴드</a></dd>
+                        <dd class="service-data"><a href="https://land.naver.com/">부동산</a></dd>
+                        <dd class="service-data"><a href="https://bookmark.naver.com/">북마크</a></dd>
+                        <dd class="service-data"><a href="https://software.naver.com/main.nhn">소프트웨어</a></dd>
+                        <dd class="service-data"><a href="https://sports.news.naver.com/" >스포츠</a></dd>
+                        <dd class="service-data"><a href="https://series.naver.com">시리즈</a></dd>
+                        <dd class="service-data"><a href="https://serieson.naver.com">시리즈on</a></dd>
+                    </dl>
+                    <dl class="list-service">
+                        <dt class="service-title">ㅇ-ㅈ</dt>
+                        <dd class="service-data"><a href="#">영화</a></dd>
+                        <dd class="service-data"><a href="#">오디오클립</a></dd>
+                        <dd class="service-data"><a href="#">오피스</a></dd>
+                        <dd class="service-data"><a href="#">웹소설</a></dd>
+                        <dd class="service-data"><a href="#">자동차</a></dd>
+                        <dd class="service-data"><a href="#">주소록</a></dd>
+                        <dd class="service-data"><a href="#">증권(금융)</a></dd>
+                        <dd class="service-data"><a href="#">지도</a></dd>
+                        <dd class="service-data"><a href="#">지식백과</a></dd>
+                    </dl>
+                    <dl class="list-service">
+                        <dt class="service-title">ㅊ-ㅎ</dt>
+                        <dd class="service-data"><a href="#">책</a></dd>
+                        <dd class="service-data"><a href="#">캘린더</a></dd>
+                        <dd class="service-data"><a href="#">학술정보</a></dd>
+                        <dd class="service-data"><a href="#">항공권</a></dd>
+                        <dd class="service-data"><a href="#">호텔</a></dd>
+                    </dl>
+                    <dl class="list-service">
+                        <dt class="service-title">A-Z</dt>
+                        <dd class="service-data"><a href="#">modoo![모두]</a></dd>
+                        <dd class="service-data"><a href="#">MY구독</a></dd>
+                        <dd class="service-data"><a href="#">PC게임</a></dd>
+                        <dd class="service-data"><a href="#">TV연예</a></dd>
+                        <dd class="service-data"><a href="#">V LIVE</a></dd>
+                    </dl>
+                    <dl class="list-service">
+                        <dt class="service-title">사전</dt>
+                        <dd class="service-data"><a href="#">사전</a></dd>
+                        <dd class="service-data"><a href="#">국어사전</a></dd>
+                        <dd class="service-data"><a href="#">영어/영영사전</a></dd>
+                        <dd class="service-data"><a href="#">일본어사전</a></dd>
+                        <dd class="service-data"><a href="#">중국어사전</a></dd>
+                        <dd class="service-data"><a href="#">한자사전</a></dd>
+                        <dd class="service-data"><a href="#" class="link-dic">사전 더보기</a></dd>
+                    </dl>
+                    <dl class="list-service">
+                        <dt class="service-title">인기/신규 서비스</dt>
+                        <dd class="service-data"><a href="#">네이버플러스 멤버십</a></dd>
+                        <dd class="service-data"><a href="#">클로바더빙</a></dd>
+                        <dd class="service-data"><a href="#">인플루언서 검색</a></dd>
+                        <dd class="service-data"><a href="#">Keep</a></dd>
+                        <dd class="service-data"><a href="#">VIBE</a></dd>
+                        <dd class="service-data"><a href="#">웨일</a></dd>
+                        <dd class="service-data"><a href="#">파파고</a></dd>
+                    </dl>
+            </div>
+            <div class="group-service fav-edit-ly display-none">
+                <dl class="list-service">
+                  <dt class="service-title">ㄱ-ㄷ</dt>
+                    <dd class="service-data">
+                      <label><input type="checkbox" name="grafolio" value="grafolio"><i class="ico-chk bg-44265f"></i>그라폴리오</label>
+                    </dd>
+                    <dd class="service-data">
+                      <label><input type="checkbox" name="weather" value="weather"><i class="ico-chk bg-44265f"></i>날씨</label>
+                    </dd>
+                    <dd class="service-data">
+                      <label><input type="checkbox" name="booking" value="booking"><i class="ico-chk bg-44265f"></i>네이버 예약</label>
+                    </dd>
+                    <dd class="service-data">
+                      <label><input type="checkbox" name="ndrive" value="ndrive"><i class="ico-chk bg-44265f"></i>네이버 클라우드</label>
+                    </dd>
+                    <dd class="service-data">
+                      <label><input type="checkbox" name="post" value="post"><i class="ico-chk bg-44265f"></i>네이버 포스트</label>
+                    </dd>
+                    <dd class="service-data">
+                      <label><input type="checkbox" name="news" value="news"><i class="ico-chk bg-44265f"></i>뉴스</label>
+                    </dd>
+                    <dd class="service-data">
+                      <label><input type="checkbox" name="datalab" value="datalab"><i class="ico-chk bg-44265f"></i>데이터랩</label>
+                    </dd>
+                </dl>
+                <dl class="list-service">
+                  <dt class="service-title">ㄹ-ㅅ</dt>
+                    <dd class="service-data">
+                      <label><input type="checkbox" name="comic" value="comic"><i class="ico-chk bg-44265f"></i>만화/웹툰</label>
+                    </dd>
+                    <dd class="service-data">
+                      <label><input type="checkbox" name="memo" value="memo"><i class="ico-chk bg-44265f"></i>메모</label>
+                    </dd>
+                    <dd class="service-data">
+                      <label><input type="checkbox" name="music" value="music"><i class="ico-chk bg-44265f"></i>뮤직</label>
+                    </dd>  
+                    <dd class="service-data">
+                      <label><input type="checkbox" name="band" value="band"><i class="ico-chk bg-44265f"></i>밴드</label>
+                    </dd>
+                    <dd class="service-data">
+                      <label><input type="checkbox" name="land" value="land"><i class="ico-chk bg-44265f"></i>부동산</label>
+                    </dd>
+                    <dd class="service-data">
+                      <label><input type="checkbox" name="bookmark" value="bookmark"><i class="ico-chk bg-44265f"></i>북마크</label>
+                    </dd>
+                    <dd class="service-data">
+                      <label><input type="checkbox" name="software" value="software"><i class="ico-chk bg-44265f"></i>소프트웨어</label>
+                    </dd>
+                    <dd class="service-data">
+                      <label><input type="checkbox" name="sports" value="sports"><i class="ico-chk bg-44265f"></i>스포츠</label>
+                    </dd>
+                    <dd class="service-data">
+                      <label><input type="checkbox" name="nstore" value="nstore"><i class="ico-chk bg-44265f"></i>시리즈</label>
+                    </dd>
+                    <dd class="service-data">
+                      <label><input type="checkbox" name="nstoreon" value="nstoreon"><i class="ico-chk bg-44265f"></i>시리즈on</label>
+                    </dd>
+                </dl>
+                <dl class="list-service">
+                  <dt class="service-title">ㅇ-ㅈ</dt>
+                    <dd class="service-data">
+                      <label><input type="checkbox" name="movie" value="movie"><i class="ico-chk bg-44265f"></i>영화</label>
+                    </dd>
+                    <dd class="service-data">
+                      <label><input type="checkbox" name="audioclip" value="audioclip"><i class="ico-chk bg-44265f"></i>오디오클립</label>
+                    </dd>
+                    <dd class="service-data">
+                      <label><input type="checkbox" name="office" value="office"><i class="ico-chk bg-44265f"></i>오피스</label>
+                    </dd>
+                    <dd class="service-data">
+                      <label><input type="checkbox" name="webnovel" value="webnovel"><i class="ico-chk bg-44265f"></i>웹소설</label>
+                    </dd>
+                    <dd class="service-data">
+                      <label><input type="checkbox" name="auto" value="auto"><i class="ico-chk bg-44265f"></i>자동차</label>
+                    </dd>
+                    <dd class="service-data">
+                      <label><input type="checkbox" name="contact" value="contact"><i class="ico-chk bg-44265f"></i>주소록</label>
+                    </dd>
+                    <dd class="service-data">
+                      <label><input type="checkbox" name="stock" value="stock"><i class="ico-chk bg-44265f"></i>증권(금융)</label>
+                    </dd>
+                    <dd class="service-data">
+                      <label><input type="checkbox" name="map" value="map"><i class="ico-chk bg-44265f"></i>지도</label>
+                    </dd>
+                    <dd class="service-data">
+                      <label><input type="checkbox" name="terms" value="terms"><i class="ico-chk bg-44265f"></i>지식백과</label>
+                    </dd>
+                </dl>
+                <dl class="list-service">
+                  <dt class="service-title">ㅊ-ㅎ</dt>
+                    <dd class="service-data">
+                      <label><input type="checkbox" name="book" value="book"><i class="ico-chk bg-44265f"></i>책</label>
+                    </dd>
+                    <dd class="service-data">
+                      <label><input type="checkbox" name="calendar" value="calendar"><i class="ico-chk bg-44265f"></i>캘린더</label>
+                    </dd>
+                    <dd class="service-data">
+                      <label><input type="checkbox" name="academic" value="academic"><i class="ico-chk bg-44265f"></i>학술정보</label>
+                    </dd>
+                    <dd class="service-data">
+                      <label><input type="checkbox" name="airticket" value="airticket"><i class="ico-chk bg-44265f"></i>항공권</label>
+                    </dd>
+                    <dd class="service-data">
+                      <label><input type="checkbox" name="hotel" value="hotel"><i class="ico-chk bg-44265f"></i>호텔</label>
+                    </dd>
+                </dl>
+                <dl class="list-service">
+                  <dt class="service-title">A-Z</dt>
+                    <dd class="service-data">
+                      <label><input type="checkbox" name="modoo" value="modoo"><i class="ico-chk bg-44265f"></i>modoo![모두]</label>
+                    </dd>
+                    <dd class="service-data">
+                      <label><input type="checkbox" name="myfeed" value="myfeed"><i class="ico-chk bg-44265f"></i>MY구독</label>
+                    </dd>
+                    <dd class="service-data">
+                      <label><input type="checkbox" name="ngame" value="ngame"><i class="ico-chk bg-44265f"></i>PC게임</label>
+                    </dd>
+                    <dd class="service-data">
+                      <label><input type="checkbox" name="entertain" value="entertain"><i class="ico-chk bg-44265f"></i>TV연예</label>
+                    </dd>
+                    <dd class="service-data">
+                      <label><input type="checkbox" name="v" value="v"><i class="ico-chk bg-44265f"></i>V LIVE</label>
+                    </dd>
+                </dl>
+                <dl class="list-service">
+                  <dt class="service-title">사전</dt>
+                    <dd class="service-data">
+                      <label><input type="checkbox" name="dic" value="dic"><i class="ico-chk bg-44265f"></i>사전</label>
+                    </dd>
+                    <dd class="service-data">
+                      <label><input type="checkbox" name="krdic" value="krdic"><i class="ico-chk bg-44265f"></i>국어사전</label>
+                    </dd>
+                    <dd class="service-data">
+                      <label><input type="checkbox" name="endic" value="endic"><i class="ico-chk bg-44265f"></i>영어/영영사전</label>
+                    </dd>
+                    <dd class="service-data">
+                      <label><input type="checkbox" name="jpdic" value="jpdic"><i class="ico-chk bg-44265f"></i>일본어사전</label>
+                    </dd>
+                    <dd class="service-data">
+                      <label><input type="checkbox" name="cndic" value="cndic"><i class="ico-chk bg-44265f"></i>중국어사전</label>
+                    </dd>
+                    <dd class="service-data">
+                      <label><input type="checkbox" name="hanja" value="hanja"><i class="ico-chk bg-44265f"></i>한자사전</label>
+                    </dd>
+                </dl>
+                <dl class="list-service">
+                  <dt class="service-title">인기/신규 서비스</dt>
+                    <dd class="service-data">
+                      <label><input type="checkbox" name="plus" value="plus"><i class="ico-chk bg-44265f"></i>네이버플러스</label>
+                    </dd>
+                    <dd class="service-data">
+                      <label><input type="checkbox" name="dubbing" value="dubbing"><i class="ico-chk bg-44265f"></i>클로바더빙</label>
+                    </dd>
+                    <dd class="service-data">
+                      <label><input type="checkbox" name="influencer" value="influencer"><i class="ico-chk bg-44265f"></i>인플루언서 검색</label>
+                    </dd>
+                    <dd class="service-data">
+                      <label><input type="checkbox" name="keep" value="keep"><i class="ico-chk bg-44265f"></i>Keep</label>
+                    </dd>
+                    <dd class="service-data">
+                      <label><input type="checkbox" name="vibe" value="vibe"><i class="ico-chk bg-44265f"></i>VIBE</label>
+                    </dd>
+                    <dd class="service-data">
+                      <label><input type="checkbox" name="whale" value="whale"><i class="ico-chk bg-44265f"></i>웨일</label>
+                    </dd>
+                    <dd class="service-data">
+                      <label><input type="checkbox" name="papago" value="papago"><i class="ico-chk bg-44265f"></i>파파고</label>
+                    </dd>
+                </dl>
+            </div>
+        </div>
         <div class="container">
             <div class="group-menu">
                 <ul class="list-nav type-color">
@@ -147,7 +392,30 @@
                         웹툰
                     </a></li>
                 </ul>
+                <ul class="list-nav type-empty display-none">
+                    <li class="nav-item">
+                        <div class="empty-box type-point"></div>
+                    </li>
+                    <li class="nav-item">
+                        <div class="empty-box"></div>
+                    </li>
+                    <li class="nav-item">
+                        <div class="empty-box"></div>
+                    </li>
+                    <li class="nav-item">
+                        <div class="empty-box"></div>
+                    </li>
+                    <li class="nav-item">
+                        <div class="empty-box"></div>
+                    </li>
+                </ul>
                 <a href="#" class="btn-more">더보기</a>
+                <div class="btn-ly-area">
+                    <a href="#" class="btn fav-all">서비스 전체보기</a>
+                    <a href="#" class="btn btn-set">메뉴설정</a>
+                    <a href="#" class="btn btn-reset display-none">초기화</a>
+                    <a href="#" class="btn btn-save display-none">저장</a>
+                </div>
             </div>
             <div class="groupkeyword">
                 <div class="keyword-area">
@@ -157,26 +425,39 @@
                     </a>
                 </div>
             </div>
-            <div class="ly-service">
-                <div class="group-service">
-                    <dl class="list-service">
-                        <dt class="service-title">ㄱ-ㄷ</dt>
-                          <dd class="service-data"><a href="https://www.grafolio.com/">그라폴리오</a></dd>
-                          <dd class="service-data"><a href="https://weather.naver.com/">날씨</a></dd>
-                          <dd class="service-data"><a href="https://booking.naver.com/booked/list">네이버 예약</a></dd>
-                          <dd class="service-data"><a href="https://cloud.naver.com/">네이버 클라우드</a></dd>
-                          <dd class="service-data"><a href="https://post.naver.com/">네이버 포스트</a></dd>
-                          <dd class="service-data"><a href="https://news.naver.com/">뉴스</a></dd>
-                          <dd class="service-data"><a href="https://datalab.naver.com/">데이터랩</a></dd>
-                        </dl>
-                </div>
-            </div>
+            
         </div>
     </div>
     <div class="box-container-main">
         <div class="container">
-            <div class="box-container-m-left"></div>
-            <div class="box-container-m-right"></div>
+            <div class="box-container-m-left">
+              <div class="da-board">
+                <div class="ad-content">
+                  <a href="#" class="ad-banner">
+                    <img src="https://ssl.pstatic.net/tveta/libs/1282/1282698/da63fd8ffd3da4c3a6e0_20200619161038981.jpg" width="1500" height="270" alt="[광고]진심을 다해 원작의 감성을 지키다 RAGNAROK ORIGIN 사전예약 중" border="0" style="width:750px;height:135px;">
+                  </a>
+                </div>
+              </div>
+              <div class="newscast">
+                <div class="newscast-header">
+                  <div class="issue-area">
+                    <a href="http://news.naver.com/main/list.nhn?mode=LPOD&mid=sec&sid1=001&sid2=140&oid=001&isYeonhapFlash=Y" class="link-media">연합뉴스</a>
+                    <div class="list-issue">
+                      <a href=""class="line-issue">재포장금지, 논란 속 내년 1월로 연기…유예기간 두기로(종합)</a>
+                    </div>
+                  </div>
+                  <div class="direct-area">
+                    <a href="#" class="link-news">네이버뉴스</a>
+                    <a href="#" class="link-direct">연예</a>
+                    <a href="#" class="link-direct">스포츠</a>
+                    <a href="#" class="link-direct">경제</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="box-container-m-right">
+              <div class="container-right"></div>
+            </div>
         </div>
     </div>
     <div class="box-container-footer">
@@ -184,31 +465,7 @@
     </div>
 
     <script>
-        $(function(){
-            var open = true;
-            $('html').scrollTop(0);
-            $('.btn-container-whale').click(function(e){
-                //$(this).parents('.box-whale').remove();
-                $('.box-whale').addClass('display-none');
-                e.preventDefault();
-                //이벤트가 발생하면 주소창에 #뜨는걸 막아줌 
-            })
-
-            
-
-            $('.off').click(function(e){
-                $('.btn-autocomplete').click();
-                e.preventDefault();
-            })
-
-            $('.btn-autocomplete').click(function(){
-		    //자동 완성 기능이 활성화/비활성화
-		        $('.autowindow').toggleClass('display-block');
-		//자동 완성 버튼 모양을 위로/아래로
-		        $('.ico-complete').toggleClass('active');
-	        })
-            // -- > 선생님꺼랑 비교해보기 그래서 위의 자동완성 끄기 버튼도 마저 구현하기 
-         })
+       
     </script>
 </body>
 </html>
@@ -220,3 +477,5 @@
 <!-- 선택자 종류 
     http://blog.naver.com/PostView.nhn?blogId=pringles73&logNo=220654082385 -->
 <!-- inline 의 띄어쓰기 줄바꿈을 공백으로 인식하는거 주의  -->
+
+<!-- 라벨로 묶으면 체크박스를 선택하지 않고 옆의 텍스트만 클릭해도 선택이 된다  -->
