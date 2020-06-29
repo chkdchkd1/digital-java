@@ -45,6 +45,21 @@ $(function(){
         $('.btn-ly-area a').toggleClass('display-none');
     })
 
+    $('.thumb-box').hover(function(){
+        $(this).toggleClass('thumb-hover');
+      })
+
+      $('.thumb-sub').click(function(){
+        $(this).toggleClass('display-none');
+        $('.thumb-unsub').toggleClass('display-none');
+      })
+
+      $('.thumb-unsub').click(function(){
+        $(this).toggleClass('display-none');
+        $('.thumb-sub').toggleClass('display-none');
+      })
+      
+
     // 초기화 버튼 
     function initMenu(){
         $('.fav-edit-ly').addClass('display-none');

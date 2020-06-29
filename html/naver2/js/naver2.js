@@ -154,6 +154,119 @@ $(function(){
 	})
 
 
+	$('.btn-set').click(function(){
+		if(!$(this).hasClass('not')){
+			$('.btn-set>i').removeClass('set');
+			$(this).find('i').addClass('set');
+		}
+	})
+
+	$('.btn-set').hover(function(){
+		$(this).find('i').toggleClass('hover');
+	})
+
+	$('.box-thumb-area').hover(function(){
+		$(this).find('img').toggleClass('display-none');
+		$(this).find('.box-thumb').toggleClass('display-none');
+	})
+
+	$('.box-thumb>a').hover(function(){
+		$(this).toggleClass('active');
+		$(this).siblings.toggleClass('disable')
+	})
+
+	$('.btn-nav-prev').click(function(e){
+		/*.box-card-nav>.card 요소가 애니메이션 중이 아니면 동작하고, 애니메이션 중이면 아무일도 안함*/
+		/*첫 애니메이트가 동작 중인데 또 클릭해서 동작시켜서 겹쳐 보이는걸 방지 ㅇㅇ */ 
+		if(!$('.box-card-nav>.card').is(':animated')){
+		$('.box-card-nav>.card').last().detach().prependTo('.box-card-nav').css('margin-left','-281px');
+		$('.box-card-nav>.card').first().animate({'margin-left':'0'},1000);
+		}
+	})
+
+	$('.btn-nav-next').click(function(e){
+		if(!$('.box-card-nav>.card').is(':animated')){
+		$('.box-card-nav>.card').first().animate({'margin-left':'-281px'},1000,function(){
+			$(this).detach().appendTo('.box-card-nav').removeAttr('style');
+			e.preventDefault();
+		});
+		}
+	})
+
+	$('.box-theme-wrap .btn-tab').click(function(e){
+		e.preventDefault();
+		$('.box-theme-wrap .btn-tab').attr('aria-selected','false');
+		$(this).attr('aria-selected','true');
+		themeBtnView();
+		themeBodyView();
+
+
+		// 태그안에 속성의 값을 설정할때 사용 =attr (속성이란 형광연하늘색으로 표시되는것들)
+		/* $(선택자).attr('속성명','값A') : 해당 요소의 속성의 값을 값A로 설정
+		   $(선택자).attr('속성명') : 해당 요소의 속성의 값을 가져옴 
+		   $(선택자).prop('속성명','값A') : 해당 요소의 속성의 값을 값A로 설정
+		   $(선택자).prop('속성명') : 해당 요소의 속성의 값을 가져옴 
+		   */ 
+	})
+	//find()는 선택자 밑에 ()<-에들어가는게 있는지 확인 하는 
+	$('.box-theme-wrap .btn-prev').click(function(e){
+		e.preventDefault();
+		if($('.btn-tab[aria-selected=true]').hasClass('tab-job')){
+			$('.list-category').animate({'margin-left':'0px'},1000)
+		}
+		if($('.btn-tab[aria-selected=true]').hasClass('tab-book')){
+			$('.list-category').animate({'margin-left':'-750px'},1000)
+		}
+		if($('.btn-tab[aria-selected=true]').hasClass('tab-show')){
+			$('.list-category').animate({'margin-left':'-1500px'},1000)
+		}
+
+		$('.btn-tab[aria-selected=true]').attr('aria-selected','false').parent().prev().find('.btn-tab').attr('aria-selected','true');
+		themeBtnView();
+		themeBodyView();
+
+	})
+
+	$('.box-theme-wrap .btn-next').click(function(e){
+		e.preventDefault();
+		if($('.btn-tab[aria-selected=true]').hasClass('tab-movie')){
+			$('.list-category').animate({'margin-left':'-750px'},1000)
+		}
+		if($('.btn-tab[aria-selected=true]').hasClass('tab-wedding')){
+			$('.list-category').animate({'margin-left':'-1500px'},1000)
+		}
+		if($('.btn-tab[aria-selected=true]').hasClass('tab-farm')){
+			$('.list-category').animate({'margin-left':'-2250px'},1000)
+		}
+
+		$('.btn-tab[aria-selected=true]').attr('aria-selected','false').parent().next().find('.btn-tab').attr('aria-selected','true');
+		themeBtnView();
+		themeBodyView();
+
+	})
+
+
+	themeBodyView();
+	function themeBodyView(){
+		var target = $('.btn-tab[aria-selected=true]').attr('data-target');
+		$('.box-theme-body .box-body').addClass('display-none');
+		$('.box-theme-body>.'+target).removeClass('display-none')
+	}
+
+	themeBtnView();
+
+	//버튼 보이는 경우 or 안보이는 경우 
+	function themeBtnView(){
+		$('.box-theme-wrap .btn-prev').removeClass('display-none')
+		$('.box-theme-wrap .btn-next').removeClass('display-none')
+		if($('.box-theme-wrap .btn-tab').first().attr('aria-selected') == 'true'){
+			$('.box-theme-wrap .btn-prev').addClass('display-none');
+		}
+		if($('.box-theme-wrap .btn-tab').last().attr('aria-selected') == 'true'){
+			$('.box-theme-wrap .btn-next').addClass('display-none');
+		}
+	} 
+
 	function initMenu(){
 		$('.box-service-menu.display').addClass('display-none');
 		$('.box-service-menu.set').addClass('display-none');
@@ -163,4 +276,54 @@ $(function(){
 		$('.icon-check').removeClass('checked');
 
 	}
+
+	$('.box-shop-header .tab').click(function(e){
+		e.preventDefault();
+		$('.box-shop-header .tab').attr('aria-selected','false');
+		$(this).attr('aria-selected','true');
+		shopView();
+		tabRamdom();
+		var target = $(this).attr('data-target');
+		if(target == 'mall'){
+			$('.box-shop-middle').addClass('display-none');
+		} else {
+			$('.box-shop-middle').removeClass('display-none');
+		}
+	})
+
+
+
+	/*오른쪽 3번째 컨텐츠에서 상품/쇼핑몰/MEN이 선택되면 선택된 내용에 맞는 body가 보이도록 하는 함수  */
+	function shopView(){
+		var target = $('.box-shop-header .tab[aria-selected=true]').attr('data-target');
+		$('.box-shop-body>div').addClass('display-none');
+		$('.box-shop-body>.'+target).removeClass('display-none');
+	}
+
+	shopView();
+	tabRamdom();
+
+	function tabRamdom(){
+		var arr = [];
+		$('.box-shop-middle>.box-mall>.link-mall').removeClass('random');
+		for( ; arr.length < 4; ){
+			var r = getRnadom(1,12);
+			if(arr.indexOf(r) >= 0){
+				continue;
+			}
+			arr.push(r)
+			if ( r <= 6 ){
+				$('.box-shop-middle>.box-mall').eq(0).find('.link-mall').eq(r-1).addClass('random');
+			}else {
+			$('.box-shop-middle>.box-mall').eq(1).find('.link-mall').eq(r-7).addClass('random');
+		}
+		}
+	}
+	
+	function getRnadom(min, max){
+		return Math.floor(Math.random()*(max-min+1 + min))
+	}
+
+	//indexOf() 메서드는 배열에서 지정된 요소를 찾을 수 있는 첫 번째 인덱스를 반환하고 존재하지 않으면 -1을 반환합니다
+
 })

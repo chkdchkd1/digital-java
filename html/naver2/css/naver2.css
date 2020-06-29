@@ -53,6 +53,7 @@ body{
 }
 .text-underline{
     text-decoration: underline;
+    color: white;
 }
 .btn-down-whale{
     display: block;
@@ -614,13 +615,16 @@ body{
     height: 2685px;
 }
 
+
+/*컨텐츠 왼쪽 관련 CSS */
 .box-left{
     width: 750px;
     float: left;
-    background-color: yellow;
-    height: 1000px;
     padding: 20px 0px;
 }
+
+
+/*왼쪽 첫번째 컨텐츠 */
 
 .box-left1{
     height: 135px;
@@ -629,6 +633,8 @@ body{
 .box-left1>a{
     display: block;
 }
+
+/*왼쪽 두번째 컨텐츠 */
 
 .box-left2{
     padding: 12px 15px 11px 15px;
@@ -710,19 +716,813 @@ body{
 .box-right{
     width:350px;
     float: right;
-    background-color: green;
-    height: 1000px;
     padding: 20px 0px;
 }
+
+
+/*왼쪽 세번째 컨텐츠  */
+
+.box-group-title{
+    padding: 22px 0 16px;
+    line-height: 18px;
+    /*= 높이를 18로 준것과 비슷한 효과*/
+    font-size: 14px;
+}
+
+.box-group-contents{
+    height: 262px;
+    border: 1px solid #dae1e6;
+    border-width: 1px 0;
+    box-sizing: border-box;
+    position: relative;
+    background-color: #fff;
+}
+
+.link-newstand{
+    float: left;
+    font-weight: 700;
+    color: #000;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+.link-newstand::before{
+    display: inline-block;
+    width : 27px;
+    height: 24px;
+    margin: -6px 1px 0 0;
+    content: '';
+    vertical-align: top;
+    background-position: -293px -357px;
+}
+
+.link-newstand::after{
+    display: inline-block;
+    width: 7px;
+    height: 11px;
+    margin-left: 6px;
+    content: '';
+    vertical-align: -1px;
+    background-position: -417px -58px;
+}
+
+.btn-sort{
+    font-size: 14px;
+    line-height: 18px;
+    color: #505050;
+    float: left;
+    margin-left: 10px;
+    letter-spacing: -.2px;
+
+}
+
+.btn-sort-all{
+    font-size: 14px;
+    font-weight: 700px;
+    line-height: 18px;
+    color: #000;
+    float: left;
+}
+
+.btn-sort-all::before{
+   display: inline-block;
+   width: 4px;
+   height: 4px;
+   margin: 0 8px 0 8px;
+   content: '';
+   vertical-align: 3px;
+   border-radius: 50%;
+   background-color: #c7ccd1;
+}
+
+.btn-set{
+    float: left;
+    padding: 0 9px;
+    line-height: 18px;
+}
+
+.icon-list{
+    display: inline-block;
+    width: 14px;
+    height: 13px;
+    vertical-align: top;
+    opacity: 0.7;
+    background-position: -77px -427px;
+}
+
+.icon-title.hover,.icon-set.hover,.icon-list.hover{
+    opacity: 1;
+}
+
+
+.icon-list.set{
+    opacity: 1;
+    background-position: -96px -427px;
+}
+
+
+
+.icon-title{
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    vertical-align: top;
+    opacity: 0.7;
+    background-position: -458px -62px;
+}
+.icon-title.set{
+    background-position: -458px -44px;
+    opacity: 1;
+}
+
+.icon-set{
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin: - 1px 0 1px;
+    opacity: 0.7;
+    vertical-align: top;
+    background-position: 0px -427px;
+}
+
+
+.box-row{
+    display: flex;
+}
+
+.box-thumb-area{
+    height: 65px;
+    width: 100%;
+    padding: 23px 0 22px;
+    text-align: center;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.line-row1,.line-row2,.line-row3,
+.line-col1,.line-col2,.line-col3,.line-col4,.line-col5,.line-col6,.line-col7 {
+    position: absolute;
+    z-index: 1;
+    background-color: #e4e8eb;
+}
+
+.line-row1,.line-row2,.line-row3{
+    left: 0;
+    right: 0;
+    height: 1px;
+}
+/*높이는 있어야*/
+
+
+.line-row1{    top:65px;}
+.line-row2{    top:130px;}
+.line-row3{    top:195px;}
+
+
+.line-col1,.line-col2,.line-col3,.line-col4,.line-col5,.line-col6,.line-col7{
+    top:0;
+    bottom: 0;
+    width: 1px;
+}
+
+.line-col2{    left:125px;}
+.line-col3{    left:250px;}
+.line-col4{    left:375px;}
+.line-col5{    left:500px;}
+.line-col6{    left:625px;}
+.line-col7{    left:750px;}
+.box-thumb{
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left : 0;
+    right: 0;
+    background-color: #f7f9fa;
+    padding : 19px 0 18px;
+    font-size: 0;
+    /*btn-subs, btn-view 사이의 엔터에 의한 공백을 폰트 사이즈 0으로 처리함으로써 붙는 것 처럼 보여줌 */
+}
+
+.btn-subs,.btn-view{
+    font-size: 12px;
+    line-height: 16px;
+    display: inline-block;
+    padding: 7px 8px 5px;
+    vertical-align: top;
+    color: #505050;
+    border : 1px solid #dae1e6;
+    background-color: #fff;
+
+}
+
+.btn-subs{
+    border-right: none;
+}
+
+.btn-subs.active, .btn-view.active{
+    border-color: #bec8d8;
+}
+
+.btn-view.disable{
+    border-left-color: #bec8d8;
+}
+
+.btn-news-prev,.btn-news-next{
+    top:109px;
+    position: absolute;
+    z-index: 10;
+    width: 44px;
+}
+
+.btn-news-prev{
+    left:-27px;
+}
+
+.btn-news-next{
+    right: -27px;
+}
+
+/*left right 따로 따로 주어야..! */
+
+.icon-news-prev,.icon-news-next{
+    display: inline-block;
+    width: 44px;
+    height: 44px;
+    vertical-align: top;
+    background-position: 0 -308px;
+}
+
+.icon-news-next{
+    background-position: -49px -308px;
+}
+
+.btn-news-prev:hover .icon-news-prev{
+    background-position: -227px -161px;
+}
+
+.btn-news-next:hover .icon-news-next{
+    background-position: -98px -308px;
+}
+
+
+
+/*왼쪽 네번째 컨텐츠 */
+
+.box-left4{
+    padding: 35px 0 27px;
+}
+
+/* 부모에 폰트 사이즈 0으로 넣으면 엔터에의한 공백을 없앨 수 있다. 단 자식들에게 폰트사이즈를 상속하기때문에 자식들에게 꼭 별도로 폰트사이즈를 지정해주어야 */
+.area-title{
+    font-size: 0;
+    float: left;
+}
+
+.box-theme-title{
+    height:17px;
+    padding-bottom: 17px;
+}
+.area-title .title{
+    font-size: 14px;
+    color: #000;
+    line-height: 16px;
+}
+
+.area-title .dsc{
+    margin-left: 8px;
+    color: grey;
+    font-size: 12px;
+    line-height: 16px;
+}
+.area-info{
+    float: right;
+}
+
+.area-info .info{
+    color: gray;
+    line-height: 16px;
+    font-size: 12px;
+}
+
+.area-info .info strong{
+    color: #000;
+}
+
+.area-info .btn-setting{
+    font-size: 12px;
+    line-height: 16px;
+    position: relative;
+    margin-left: 14px;
+    color: #505050;
+}
+
+.area-info .btn-setting::before{
+    display: inline-block;
+    width: 11px;
+    height: 11px;
+    margin-right: 4px;
+    content: '';
+    vertical-align: -1px;
+    opacity: 0.7;
+    background-position: -458px -223px;
+}
+
+.area-info .btn-setting:hover{
+    text-decoration: underline;
+}
+
+.area-info .btn-setting:hover::before{
+    opacity: 1;
+}
+
+.area-info .btn-setting::after{
+    position: absolute;
+    top : 2px;
+    left: -8px;
+    width: 1px;
+    height: 12px;
+    content: '';
+    background-color: #e4e8eb;
+}
+
+.box-theme-wrap{
+    height: 49px;
+    width: 100%;
+    position: relative;
+}
+
+
+.box-theme-container{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+/*overflow: hidden > 같은 형제들한테는 통하지는 않는다 */
+
+
+.box-theme-wrap .list-category::before{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 1px solid #dae1e6;
+    content: '';
+}
+
+.box-theme-wrap .list-category{
+    background-color: #fff;
+    height: 100%;
+    width: 400%;
+}
+
+.box-theme-wrap .list-category .category-item{
+    width: 94px;
+    height: 100%;
+    float: left;
+    z-index: 1;
+    position: relative;
+}
+/*위에서 z-index , position relative를 주는 이유는 list-category::before를 통해서 테두리를 만들었기 때문에 
+category-item을 클릭하고싶어도 before가 클릭 되기때문에 이를 막기위하여 설정해준다.*/
+
+.box-theme-wrap .list-category .category-item:first-child,
+.box-theme-wrap .list-category .category-item:nth-child(9),
+.box-theme-wrap .list-category .category-item:nth-child(17),
+.box-theme-wrap .list-category .category-item:nth-child(25){
+    width: 92px;
+}
+
+.box-theme-wrap .list-category .category-item .btn-tab{
+    display: block;
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 49px;
+    text-align: center;
+    color: #202020;
+    border-right: 1px solid #dae1e6;
+}
+
+.box-theme-wrap .list-category .category-item .btn-tab[aria-selected=true]{
+    position: relative;
+    margin: 0 -1px;
+    border-radius: 1px;
+    box-shadow: 0 3px 6px 0 rgba(0,0,0,0.16);
+    background-color: #1a2f63;
+    color: #fff;
+}
+
+
+.box-theme-wrap .btn-prev{
+    top:6px;
+    left:-23px;
+    position : absolute;
+    z-index: 10;
+    display: block;
+    width: 40px;
+    height: 40px;
+    background-position: -47px -357px;
+}
+
+.box-theme-wrap .btn-next{
+    top:6px;
+    right: -23px;
+    position : absolute;
+    z-index: 10;
+    display: block;
+    width: 40px;
+    height: 40px;
+    background-position: -92px -357px;
+}
+
+/*오른쪽 첫번째 컨텐츠*/
+.box-right1{
+    width: 100%;
+    height: 135px;
+    background-color: #f7f9fa;;
+    border : 1px solid #dae1e6;
+    box-sizing: border-box;
+    padding: 16px 16px 12px 17px;
+}
+
+.msg-login{
+    padding-left: 3px;
+    color: gray;
+    line-height: 16px;
+    font-size: 12px;
+    letter-spacing: -0.2px;
+}
+/*위의 line-height는 안에 글자가 있으면 16 없으면 0 */
+
+.link-login{
+    display: block;
+    font-size: 13px;
+    font-weight: bold;
+    margin-top: 11px;
+    padding: 15px 0;
+    text-align: center;
+    color: white;
+    border: 1px solid #15c654;
+    border-radius: 2px;
+    background-color: #19ce60;
+    line-height: 16px;
+}
+
+/*text-align : 글자 뿐만아니라 inline-block도 가운데 정렬 ㄱㄴ*/
+
+.icon-login-naver{
+    display: inline-block;
+    width: 60px;
+    height: 12px;
+    margin:  2px 5px 0 0;
+    vertical-align: top;
+    background-position: -270px -276px;
+    line-height: 16px;
+}
+
+.box-sub-area{
+    margin: 14px 8px 0 4px;
+}
+
+.link-join{
+    float: right;
+    color: #505050;
+    font-size: 12px;
+    line-height: 16px;
+}
+.link-join::before{  
+    display: inline-block;
+    width: 11px;
+    height: 11px;
+    margin: 2px 5px 0 0;
+    content: '';
+    vertical-align: top;
+    background-position: -458px -207px;
+}
+
+.box-look{
+    float: left;
+    line-height: 16px;
+}
+/*양 컨텐츠의 높이가 다르면 어긋난다 그때 float left를 해주면 ㅇㅇ*/
+
+.box-look::before{
+    display: inline-block;
+    width: 10px;
+    height: 14px;
+    margin: -1px 4px 1px 1px;
+    content: '';
+    vertical-align: top;
+    background-position: -458px -138px;
+    float: left;
+}
+
+.link-find-id,.link-find-pw{
+    font-size:12px;
+    line-height:16px;
+    letter-spacing: -0.2px;
+    color: #404040;
+    float: left;
+}
+
+.link-find-pw::before{
+    display: inline-block;
+    width: 3px;
+    height: 3px;
+    margin: 0 5px 0 5px;
+    content: '';
+    vertical-align: 3px;
+    border-radius: 50%;
+    background-color: #d7dcde;
+}
+
+
+/*오른쪽 두번째 컨텐츠 */
+
+.box-right2{
+    height: 47px;
+    border: 1px solid #dae1e6;
+    margin: 12px 0;
+    letter-spacing: -0.25px;
+    background-color: #fff;
+    position: relative;
+}
+
+.box-card-wrap{
+    height: 100%;
+    padding-right: 67px;
+    overflow: hidden;
+}
+
+.box-card-nav{
+    height: 100%;
+    width: 500%;
+    overflow: hidden;
+}
+
+.box-card1{
+    width: 281px;
+    padding: 14px 0 13px 16px;
+    display: block;
+    float: left;
+    box-sizing: border-box;
+
+}
+.badge-news{
+    font-size: 11px;
+    font-weight: bold;
+    line-height: 18px;
+    float: left;
+    height: 18px;
+    margin-right: 8px;
+    padding: 0 7px;
+    vertical-align: top;
+    border: 1px solid #202020;
+    border-radius: 10px;
+    color: #202020;
+    font-style: normal;
+}
+
+.text-news{
+    font-size: 13px;
+    line-height: 20px;
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #404040;
+}
+
+.box-card2{
+    font-size: 13px;
+    line-height: 29px;
+    display: block;
+    width: 281px;
+    overflow: hidden;
+    padding: 9px 0 9px 16px;
+    float: left;
+    box-sizing: border-box;
+}
+
+.box-card2::before{
+    display: inline-block;
+    width: 29px;
+    height: 29px;
+    vertical-align: top;
+    background-position: 0 -68px;
+    content: '';
+    margin-right: 9px;
+    float: left;
+}
+
+.text-current{
+    font-size: 15px;
+    vertical-align: top;
+    color: #202020;
+}
+
+.text-state{
+    font-size: 13px;
+    color: #202020;
+}
+
+.box-current{    float: left;}
+.box-degree{    
+    float: left;
+    margin-left: 9px;}
+
+.text-degree-max, .text-degree-mim{
+    font-size: 13px;
+    line-height: 29px;
+}
+
+.text-degree-min{ color: #2586ee;}
+
+.text-degree-min::before{
+    display: inline-block;
+    width: 5px;
+    height: 11px;
+    margin: 0 3px 0 0;
+    content: '';
+    vertical-align: -1px;
+    background-position: -417px -131px;
+}
+    
+.text-degree-max{ color: #e9564a;}
+.box-location{
+    float: right;
+    font-size: 12px;
+    color: gray;
+    line-height: 29px;
+}
+
+.box-btn{
+    width: 67px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    background-color: #fff;
+    right: 0;
+}
+
+.box-btn-wrap{
+    position: absolute;
+    top : 11px;
+    right: 10px;
+}
+
+.btn-nav-prev,.btn-nav-next{
+    float: left;
+    border: 1px solid #e4e8eb;
+    background-color: #fff;
+}
+.btn-nav-next{
+    margin-left: -1px;
+}
+.btn-nav-prev:before{
+    display: inline-block;
+    width: 6px;
+    height: 9px;
+    margin: 7px 8px 6px;
+    content: '';
+    vertical-align: top;
+    background-position: -265px -218px;
+}
+
+.btn-nav-next:before{
+    display: inline-block;
+    width: 6px;
+    height: 9px;
+    margin: 7px 8px 6px;
+    content: '';
+    vertical-align: top;
+    background-position: -417px -147px;
+}
+
+
+/*오른쪽 세번째 컨텐츠 css*/
+.box-right3>a{
+    display: block;
+}
+.box-right3>a>img{
+    width : 350px; 
+    height : 200px;
+    box-sizing: border-box;
+    border: 1px solid #e7ecf0;
+    float: left;
+}
+
+/*오른쪽 네번째 컨텐츠 css*/
+.box-right4{
+    margin-top: 15px;
+    height: 1191px;
+}
+
+.box-shop-header{
+    line-height: 17px;
+    padding: 12px 0 13px ;
+}
+
+
+.text-shop{
+    float: left;
+    line-height: 17px;
+    font-size: 14px;
+    font-weight: bold;
+    margin: -1px 0 3px;
+    color: #000;
+}
+
+.shop-tab{
+    float: right;
+}
+
+.shop-tab .tab{
+    display: block;
+    padding: 0 1px ;
+    color: #202020;
+    border-bottom: 2px solid transparent;
+    font-size: 13px;
+    line-height: 17px;
+    font-weight: bold;
+}
+
+.shop-tab .tab[aria-selected=true]{
+    color: #03c75a;
+    border-color: #19ce60;
+}
+
+.shop-tab .tab-item{
+    float: left;
+    margin-left: 15px;
+}
+/*ul 밑 기본은 li태그는 기본 display  block이라 다음줄로 옴 그래서 float left 해주어야  */
+
+
+.shop-tab .tab-item:first-child{
+    margin-left: 0;
+}
+
+
+.box-shop-middle{
+    padding: 12px 9px 11px 17px;
+    border: 1px solid #e4e8eb;
+    background-color: #f7f9fa;
+    border-bottom: none;
+}
+
+.box-shop-middle>.box-mall>.link-mall{
+    float: left;
+    line-height: 23px;
+    color: #404040;
+    font-size: 12px;
+}
+
+.box-shop-middle>.box-mall>.link-mall.random{
+    font-weight: bold;
+}
+
+.box-shop-middle>.box-mall>.comma{
+    display: block;
+    float: left;
+    width: 3px;
+    height: 3px;
+    vertical-align: top;
+    border-radius: 50%;
+    background-color : #c9cccf;
+    margin: 10px 9px 0;
+}
+
+.box-shop-middle>.box-mall:nth-child(2)>.comma{
+    margin: 10px 5px 0;;
+}
+
+.box-shop-body{
+    border: 1px solid #e4e8eb;
+}
+
+/*푸터 관련 CSS*/
+
 .box-container-footer{
     height: 423px;
     background-color: rgb(250, 251, 252);
 }
 
 
+
 /* 배경 이미지 클래스 */
 
 
+
+.area-info .btn-setting::before,
+.btn-nav-prev:before,
+.btn-nav-next:before,
+.text-degree-min::before,
+.box-look::before,
+.link-join::before,
+.link-newstand::before,
+.link-newstand::after,
 .link-media::after,
 .btn-service-init::before,
 .btn-menu-set::before,
@@ -740,6 +1540,20 @@ body{
 }
 
 
+.box-card2::before{
+    background-image: url(https://s.pstatic.net/static/www/img/uit/2020/sp_weather_time.284fc7.png);
+    background-repeat: no-repeat;
+    background-size: 199px 165px;
+}
+
+
+
+.box-shop-header::after,
+.box-shop-middle>.box-mall::after,
+.box-right3>a::after,
+.box-theme-title::after,
+.box-sub-area::after,
+.box-group-title::after,
 .box-left2::after,
 .box-container-green::after,
 .box-container-black::after,
@@ -747,4 +1561,20 @@ body{
     clear: both;
     content: '';
     display: block;
+}
+
+/* box-group-title을 after 준 이유 부모의 높이가 없기 때문에 float left float right가 안먹힌ㄷ ㅡ ㅇ ㅏ 
+‘float 된 엘리먼트가 부모 엘리먼트의 높이에 영향을 주지 않는다는 사실
+ float된 자식 엘리먼트의 높이를 부모 엘리먼트에 반영하도록 대응하는 방법이라고 한마디로 설명할 수 있겠습니다. 
+ 부모 떠난 자식을 다시 부모의 품 안으로 돌아오도록 하려면 어떻게 해야 하는지 한번 살펴 보시죠. */
+ /**float속성으로 원하는 곳에 배치를 하면 그 다음에 오는 태그들의 위치가 뭉개지는 경우가 허다한데~*/
+ /* =>즉 부모의 높이 자식의 높이랑 일치시켜주는 것 */
+
+
+.float-left{
+    float: left;
+}
+
+.float-right{
+    float: right;
 }

@@ -12,8 +12,15 @@ a{
 }
 body{
     min-width: 1190px;
-    font-family: "Malgun Gothic", "맑은 고딕";
 }
+
+body, button, input, select, table, textarea {
+    font-family: -apple-system, BlinkMacSystemFont, "Malgun Gothic", "맑은 고딕", helvetica, "Apple SD Gothic Neo", sans-serif;
+    font-size: 12px;
+    line-height: 16px;
+    color: rgb(32, 32, 32);
+}
+
 .container{
     width: 1190px;
     margin: 0 auto;
@@ -755,7 +762,8 @@ input[type=checkbox] {
     content: '';
 }
 
-/* https://takeuu.tistory.com/60 */
+/* https://takeuu.tistory.com/60*/
+/*float속성으로 원하는 곳에 배치를 하면 그 다음에 오는 태그들의 위치가 뭉개지는 경우가 허다한데
 /* float 는 block에서 많이 쓰이고 사용하면 부모의 높이가 안잡힘, 이걸 해결하기 위해서 float를 자식으로 가진 부모 쪽에 after~ 위 코드를 넣어주면  */
 
 .issue-area{
@@ -797,6 +805,7 @@ input[type=checkbox] {
     width: 310px;
     white-space: nowrap;
     text-overflow: ellipsis;
+    margin-top: 0px;
 }
 
 
@@ -849,6 +858,516 @@ input[type=checkbox] {
     text-decoration: none;
 }
 
+.newscast-title {
+    font-size: 14px;
+    line-height: 18px;
+    padding: 22px 0 16px;
+}
+
+.newscast-title::after{
+    display: table;
+    clear: both;
+    table-layout: fixed;
+    content: '';
+}
+
+.link-newsstand {
+    font-weight: 700;
+    float: left;
+    white-space: nowrap;
+    text-decoration: none;
+    color: #000;
+}
+
+.link-newsstand::before{
+    display: inline-block;
+    width: 27px;
+    height: 24px;
+    margin: -6px 1px 0 0;
+    content: '';
+    vertical-align: top;
+    background-position: -293px -357px;
+}
+
+
+.link-newsstand::after{
+    display: inline-block;
+    width: 7px;
+    height: 11px;
+    margin-left: 6px;
+    content: '';
+    vertical-align: top;
+    vertical-align: -1px;
+    background-position: -417px -58px;
+}
+
+.tile-view{
+    
+    position: relative;
+    height: 260px;
+    border-width: 0 1px;
+    border-style: solid;
+    border-color: #dae1e6;
+
+}
+
+.sort-area {
+    float: left;
+    margin-left: 10px;
+}
+
+.btn-sort {
+    font-size: 14px;
+    text-decoration: none;
+    color: #505050;
+}
+
+.btn-sort.sort-on {
+    font-weight: 700;
+    color: #000;
+}
+
+.btn-sort+.btn-sort:before {
+    display: inline-block;
+    width: 4px;
+    height: 4px;
+    margin: 0 8px 0 4px;
+    content: '';
+    vertical-align: top;
+    vertical-align: 3px;
+    border-radius: 50%;
+    background-color: #c7ccd1;
+}
+
+.set-area{
+    float: right;
+}
+
+
+.sbtn-set {
+    float: left;
+    padding: 0 9px;
+}
+
+
+.ico-list {
+    display: inline-block;
+    width: 14px;
+    height: 13px;
+    vertical-align: top;
+    opacity: .7;
+    background-position: -77px -427px;
+}
+
+.ico-tile {
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    vertical-align: top;
+    background-position: -458px -44px;
+}
+
+.ico-set {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin: -1px 0 1px;
+    vertical-align: top;
+    opacity: .7;
+    background-position: 0 -427px;
+}
+
+
+.set-area:after {
+    display: table;
+    clear: both;
+    table-layout: fixed;
+    content: '';
+}
+
+
+.newscast-group-news{
+    position: relative;
+    height: 260px;
+    border-width: 1px 0;
+    border-style: solid;
+    border-color: #dae1e6;
+}
+
+.btn-prev{
+    position: absolute;
+    z-index: 10;
+    left: -27px;
+    top: 109px;
+}
+
+.btn-next{
+    position: absolute;
+    z-index: 10;
+    right: -13px;
+    top: 109px;
+}
+
+.btn-prev .ico-btn {
+    display: inline-block;
+    width: 44px;
+    height: 44px;
+    vertical-align: top;
+    background-position: 0 -308px;
+}
+
+.btn-next .ico-btn {
+    display: inline-block;
+    width: 44px;
+    height: 44px;
+    vertical-align: top;
+    background-position: -49px -308px;
+}
+
+
+
+.page-box{
+    height: 100%;
+    overflow: hidden;
+}
+
+.p-b{
+    width: 750px;
+    float: left;
+    /* display: none; */
+}
+
+
+.frame-area {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.frame-area .line {
+    position: absolute;
+    z-index: 1;
+    background-color: #e4e8eb;
+}
+
+.to-right1,.to-right2, .to-right3 {
+    right: 0;
+    left: 0;
+    height: 1px;
+}
+
+.to-right1 {    top: 65px;}
+
+.to-right2 {    top: 130px;}
+
+.to-right3 {    top:195px}
+
+
+.to-bottom1,.to-bottom2,.to-bottom3,.to-bottom4,.to-bottom5 {
+    top: 0;
+    bottom: 0;
+    width: 1px;
+}
+
+.to-bottom1 {    left: 124px;}
+
+.to-bottom2 {    left: 248px;}
+
+.to-bottom3 {    left: 372px;}
+
+.to-bottom4 {    left: 497px;}
+
+.to-bottom5 {    left: 622px;}
+
+.thumb-area:after {
+    display: table;
+    clear: both;
+    table-layout: fixed;
+    content: '';
+}
+
+.thumb-box {
+    overflow: hidden;
+    position: relative;
+    float: left;
+    width: 16.66%;
+    height: 65px;
+}
+
+.thumb{
+    display: block;
+    padding: 23px 0 22px;
+    text-align: center;
+    
+}
+
+
+.thumb-box.thumb-hover .thumb-popup{
+    display: block
+}
+
+.thumb-popup {
+    font-size: 0;
+    line-height: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: none;
+    overflow: hidden;
+    padding: 19px 0 18px;
+    text-align: center;
+    background-color: #f7f9fa;
+}
+
+
+.btn-popup {
+    font-size: 12px;
+    line-height: 16px;
+    display: inline-block;
+    padding: 7px 8px 5px;
+    vertical-align: top;
+    text-decoration: none;
+    color: #505050;
+    border: 1px solid #dae1e6;
+    background-color: #fff;
+}
+
+
+.btn-popup+.btn-popup {
+    margin-left: -1px;
+}
+
+
+.btn-popup:hover {
+    position: relative;
+    border-color: #bec8d8;
+}
+
+
+
+/*오늘 읽을만한 글 ~ */
+
+.themecast{
+    padding: 35px 0 27px;
+    letter-spacing: -.25px;
+}
+
+.group-title {
+    overflow: hidden;
+    padding-bottom: 17px;
+}
+
+
+.theme-contents{
+    height:2747px ;
+}
+
+.title-area{    float: left;}
+
+.title-area .title {
+    font-size: 14px;
+    color: #000;
+}
+
+.title-area .dsc {
+    margin-left: 8px;
+    color:grey;
+}
+
+.info-area{    float: right;}
+.info-area .info{   color: grey;}
+.info-area .new{   color: black;}
+
+
+.btn-theme-set{
+    position: relative;
+    margin-left: 14px;
+    color: #505050;
+}
+
+.btn-theme-set:hover{
+    text-decoration: underline;
+    /* cursor: pointer; */
+}
+
+.btn-theme-set::before{
+    display: inline-block;
+    width: 11px;
+    height: 11px;
+    margin-right: 4px;
+    content: '';
+    vertical-align: top;
+    vertical-align: -1px;
+    opacity: .7;
+    background-position: -458px -223px;
+}
+
+.btn-theme-set:hover:before{
+    opacity: 1;
+}
+
+.btn-theme-set::after{
+    position: absolute;
+    top: 2px;
+    left: -8px;
+    width: 1px;
+    height: 12px;
+    content: '';
+    background-color: #e4e8eb;
+}
+
+.main-category {
+    position: relative;
+}
+
+.btn-main-prev{
+    position: absolute;
+    z-index: 10;
+    top: 6px;
+    left: -23px;
+}
+
+.btn-main-next{
+    position: absolute;
+    z-index: 10;
+    top: 6px;
+    right: -18px;
+}
+
+.btn-main-prev .ico-btn{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    vertical-align: top;
+    background-position: -47px -357px;
+}
+
+.btn-main-next .ico-btn{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    vertical-align: top;
+    background-position: -92px -357px;
+}
+
+.main-container{
+    position: relative;
+    z-index: 5;
+    overflow: hidden;
+    min-height: 100%;
+    width: 100%;
+    height: 49px;
+}
+
+.menu-list{
+    width: 3000px;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+.list-category{
+    position: relative;
+    background-color: #fff;
+    float: left;
+}
+
+.list-category:before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    content: '';
+    border: 1px solid #dae1e6;
+}
+
+.list-category:after {
+    display: table;
+    clear: both;
+    table-layout: fixed;
+    content: '';
+}
+
+.category-item {
+    position: relative;
+    z-index: 1;
+    float: left;
+    width: 94px;
+}
+
+.category-item:first-child {
+    width: 92px;
+}
+
+.main-category .tab {
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 49px;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    border-right: 1px solid #dae1e6;
+}
+
+.category-item.id .tab {
+    position: relative;
+    margin: 0 -1px;
+    border-radius: 1px;
+    box-shadow: 0 3px 6px 0 rgba(0,0,0,.16);
+}
+
+.tab.id-enter:hover {    color: #e65da0;}
+.tab.id-sports:hover {    color: #0147b5;}
+
+
+.category-item.id .tab.id-enter{
+    color: #fff;
+    background-color: #e65da0;
+}
+
+.category-item.id .tab.id-sports{
+    color: #fff;
+    background-color: #0147b5;
+}
+
+.category-item.id .tab.id-cargame {
+    color: #fff;
+    background-color: #4a94e1;
+}
+
+.category-item.id .tab.id-bboom {
+    color: #fff;
+    background-color: #66c971;
+}
+
+.category-item.id .tab.id-finance{
+    color: #fff;
+    background-color: #35ae5e;
+}
+
+.category-item.id .tab.id-food {
+    color: #fff;
+    background-color: #e77c43;
+}
+
+.category-item.id .tab.id-gameapp {
+    color: #fff;
+    background-color: #5bb8e1;
+}
+
+.category-item.id .tab.id-movie {
+    color: #fff;
+    background-color: #1a2f63;
+}
+
+
+/*메뉴 오른쪽 관련 css */
 
 
 .box-container-m-right{
@@ -861,15 +1380,685 @@ input[type=checkbox] {
     background-color: #fff
 }
 
+.login {
+    padding: 16px 16px 12px 17px;
+    border: 1px solid #dae1e6;
+    background-color: #f7f9fa;
+}
+
+.login-msg{
+    padding-left: 3px;
+    color: grey;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: -.2px;
+}
+
+.link-login{
+    font-size: 13px;
+    font-weight: 700;
+    display: block;
+    margin-top: 11px;
+    padding: 15px 0;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    border: 1px solid #15c654;
+    border-radius: 2px;
+    background-color: #19ce60;
+}
+
+.ico-naver {
+    display: inline-block;
+    width: 60px;
+    height: 12px;
+    margin: 2px 5px 0 0;
+    vertical-align: top;
+    background-position: -270px -276px;
+}
+
+.login-subarea{
+    margin: 14px 8px 0 4px;
+}
+.look-box{
+    float: left;
+}
+
+.look-box::before{
+    display: inline-block;
+    width: 10px;
+    height: 14px;
+    margin: -1px 1px 1px;
+    content: '';
+    vertical-align: top;
+    background-position: -458px -138px;
+}
+
+.link-look{
+    color: #404040;
+}
+
+.link-look+.link-look:before {
+    display: inline-block;
+    width: 3px;
+    height: 3px;
+    margin: 0 5px 0 2px;
+    content: '';
+    vertical-align: top;
+    vertical-align: 3px;
+    border-radius: 50%;
+    background-color: #d7dce0;
+}
+
+.link-join {
+    float: right;
+    color: #505050;
+}
+
+.link-join::before{
+    display: inline-block;
+    width: 11px;
+    height: 11px;
+    margin: 2px 5px 0 0;
+    content: '';
+    vertical-align: top;
+    background-position: -458px -207px;
+}
+
+/*카드 뉴스 관련 css */
+
+.timesquare{
+    position: relative;
+    height: 47px;
+    margin: 12px 0;
+    letter-spacing: -.25px;
+    border: 1px solid #dae1e6;
+}
+
+.card-wrap {
+    overflow: hidden;
+    height: 47px;
+    padding-right: 67px;
+}
+
+.card-nav {
+    position: absolute;
+    top: 11px;
+    right: 10px;
+    overflow: hidden;
+}
+
+.btn-nav{
+    float: left;
+    border: 1px solid #e4e8eb;
+    background-color: #fff;
+}
+
+.btn-nav:hover {
+    background-color: #fafbfc;
+}
+
+.btn-nav+.btn-nav {
+    margin-left: -1px;
+}
+
+.btn-card-prev::before{
+
+    display: inline-block;
+    width: 6px;
+    height: 9px;
+    margin: 7px 8px 6px;
+    content: '';
+    vertical-align: top;
+    background-position: -265px -218px;
+}
+.btn-card-prev:hover::before{
+    background-position: -265px -246px;
+}
+
+.btn-card-next:before {
+    display: inline-block;
+    width: 6px;
+    height: 9px;
+    margin: 7px 8px 6px;
+    content: '';
+    vertical-align: top;
+    background-position: -417px -147px
+}
+
+.btn-card-next:hover:before {
+  background-position: -265px -232px;
+}
+
+.card-rolling{
+    position: relative;
+    overflow: hidden;
+    min-height: 100%;
+    width: 100%;
+    height: 47px;
+    
+   
+}
+.rolling{
+    width: 281px;
+    /* position: absolute; */
+    /* left: 0px; */
+    height: 47px;
+    float: left;
+}
+
+.rollingbox{
+    width: 850px;
+    height: 47px;
+}
+
+.card-news {
+    display: block;
+    overflow: hidden;
+    padding: 14px 0 13px 16px;
+    z-index: 1;
+    
+}
+
+.news-badge {
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 18px;
+    float: left;
+    height: 18px;
+    margin-right: 8px;
+    padding: 0 7px;
+    vertical-align: top;
+    font-style: normal;
+    border: 1px solid #202020;
+    border-radius: 10px;
+}
+
+.news {
+    font-size: 13px;
+    line-height: 20px;
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #404040;
+}
+
+.card-weather{
+    font-size: 13px;
+    line-height: 29px;
+    display: block;
+    overflow: hidden;
+    padding: 9px 0 9px 16px;
+}
+
+.card-weather:before {
+    float: left;
+    margin-right: 9px;
+    content: '';
+}
+
+.ico-w09::before {
+    display: inline-block;
+    width: 29px;
+    height: 29px;
+    vertical-align: top;
+    background-position: -68px -68px;
+}
+
+.current-box {    float: left;}
+.current {
+    font-size: 15px;
+    vertical-align: top;
+}
+
+.degree-box {
+    float: left;
+    margin-left: 9px;
+}
+.card-weather .min {    color: #2586ee;}
+.card-weather .max {    color: #e9564a;}
+
+.min:before {
+    display: inline-block;
+    width: 5px;
+    height: 11px;
+    margin: 0 3px;
+    content: '';
+    vertical-align: top;
+    vertical-align: -1px;
+    background-position: -417px -131px;
+}
+
+.location {
+    font-size: 12px;
+    display: block;
+    overflow: hidden;
+    padding-left: 9px;
+    text-align: right;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: grey;
+
+}
+
+
+
+.card-air {
+    line-height: 18px;
+    display: block;
+    overflow: hidden;
+    padding: 14px 0 15px 16px;
+    white-space: nowrap;
+}
+
+.list-air {    float: left;}
+.air-item {    float: left;
+               color: #505050;}
+
+.state {
+    font-size: 13px;
+    margin-left: 8px;
+    color: #202020;
+    margin-left: 5px;}
+
+
+.state.s-good::before {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    vertical-align: top;
+    background-position: -382px -357px;
+    content: '';
+    margin-right: 3px;
+
+}
+
+.air-item+.air-item:before {
+    display: inline-block;
+    width: 1px;
+    height: 12px;
+    margin: 0 10px;
+    content: '';
+    vertical-align: -1px;
+    background-color: #e4e8eb;
+}
+
+.card-stock {
+    display: block;
+    overflow: hidden;
+    padding: 15px 0 14px 16px;
+    float: left;
+}
+
+.stock-title {
+    display: block;
+    font-size: 13px;
+    float: left;
+    margin-top: 1px;
+}
+
+.stock-box {
+    font-size: 0;
+    line-height: 0;
+    position: relative;
+    overflow: hidden;
+    height: 17px;
+}
+
+.stock-box:before {
+    display: inline-block;
+    width: 1px;
+    height: 12px;
+    margin: 3px 7px 2px 6px;
+    content: '';
+    vertical-align: top;
+    background-color: #e4e8eb;
+}
+
+.name {
+    font-size: 12px;
+    line-height: 17px;
+    color: #505050;
+    font-style: normal;
+}
+
+.rate {
+    font-size: 12px;
+    line-height: 17px;
+    margin-left: 10px;
+    color: #2586ee;
+}
+
+
+.timesquare .card-stock .current, .timesquare .card-stock .name, .timesquare .card-stock .rate{
+    display: inline-block;
+    vertical-align: top;
+    white-space: nowrap;
+}
+
+.timesquare .card-stock .current {
+    font-size: 13px;
+    line-height: 17px;
+    margin-left: 6px;
+}
+
+
+.rate::before{
+    display: inline-block;
+    width: 9px;
+    height: 6px;
+    vertical-align: 1px;
+    background-position: -333px -308px;
+    content: ''; 
+    /* content는 무족건..!  */
+}
+
+
+
+/*오른쪽 광고-쇼핑창 관련*/
+
+.rollingad{
+
+    width: 350px;
+    height: 200px;
+    border:1px solid #e6ecf0;
+    background-image: url("https://ssl.pstatic.net/tveta/libs/1292/1292932/0a4e60616dc2fcee6ef8_20200618102554622.jpg");
+    background-size: contain;
+
+}
+
+.shopcast{
+    overflow: hidden;
+    width: 350px;
+    height: 1191px;
+    letter-spacing: -.25px;
+    background-color: #fff;
+}
+
+.shop-header {
+    line-height: 17px;
+    padding: 12px 0 13px;
+    margin-top: 12px;
+}
+
+
+.shop-header:after {
+    display: table;
+    clear: both;
+    table-layout: fixed;
+    content: '';
+}
+
+.link-shop {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 17px;
+    float: left;
+    margin: -1px 0 3px;
+    color: #000;
+}
+
+.shop-tab {
+    font-size: 13px;
+    font-weight: 700;
+    float: right;
+}
+
+.shop-tab .tab-item {
+    float: left;
+}
+
+.shop-tab .tab-item+.tab-item {
+    margin-left: 15px;
+}
+
+
+.shop-tab .tab {
+    display: block;
+    padding: 0 1px;
+    text-decoration: none;
+    color: #202020;
+    border-bottom: 2px solid transparent;
+}
+
+.shop-tab .tab[aria-selected=true] {
+    color: #03c75a;
+    border-color: #19ce60;
+}
+
+
+.shop-content {
+    overflow: hidden;
+    height: 1145px;
+    border: 1px solid #e4e8eb;
+
+}
+
+
+.group-mall {
+    overflow: hidden;
+    padding: 12px 9px 11px 17px;
+    border-bottom: 1px solid #dae1e6;
+    background-color: #f7f9fa;
+}
+
+.group-mall .link-mall {
+    line-height: 23px;
+    float: left;
+    color: #404040;
+}
+
+.link-mall strong {
+    color: #202020;
+}
+
+.mall-area:after {
+    display: table;
+    clear: both;
+    table-layout: fixed;
+    content: '';
+}
+
+.ls9 {
+    margin: 10px 9px 0;
+}
+
+.ls5 {
+    margin: 10px 5px 0;
+}
+
+.group-mall [class^=ls] {
+    display: inline-block;
+    float: left;
+    width: 3px;
+    height: 3px;
+    vertical-align: top;
+    border-radius: 50%;
+    background-color: #c9cccf;
+}
+
+.group-goods {
+    position: relative;
+    padding: 55px 7px 16px 9px;
+}
+
+.shop-control {
+    position: absolute;
+    top: 16px;
+    right: 8px;
+    text-align: right;
+}
+
+.shop-control .num-box {
+    float: left;
+    padding: 5px 0;
+    color: grey;
+}
+
+.now {
+    font-weight: 700;
+    margin-right: 4px;
+    color: #202020;
+    font-style: normal;
+    font-size: 12px;
+    line-height: 16px;
+}
+
+
+.shop-control .btn-box {
+    float: left;
+    overflow: hidden;
+    margin-left: 7px;
+}
+
+.shop-control .btn-box:after {
+    display: table;
+    clear: both;
+    table-layout: fixed;
+    content: '';
+}
+
+
+.shop-control .btn {
+    float: left;
+    border: 1px solid #dae1e6;
+    background-color: #fff;
+}
+
+.shop-control .btn+.btn {
+    margin-left: -1px;
+}
+
+.shop-control .btn-shop-prev:before {
+    display: inline-block;
+    width: 5px;
+    height: 9px;
+    margin: 8px 10px 7px 8px;
+    content: '';
+    vertical-align: top;
+    background-position: 0 -29px;
+}
+
+
+.shop-control .btn-shop-next:before {
+    display: inline-block;
+    width: 5px;
+    height: 9px;
+    margin: 8px 8px 7px 10px;
+    content: '';
+    vertical-align: top;
+    background-position: -39px 0;
+}
+
+
+
+.list-goods-wrap{
+    display: none;
+    overflow: hidden;
+}
+
+.list-goods-wrap.yo{
+    display: block;
+}
+
+.list-goods-wrap .list-goods {
+    margin-top: -18px;
+    overflow: hidden;
+    margin-right: -5px;
+}
+
+.list-goods-wrap .goods-item {
+    margin-top: 18px;
+    float: left;
+    width: 107px;
+    margin-right: 5px;
+}
+
+.list-goods-wrap .goods-area {
+    display: block;
+}
+
+.shop-thumb-box {
+    position: relative;
+    overflow: hidden;
+}
+
+
+.list-goods-wrap .title-box {
+    margin-top: 9px;
+}
+
+.list-goods-wrap .title {
+    line-height: 18px;
+    display: block;
+    overflow: hidden;
+    text-align: center;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+
+.shop-content.shop .group-goods{
+    padding: 21px 8px 13px 9px;
+}
+
+.shop-content.shop .group-goods .list-goods {
+    margin-top: -29px;
+}
+
+.shop-content.shop .goods-item {
+    margin-top: 29px;
+}
+.shop-title {
+    position: relative;
+    padding-left: 4px;
+}
+
+.shop-title .link-mall{
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.shop-title .link-mall:after {
+    display: inline-block;
+    width: 5px;
+    height: 9px;
+    margin-left: 5px;
+    content: '';
+    vertical-align: top;
+    vertical-align: 0;
+    background-position: -29px 0;
+}
+
+
+.list-goods-wrap.yo {
+    display: block
+}
+
+/*푸터 관련 css*/
 .box-container-footer{
     border-top:1px solid #e4e8eb;
     height: 425px;
     background-color: #fafbfc;
-    
 }
+
+
 
 /*배경 이미지 클래스 */
 
+.btn-theme-set::before,
+.rate::before,
+.state.s-good::before,
+.min:before,
+.btn-card-prev::before,
+.btn-card-next:before,
+.btn-card-next:hover:before ,
+.link-join::before,
+.look-box::before,
+.ico-list, .ico-tile, .ico-set,
+.link-newsstand::before,
+.link-newsstand::after,
 .link-media:after,
 .btn-reset:before,
 .btn-set:before,
@@ -881,16 +2070,41 @@ input[type=checkbox] {
     background-image: url(https://s.pstatic.net/static/www/img/uit/2020/sp_main.44265f.png);
     background-repeat: no-repeat;
     background-size: 471px 442px;
-
 }
+
+
+.ico-w09::before{
+    background-image: url(https://s.pstatic.net/static/www/img/uit/2020/sp_weather_time.284fc7.png);
+    background-repeat: no-repeat;
+    background-size: 199px 165px;
+}
+
+
+.shop-title .link-mall:after,
+.shop-control .btn-shop-next:before,
+.shop-control .btn-shop-prev:before{
+    background-image: url(https://s.pstatic.net/static/www/img/uit/2020/sp_shop.2ab465.png);
+    background-repeat: no-repeat;
+    background-size: 44px 38px;
+}
+
 .display-none{
     display: none !important;
 }
-.display-block{
-    display: block !important;
+
+.stock-title::after{
+    clear: both;
+    content: '';
+    display: block;
 }
 
 
+.login-subarea:after{
+    display: table;
+    clear: both;
+    table-layout: fixed;
+    content: '';
+}
 /* float 는 block에서 많이 쓰이고 사용하면 부모의 높이가 안잡힘, 이걸 해결하기 위해서 float를 자식으로 가진 부모 쪽에 after~ 위 코드를 넣어주면 
 body::after{
     clear: both;
