@@ -172,7 +172,7 @@ $(function(){
 
 	$('.box-thumb>a').hover(function(){
 		$(this).toggleClass('active');
-		$(this).siblings.toggleClass('disable')
+		$(this).siblings().toggleClass('disable')
 	})
 
 	$('.btn-nav-prev').click(function(e){
@@ -325,5 +325,34 @@ $(function(){
 	}
 
 	//indexOf() 메서드는 배열에서 지정된 요소를 찾을 수 있는 첫 번째 인덱스를 반환하고 존재하지 않으면 -1을 반환합니다
+
+	$('.box-shop-control>.box-btn>a').click(function(e){
+		//a태그의 링크나 싱커 기능을 막는 역할 > 페이지 변동이 없도록함 
+		e.preventDefault();
+		// var currentObj = $('.box-shop-control>.box-num>.current-num');
+		var currentObj = $(this).parents('.box-shop-control').find('.box-num>.current-num');
+		var current = currentObj.text();
+		current = parseInt(current);
+		var change;
+		// var max = $('.box-shop-control>.box-num>.max-num').text();
+		var max = $(this).parents('.box-shop-control').find('.box-num>.max-num').text();
+		max = parseInt(max);
+		//이전 버튼인경우 , 해당 버튼은 btn-prev  클래스를 가지고 있음
+		if($(this).hasClass('btn-prev')){
+			change = current - 1 ;
+			if (change == 0)
+			change = max;
+		}
+		//다음 버튼인경우
+		else{
+			change = current + 1 ;
+			if (change == max+1)
+			change = 1; 
+		}
+		currentObj.text(change);
+
+	})
+
+	
 
 })

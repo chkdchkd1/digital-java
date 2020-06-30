@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery.js"></script>
+    <style>
+        .box-container{
+            height: 300px;
+            width: 1000px;
+            margin: 0 auto;
+            margin-top: 50px;
+         }
+        .box1{
+            width: 300px;
+            height: 300px ;
+            background-color:#ffd800;
+            float: left;
+            /* 간단하게 한줄 출력은 display:inline-block 도 ㄱㅊ (여백 신경 X)*/
+            margin-left: 10px;
+        }
+        .box1:nth-child(2){
+            background-color:#2b39a5 ;
+        }
+        .box1:nth-child(3){
+            background-color: #2ba675;
+        }
+    </style>
+</head>
+<body>
+    <div class="box-container">
+        <div class="box1"></div>
+        <div class="box1"></div>
+        <div class="box1"></div>
+    </div>
+
+ <script>
+     /*1) 동일한 기능을 하는 요소의 클릭 이벤트를 하나의 이벤트로 적용할 수 있는가?
+       2) css()함수를 사용할 수 있는가?  */
+     $('.box1').click(function(){
+         var color = $(this).css('background-color');
+         alert(color);
+     })
+ </script>
+</body>
+</html>

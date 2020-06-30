@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery.js"></script>
+    <style>
+        .box-container{
+            width: 400px;
+            height: 100px;
+            overflow: hidden;
+            margin-top: 100px;
+        }
+        .box-roll{
+            height: 100px;
+            width: 1200px;
+            margin-left: -800px;
+        }
+        .box{
+            float: left;
+            height: 100px;
+            width: 400px;
+        }
+        .box1{ background-color:#ffd800; }
+        .box2{ background-color:#2b39a5 ;}
+        .box3{ background-color: #2ba675;}
+    </style>
+</head>
+<body>
+    
+    <div class="box-container">
+        <div class="box-roll">
+            <div class= "box box1 id"></div>
+            <div class= "box box2"></div>
+            <div class= "box box3"></div>
+           
+        </div>
+    </div>
+    <button class="btn-move">move</button>
+    <script>
+        $('.btn-move').click(function(){
+            if($('.box1').hasClass('id')){
+                $('.box-roll').animate({'margin-left':'-400px'})
+             }
+             if($('.box2').hasClass('id')){
+                $('.box-roll').animate({'margin-left':'-0px'})
+		    }
+        
+            $('.id').removeClass('id').next().addClass('id');
+        })
+    </script>
+</body>
+</html>
