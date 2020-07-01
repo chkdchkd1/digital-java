@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery.js"></script>
+    <style>
+        
+        .box-btn{
+            position: relative;
+        }
+
+        .login{
+            position: absolute;
+            width: 300px;
+            height: 50px;
+            background-color: #a1a2a2;
+            color: white;
+            border: none;
+            font-size: 15px;
+            left: calc(50vw - 150px);
+            top: calc(50vh - 25px);
+        }
+        
+        
+        .main{
+            position: absolute;
+            left: calc(50vw - 250px);
+            top: calc(50vh - 150px);
+            border: 1px solid black;
+            width: 500px;
+            height: 250px;
+            padding: 20px 0px;
+            background-color: white;
+
+        }
+        .box-container{
+            width: 400px;
+            margin: 0 auto;
+
+        }
+
+        .box>input{
+            height: 50px;
+            box-sizing: border-box;
+            border: 1px solid #dadada;
+            background-color: white;
+            margin: 10px 0;
+            width: 400px;
+        }
+        .text{
+            float: left;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        .btn-login{
+            margin-top: 10px;
+            width: 100%;
+            height: 50px;
+            background-color: #a1a2a2;
+            color: white;
+            border: none;
+            font-size: 15px;
+        }
+
+        .display-none{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="box-btn">
+         <button class="login">로그인</button>
+    </div>
+    <div class="main display-none">
+        <div class="box-container">
+            <div class="box">
+                <span class="text">아이디</span>
+                <input type="text" name="id" id="">
+            </div>
+            <div class="box">
+                <span class="text">비밀번호</span>
+                <input type="password" name="pw" id="">
+            </div>
+            <button class="btn-login">로그인</button>
+        </div>
+    </div>
+    <script>
+        $('.login').click(function(){
+            $('.main').removeClass('display-none');
+        })
+        $('.btn-login').click(function(){
+            $('.main').addClass('display-none');
+        })
+    </script>
+</body>
+</html>

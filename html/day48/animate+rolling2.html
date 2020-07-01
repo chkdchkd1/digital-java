@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery.js"></script>
+    <script src="https://kit.fontawesome.com/c2a1b202c0.js" crossorigin="anonymous"></script>
+
+    <style>
+        .box-view{
+            width: 350px;
+            height: 200px;
+            border: 2px solid black;
+            overflow: hidden;
+            position: relative;
+            margin: 0 auto;
+        }
+
+        .box-container{
+            width: 1400px;
+            height: 100%;
+            border: 1px solid black;
+            margin-left: -700px;
+        }
+
+        .box{
+            width: 350px;
+            height: 100%;
+            background-image: url(https://ssl.pstatic.net/tveta/libs/1294/1294417/c65a94d4b670540077ab_20200630173358929.jpg);
+            background-size: contain; 
+            float: left;
+        }
+
+        .box2{   
+            background-image: url(https://ssl.pstatic.net/tveta/libs/1293/1293072/cbcbfc4a5563df6bb148_20200619111900688.JPG);
+            background-size: contain; 
+        }
+
+        .box3{   
+            background-image: url(https://ssl.pstatic.net/tveta/libs/1293/1293751/43f53b292cc41e53cbd4_20200624141628392.jpg);
+            background-size: contain; 
+            }
+
+        .btn-prev{
+            position: absolute;
+            width: 20px;
+            height: 30px;
+            font-size: 15px;
+            top: 45%;
+            left: 0;
+            z-index: 10;
+            text-align: center;
+        }
+        
+        .btn-next{
+            position: absolute;
+            width: 20px;
+            height: 30px;
+            font-size: 15px;
+            top: 45%;
+            right: 0;
+            z-index: 10;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="box-view">
+        <div class="box-btn">
+            <div class="btn-next"><i class="fas fa-angle-right"></i></div>
+            <div class="btn-prev"><i class="fas fa-angle-left"></i></div>
+        </div>
+        <div class="box-container">
+            <div class="box box1"></div>
+            <div class="box box2"></div>
+            <div class="box box3"></div>
+        </div>
+        
+    </div>
+    <button>이동</button>
+
+    <script>
+        $(function(){
+
+            $('.btn-prev').click(function(){
+                if(!$('.box').is(':animated')){
+                    $('.box').first().detach().appendTo('.box-container');
+                    $('.box').first().css('margin-left','350px');
+                    //위에걸 주는 이유가 첫번째 요소가 뒤로 오면서 첫번째가된 원래 두번째요소가 자동적으로 앞으로 당겨지지않게 하기위해서 
+                    $('.box').first().animate({'margin-left':'0px'},1000);
+                    };
+            })
+        
+            $('.btn-next').click(function(){
+                if(!$('.box').is(':animated')){
+                    $('.box').first().animate({'margin-left':'350px'},1000,function(){
+                    $('.box').last().detach().prependTo('.box-container')
+                    $(this).removeAttr('style');
+                    });
+                }
+            })
+        
+            var boxRollingNum = boxRolling();
+
+            $('.box-container').hover(function(){
+                clearInterval(boxRollingNum);
+            },function(){
+                boxRollingNum = boxRolling();
+            })
+
+            function boxRolling(){
+                return setInterval(function(){
+                //.box요소들이 애니메이션 동작중이지 않으면
+                    if(!$('.box').is(':animated')){
+                        $('.box').first().animate({'margin-left':'350px'},1000,function(){
+                            $('.box').last().detach().prependTo('.box-container');
+                            //처음에 추가 
+                            $(this).removeAttr('style');
+                        })
+                        }
+                },1100)
+            }
+        })
+                
+    </script>
+</body>
+</html>

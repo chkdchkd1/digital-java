@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ol,ul{
+            list-style: none;
+        }
+     
+        .box-menu{
+            margin: 0 auto;
+            margin-top: 50px;
+            width: 90%;
+            height: 60px;
+        }
+        .list-menu{
+            width: calc(100% / 3);
+            height: 100%;
+            box-sizing: border-box;
+            float: left;
+            border: 1px solid black;
+            text-align: center;
+            line-height: 60px;
+            background-color: #ffd200;
+        }
+        .list-menu:nth-child(1),
+        .list-menu:nth-child(2){
+            border-right: none;
+        }
+        .list-menu[aria-selected="true"]{
+            background-color: #b8bcba;
+            font-weight: bold;
+        }
+
+        .box-main{
+            position: absolute;
+            top:130px;
+            border: 1px solid black;
+            width: 90%;
+            height: 500px;
+            left: calc(50vw - 45%);
+        }
+        .display-none{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+        <ul class="box-menu">
+            <li class="list-menu" data-target="menu1" aria-selected="true">메뉴1</li>
+            <li class="list-menu" data-target="menu2">메뉴2</li>
+            <li class="list-menu" data-target="menu3">메뉴3</li>
+        </ul>
+            <div class="box-main menu1">메뉴1</div>
+            <div class="box-main menu2">메뉴2</div>
+            <div class="box-main menu3">메뉴3</div>
+    <script>
+        mainView();
+    
+        $('.list-menu').click(function(){
+            $('.list-menu').attr('aria-selected','false');
+            $(this).attr('aria-selected','true');
+            mainView(); 
+        })
+
+        function mainView(){
+            var name = $('.list-menu[aria-selected="true"]').attr('data-target');
+            $('.box-main').addClass('display-none');
+            $('.box-main.'+name).removeClass('display-none')
+        }
+    </script>
+</body>
+</html>

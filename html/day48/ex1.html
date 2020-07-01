@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery.js"></script>
+    <script src="https://kit.fontawesome.com/c2a1b202c0.js" crossorigin="anonymous"></script>
+
+    <style>
+
+
+        .box-ham{
+            float: right;
+            width: 40px;            
+            height: 40px;
+            margin-top: 30px;
+            background-color: #404040;
+            text-align: center;
+            color: #fff;
+            line-height: 40px;
+        }
+        .box{
+            position: relative;
+        }
+        .box-menu{
+            position: absolute;
+            top: 100px;
+            right: 10px;
+            width: 300px;
+            height: 400px;
+            overflow: hidden;
+        }
+        .menu{
+            position: absolute;
+            right: 0;
+            width: 300px;
+            height: 400px;
+            background-color: #cfcfcf;
+            margin-right: -400px;
+        }
+        .display-none{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+        <div class="box-ham">
+            <i class="fas fa-bars"></i>
+        </div>
+        <div class="box-menu">
+            <div class="menu"></div>
+        </div>
+    
+        <script>
+            var now = true;
+            $('.box-ham').click(function(){
+                // $('.box-ham').removeClass('display-none')
+                if(now){
+                    $('.menu').animate({'margin-right':'0px'},1000);
+                    $('.box-ham>i').attr('class','fas fa-times'); 
+                }else if(!now){
+                     $('.menu').animate({'margin-right':'-400px'},1000);
+                     $('.box-ham>i').attr('class','fas fa-bars'); 
+                }
+                now = !now
+             
+            })    
+        </script>
+</body>
+</html>

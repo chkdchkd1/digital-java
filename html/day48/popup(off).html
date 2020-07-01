@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery.js"></script>
+    <script src="https://kit.fontawesome.com/c2a1b202c0.js" crossorigin="anonymous"></script>
+
+    <style>
+        .box-modal-bg{
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #000;
+            opacity: 0.3;
+        }
+        .box-modal-login{
+            position: absolute;
+            background-color: #fff;
+            width: 400px;
+            height: 300px;
+            left: calc(50vw - 200px);
+            top: calc(50vh - 150px);
+        }
+
+        input[name=id], input[name=pw]{
+            width: 90%;
+            display: block;
+            margin: 20px auto;
+            border: 1px solid black;
+            height: 50px;
+            margin: 10px auto;
+            border-radius: 5px;
+        }
+
+        .btn-submit{
+            width: 90%;
+            display: block;
+            margin: 10px auto;
+            height: 50px;
+            border-radius: 5px;
+            border: 1px solid black;
+        }
+
+        .text-login{
+            text-align: center;
+        }
+        .btn-close{
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 20px;
+            height: 20px;
+            line-height: 20px;
+            text-align: center;
+            font-size: 16px;
+            color: #000;
+        }
+        .display-none{
+            display: none !important;
+        }
+    </style>
+</head>
+<body>
+    <button class="login" data-target=".box-modal">로그인</button>
+    <div class="box-modal display-none">
+        <div class="box-modal-bg"></div>
+        <div class="box-modal-login">
+            <h1 class="text-login">로그인</h1>
+            <a href="#" class="btn-close" data-target=".box-modal">
+                <i class="fas fa-times"></i>
+            </a>
+            <form action="">
+                <input type="text" name="id" id="">
+                <input type="password" name="pw" id="">
+                <button class="btn-submit">로그인</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        $(function(){
+            $('button, .btn-close').click(function(){
+                var target = $(this).attr('data-target');
+                $(target).toggleClass('display-none');
+            })
+        })
+    </script>
+    <!-- position : absolute 의 기준점 ? 
+        인터넷상의 많은 자료들을 살펴보면 부모요소중 가장 가까운 relative속성을 기준으로 영역을 산출한다는 설명이 가장 많다.
+         이 것은 잘못된 정보이다. 부모요소가 relative든  absolute든 실제로는 아무 부모의 요소로부터 거리를 산출해 낸다.-->
+</body>
+</html>
+
