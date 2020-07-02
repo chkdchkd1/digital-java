@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery.js"></script>
+</head>
+<style>
+    *{
+        font-family: "Malgun Gothic", "맑은 고딕";
+    }
+    .box-container{
+        margin: 0 auto;
+        margin-top: 30px;
+        width: 510px;
+        height: 365px;
+        /* border: 1px solid #202020; */
+    }
+    .comment-box{
+        display: none;
+        width: 510px;
+        height: auto;
+        border: 1px solid #a6aba9;
+        margin-bottom: 10px;
+        overflow:auto;
+
+    }
+    .input{
+        height: 60px;
+        text-align: center;
+    }
+    .box1,.submit{
+        float: left;
+        width: 50px;
+        height: 50px;
+        background-color: #a6aba9;
+        font-size: 16px;
+        color: white;
+        text-align: center;
+        line-height: 48px;
+    }
+    textarea{
+        /* float: left; */
+        width: 400px;
+        height: 50px;
+        margin: 0px;
+        padding: 0px;
+        border: 1px solid #a6aba9;;
+    }
+    .submit{
+        float: right;
+        border: none;
+    }
+    .comment-line{
+        float: left;
+        width: 100%;
+        margin-top: 5px;
+    }
+    .num{
+        float: left;
+        width: 50px;
+        height: 23px;
+        text-align: center;
+        font-size: 12px;
+        line-height: 20px;
+
+        }
+    .text{
+        float: left;
+        width: 400px;
+        height: 23px;
+        font-size: 12px;
+        padding-left: 3px;
+        line-height: 20px;
+    }
+
+    .display-none{
+        display: none !important;
+    }
+   
+</style>
+<body>
+    <div class="box-container">
+        <div class="comment-box">
+            <!-- <div class="comment-line">
+                <div class="num"></div>
+                <div class="text"></div>
+            </div> -->
+        </div>
+        <div class="input">
+            <div class="box1">댓글</div>
+            <textarea id="comment" cols="30" rows="2" maxlength="30"></textarea>
+            <button class="submit">확인</button>
+        </div>
+    </div>
+    <script>
+        var cnt = 1;
+        $('.submit').click(function(){
+            var comment = $('#comment').val();
+           var  str = 
+            '<div class="comment-line">'+
+                '<div class="num">댓글'+cnt+'</div>'+
+                '<div class="text">'+comment+'</div>'+
+            '</div>'
+            $('.comment-box').append(str);
+            $('.comment-box').slideDown(1000);
+            cnt++;
+        })
+    </script>
+</body>
+
+</html>
