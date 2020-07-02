@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>댓글 예제</title>
+    <script src="../js/jquery.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        .container{
+            width: 800px;
+            margin: 0 auto;
+        }
+
+        .box-title, .box-writer{
+            height: 40px;
+            line-height: 40px;
+            font-size: 20px;
+            margin: 20px 0 10px;
+        }
+
+        .box-writer{
+            font-size: 16px;
+            margin: 0 0 10px;
+        }
+
+        .box-board{
+            min-height: 300px;
+            border: 1px solid black;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+        }
+
+        .box-comment-list{
+            margin-top: 10px;    
+        }
+
+        .box-comment::after{
+            clear: both;
+            content: '';
+            display: block;
+            margin-bottom: 10px;
+            /*댓글과 댓글사이의 간격*/
+        }
+
+        .box-comment>.box-head,
+        .box-comment-input>.box-head{
+            float: left;
+            width: 90px;
+            text-align: center;
+        }
+        .box-comment>.box-body,
+        .box-comment-input>.box-body{
+            float: left;
+            margin-left: 10px;
+            width: 650px;
+            box-sizing: border-box;
+            /*테두리 때문에 800px을 넘어가기 때문*/
+        }
+
+        .btn-remove{
+            float: left;
+            width: 50px;
+            text-align: center;
+        }
+
+        .box-comment-input>.box-body{
+            height: 80px;
+            width: 610px;
+        }
+        .box-comment-input>.btn-ok{
+            width: 80px;
+            height: 80px;
+            box-sizing: border-box;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+    
+    
+        </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box-title">제목입니다</div>
+        <div class="box-writer">작성자</div>
+        <div class="box-board"></div>
+        <div class="box-comment">
+            <h3>댓글</h3>
+            <div class="box-comment-list">
+                <!-- <div class="box-comment">
+                    <div class="box-head">댓글1</div>
+                    <div class="box-body">안녕하세요</div>
+                    <button class="btn-remove">삭제</button>
+                </div> -->
+            </div>
+            <div class="box-comment-input">
+                <div class="box-head">작성자</div>
+                <textarea class="box-body"></textarea>
+                <button class="btn-ok">등록</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(function(){
+            $('.btn-ok').click(function(){
+                var writer = $('.box-comment-input>.box-head').text();
+                var comment = $('.box-comment-input>.box-body').val();
+                var str = 
+                   '<div class="box-comment">'+
+                    '<div class="box-head">'+writer+'</div>'+
+                    '<div class="box-body">'+comment+'</div>'+
+                    '<button class="btn-remove">삭제</button>'+
+               '</div>';
+                $('.box-comment-list').append(str);
+                $('.box-comment-input>.box-body').val('');
+                removeBtn();
+            })
+
+            /* 나중에 생기는 버튼에 기능을 등록하고싶으면 이런식으로 ㅇㅇ 이벤트 등록 중복을 피하기위해 */
+
+            function removeBtn(){
+            $('.btn-remove').click(function(){
+                $(this).parent().remove();
+            })
+            }
+        })
+    </script>
+</body>
+</html>
