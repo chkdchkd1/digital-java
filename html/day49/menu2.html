@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery.js"></script>
+    <script src="https://kit.fontawesome.com/c2a1b202c0.js" crossorigin="anonymous"></script>
+    <style>
+        .box-menu{
+            margin: 0 auto;
+            width: 1351px;
+            height: 50px;
+            overflow: hidden;
+            position: relative;
+            margin-bottom: 10px;
+            margin-top: 30px;
+        }
+        .main-menu{
+            height: 100%
+        }
+
+        .main-menu>ul{
+            list-style: none;
+            padding: 0;
+            width: 2700px;
+            height: 50px;
+            margin: 0;
+        }
+        .main-menu li{
+            width: 100%;
+        }
+        .main-menu a{
+            float: left;
+            width: 450px;
+            height: 100%;
+            box-sizing: border-box;
+            border: 1px solid black;
+            text-align: center;
+            line-height: 48px;
+            color: black;
+            display: block;
+            border-right: none;
+            text-decoration: none;
+            font-size: 20px;
+        }
+
+        /* .main-menu li:nth-child(3)>a, */
+        .main-menu li:last-child>a{
+            border-right: 1px solid black;
+        }
+
+        .container{
+            margin: 0 auto;
+            width: 1351px;
+            border: 1px solid black;
+            height: 500px;
+            box-sizing: border-box;
+        }
+
+        .main-menu a[aria-selected="true"]{
+            background-color: #8acab0;
+        }
+
+        .display-none{
+            display: none !important;
+        }
+        .btn-prev{
+            position: absolute;
+            left: 10px;
+            top: 8px;
+            font-size: 25px;
+        }
+
+        .btn-next{
+            position: absolute;
+            right: 10px;
+            top: 8px;
+            font-size: 25px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box-menu">
+        <div class="btn-next"><i class="fas fa-angle-right"></i></div>
+        <div class="btn-prev"><i class="fas fa-angle-left"></i></div>
+        <nav class="main-menu">
+            <ul>
+                <li><a href="#" aria-selected="true"  data-target=".box1">메뉴1</a></li>
+                <li><a href="#" data-target=".box2">메뉴2</a></li>
+                <li><a href="#" data-target=".box3">메뉴3</a></li>
+                <li><a href="#" data-target=".box4">메뉴4</a></li>
+                <li><a href="#" data-target=".box5">메뉴5</a></li>
+                <li><a href="#" data-target=".box6">메뉴6</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="container">
+        <div class="box box1">컨텐츠1</div>
+        <div class="box box2">컨텐츠2</div>
+        <div class="box box3">컨텐츠3</div>
+        <div class="box box4">컨텐츠4</div>
+        <div class="box box5">컨텐츠5</div>
+        <div class="box box6">컨텐츠6</div>
+    </div>
+
+    <script>
+        $(function(){
+            function viewContent(){
+                /* a태그의 aria-selected 값이 true인 요소의 data-target과 일치하는 컨텐츠만 보여주고 나머지는 가려주는 함수*/
+            var target =  $('.main-menu a[aria-selected=true]').attr('data-target');
+            $('.box').addClass('display-none');
+            $(target).removeClass('display-none');
+            }
+        viewContent();
+
+        $('.main-menu a').click(function(e){
+            e.preventDefault();
+            $('.main-menu a').attr('aria-selected','false');
+            $(this).attr('aria-selected','true');
+            $('.btn-next').removeClass('display-none');
+            $('.btn-prev').removeClass('display-none');
+            
+            var c = $(this).attr('data-target');
+            if ( c == '.box6'){
+                 $('.btn-next').addClass('display-none');
+            }
+            if ( c == '.box1'){
+                 $('.btn-prev').addClass('display-none');
+            }
+            
+            viewContent();
+        })
+
+        $('.btn-next').click(function(){
+            $('.btn-prev').removeClass('display-none');
+            $('.btn-next').removeClass('display-none');
+           
+            var c = $('.main-menu a[aria-selected=true]').attr('data-target');
+            if(c == '.box3'){
+                $('.main-menu>ul').animate({'margin-left':'-1350px'});
+            }
+            if(c == '.box5'){
+                $('.btn-next').addClass('display-none');
+            }
+            $('.main-menu a[aria-selected=true]').attr('aria-selected','false').parent().next().find('a').attr('aria-selected','true');
+            viewContent();
+        })
+
+        $('.btn-prev').click(function(){
+            $('.btn-prev').removeClass('display-none');
+            $('.btn-next').removeClass('display-none');
+
+            var c = $('.main-menu a[aria-selected=true]').attr('data-target');
+            if(c == '.box4'){
+                $('.main-menu>ul').animate({'margin-left':'0px'});
+            }
+            if(c == '.box2'){
+                $('.btn-prev').addClass('display-none');
+            }
+           
+            $('.main-menu a[aria-selected=true]').attr('aria-selected','false').parent().prev().find('a').attr('aria-selected','true');
+            viewContent();
+        })
+
+        })
+    </script>
+</body>
+</html>
