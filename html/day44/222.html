@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery.js"></script>
+    <style>
+
+        
+.card-rolling{
+    position: relative;
+    /* overflow: hidden; */
+    /* min-height: 100%; */
+    width: 200px;
+    height: 47px;
+    border: 1px solid black;
+    
+   
+}
+.rolling{
+    width: 281px;
+    /* position: absolute; */
+    /* left: 0px; */
+    height: 47px;
+    float: left;
+  
+    background-color: yellow;
+}
+
+.box-rol{
+    width: 850px;
+    height: 47px;
+    border: 1px solid brown;
+}
+
+ol,ul{
+    list-style: none;
+}
+ul {
+    border: 1px solid black ;
+    width: 200px;
+}
+li {
+    width: 100px;
+    float: left;
+}
+.dd{
+    width: 400px;
+    border: 1px solid brown;
+    height: 30px;
+}
+    </style>
+</head>
+
+<body>
+    <div class="card-rolling">
+        <div class="box-rol">
+            <div class="rolling">ddddd</div>
+            <div class="rolling">dd</div>
+            <div class="rolling">bb</div>
+        </div>
+    </div>
+
+        <ul>
+            <div class="dd">
+                <li>why</li>
+                <li>ddddd</li>
+                <li>dddd</li>
+                <li>ddzzzz</li>
+             </div>
+        </ul>
+    <!-- <script>
+         $(function(){
+    setInterval(function(){
+        $('.rolling').first().animate({'margin-left':'-281px'},700,function(){
+            // $(this).detach().appendTo('.roro').css('margin-top','0px').removeAttr('style');
+        });
+    },2000)
+})
+    </script> -->
+</body>
+
+
+</html>
