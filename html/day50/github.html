@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            background-color: #2b3137;
+        }
+        
+
+        ol,ul{
+            list-style: none;
+        }
+        .box-header{
+            width: 100%;
+            height: 56px;
+            background-color: #24292e;
+        }
+        nav{
+            height: 40px;
+            padding: 8px 40px ;
+
+        }
+        
+        .menu{
+            float: left;
+        }
+
+        .logo{
+            width: 56px;
+            height: 34px;
+            float: left;
+            background-image: url(../day50/logo.png);
+            background-repeat: no-repeat;
+        }
+        .logo>img{
+            align-items: center !important;
+        }
+        
+        .box-menu{
+            float: left;
+            display: flex;
+            width: 600px;
+        }
+
+        .menu{
+            width: 109px;
+            height: 100%;
+            font-size: 16px;
+            color: #fff;
+            line-height: 40px;
+            text-align: center;
+            /* margin-right: 20px; */
+        }
+
+        .menu:hover{
+            color: #444d56;
+        }
+        
+
+        .box-right{
+            float: right;
+            height: 40px;
+            line-height: 40px;
+        }
+
+        .search{
+            background-color: #3f4448;
+            height: 36px;
+            border: none;
+            border-radius: 4px;
+            width: 250px;
+            outline: none;
+        }
+
+        .sub-menu{
+            display: none;
+            width: 200px;
+            height: 300px;
+            background-color: #ffffff;
+            border-radius: 5px;
+            text-align: left;
+        }
+
+        .s-m{
+            font-size: 12px;
+            color: #000;
+            padding: 0 10px;
+        }
+
+        button{
+            width: 60px;
+            height: 24px;
+            color: white;
+            border: none;
+            background-color: transparent;
+            font-size: 13px;
+        }
+
+        button:nth-of-type(2){
+            border: 1px solid white;
+            border-radius: 4px;
+
+        }
+
+        /* nav{
+            clear: both;
+            content: '';
+            display: block;
+        } */
+
+    </style>
+</head>
+<body>
+    <div class="box-header">
+        <nav> 
+            <div class="logo"></div>
+            <ul class="box-menu">
+                <li class="menu subm">Why GitHub?
+                    <ul class="sub-menu">
+                        <li class="s-m">sub-menu</li>
+                        <li class="s-m">sub-menu</li>
+                    </ul>
+                </li>
+                <li class="menu">Team</li>
+                <li class="menu">Enterprise</li>
+                <li class="menu">Explore</li>
+                <li class="menu">Marketplace</li>
+                <li class="menu">Pricing</li>
+            </ul>
+            <div class="box-right">
+                <input type="text" class="search www" placeholder="   Search GitHub" >
+                <button>Sign in</button>
+                <button>Sign up</button>
+            </div>
+        </nav>
+    </div>
+    <script>
+        $(function(){
+            $('.menu.subm').hover(function(){
+                $(this).find('.sub-menu').stop().slideToggle(1000); 
+            })
+            $('input').click(function(e){
+                $(this).animate({'width':'450px'},150);
+                $(this).css('background-color','#fff');
+                // float와 같이 값을 숫자로 표현 할 수 없는 속성들은 animate를 적용할 수 없다. 
+                $(this).attr('placeholder','');
+                //애니메이트를 꼭 움직이는데만 쓰는것 X 
+                e.stopPropagation();
+                 //해당하는 요소에만 적용하도록 조상으로부터 영향 받는걸 막아줌 (밑의 html 이벤트 )
+            })
+
+            $('html').click(function(){
+                $('input').animate({'width':'250px'},150);
+                $('input').css('background-color','#3f4448');
+                $('input').attr('placeholder','   Search GitHub');
+                })
+        })
+    </script>
+</body>
+</html>
