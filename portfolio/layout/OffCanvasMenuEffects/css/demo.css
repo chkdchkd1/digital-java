@@ -1,0 +1,117 @@
+/* @import url(http://fonts.googleapis.com/css?family=Raleway:200,400,700,800); */
+@import url('https://fonts.googleapis.com/css2?family=Gothic+A1&display=swap');
+
+*, *:after, *:before { -webkit-box-sizing: border-box; box-sizing: border-box; }
+.clearfix:before, .clearfix:after { content: ''; display: table; }
+.clearfix:after { clear: both; }
+
+body {
+	background: #b4bad2;
+	color: black;
+	font-weight: 400;
+	font-size: 1em;
+	font-family: 'Gothic A1', sans-serif;
+}
+
+ol,ul{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+
+a {
+	color: #4e4a46;
+	text-decoration: none;
+	outline: none;
+}
+
+a:hover, a:focus {
+	color: #c94e50;
+	outline: none;
+}
+
+button:focus {
+	outline: none;
+}
+
+section {
+	padding: 1em;
+	text-align: center;
+}
+
+/* Header */
+.codrops-container {
+	margin: 0 auto;
+	padding: 20px 30px;
+	text-align: center;
+	border:1px solid black;
+	width: 85%;
+}
+
+/* 로그인 박스 */
+
+.logingbox{
+	border: 1px solid black;
+	height: 30px;
+	width: 100%;
+}
+
+.logingbox ul {
+	float: right;
+}
+
+.logingbox li {
+	float: left;
+	box-sizing: border-box;
+	font-size: 12px;
+    border: 1px solid black;
+	text-align: center;
+	line-height: 28px;
+	padding-left: 3px;
+	padding-right: 3px;
+
+}
+
+
+body #cdawrap {
+	top: auto;
+	bottom: 35px;
+	right: 35px;
+	background: #b4bad2;
+	border: 1px solid rgba(131,135,151,0.6);
+}
+
+.demo-wave body #cdawrap {
+	top: 35px;
+	right: 35px;
+	bottom: auto;
+}
+
+@media screen and (max-width: 40em) {
+	body {
+		font-size: 80%;
+	}
+	.codrops-header h1 {
+		font-size: 2.5em;
+	}
+	.codrops-demos {
+		max-width: 900px;
+		padding: 2em 2em 0;
+	}
+	.related > a {
+		margin: 20px 0;
+	}
+}
+
+@media screen and (max-width: 25em) {
+
+	.codrops-icon {
+		font-size: 250%;
+	}
+
+	.codrops-icon span {
+		display: none;
+	}
+
+}
