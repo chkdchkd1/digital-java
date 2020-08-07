@@ -1,0 +1,20 @@
+로그인 - 로그아웃
+회원가입  
+            마이페이지
+            예매확인/취소
+
+메뉴
+전시
+행사/축제
+오픈공지
+예매 정보
+ 지역별 예매
+ 날짜별 예매
+고객센터
+
+
+
+
+* 참고 사이트 
+http://webjangi.com/design/freetemplate?sort_type=download#
+http://webjangi.com/design/sampleDownload?cid=34
