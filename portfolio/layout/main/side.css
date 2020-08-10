@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Gothic+A1&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font:14px/1.8 Arial, Helvetica, sans-serif;
+    height: 100vh;
+    position: relative;
+    font-family: 'Gothic A1', sans-serif;
+}
+
+a{
+    text-decoration: none;
+    font-size: 18px;
+}
+ol,ul {
+    text-decoration: none;
+    list-style: none;
+}
+  
+.right-container {
+    float: right;
+    width: calc(100vw - 260px);
+    border: 1px solid black;
+}
+
+.left-container {
+    z-index:999;
+    width: 250px;
+    height: 100%;
+    background: #373a47;
+    color: #b8b7ad;
+    position: fixed;
+    top:0; 
+    left:0;
+
+}
+
+.search-box {
+    height: 40px;
+    box-sizing: border-box;
+    border: 1px solid #dadada;
+    background-color: white;
+    padding: 10px 30px 10px 10px;
+    margin: 40px 20px 20px 20px;
+}
+
+.search-box>input {
+    width: 100%;
+    height: 18px;
+    border: none;
+}
+
+.nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 20px 20px 20px 30px;
+}
+
+.nav-item {
+    margin: 4px 0;
+}
+
+.nav-item2 {
+    margin-left: 40px;
+    font-weight: 700;
+}
+
+.nav-link {
+    display: block;
+    text-decoration: none;
+    padding: 4px 10px;
+    color: #b8b7ad;
+    font-weight: 700;
+}
+
+.nav-link:hover {
+    color: #c94e50;
+
+}
+
+/* 메인화면 슬라이더 */
+
+
+.swiper-container {
+    width: 1000px;
+    height: 400px
+  }
+
+  .swiper-box{
+      border: 1px solid black;
+      margin-top: 130px;
+  }
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    background: url("http://ticketimage.interpark.com/TCMS4/Main/202008/MainVisual_650299f5-d583-4a6d-8607-f7ed9b95e16e.jpg") center 0px no-repeat;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+
+  .swiper-slide:nth-child(2){
+    background: url("http://ticketimage.interpark.com/TCMS4/Main/202007/MainVisual_4975a2de-0796-4da0-9bd1-ddc6a9cd733c.jpg") center 0px no-repeat;
+  }
+
+  .swiper-slide:nth-child(3){
+    background: url("http://ticketimage.interpark.com/TCMS4/Main/202006/MainVisual_ec60c0db-65a9-481f-b300-dfcc73779491.jpg") center 0px no-repeat;
+  }
+
+  .swiper-slide:nth-child(4){
+    background: black;
+    background: url("slider4.png") center 0px no-repeat;  }
