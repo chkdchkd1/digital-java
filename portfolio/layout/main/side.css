@@ -20,44 +20,280 @@ ol,ul {
     text-decoration: none;
     list-style: none;
 }
-  
+
+/* 오른쪽 메인 */
 .right-container {
     float: right;
-    width: calc(100vw - 260px);
-    border: 1px solid black;
+    width: calc(100vw - 270px);
+    /* border: 1px solid violet; */
+    height: 100vh;
+    
 }
 
+.content{
+    border: 1px solid red;
+    width: 95%;
+    margin: 0 auto;
+    /* height: 1350px; */
+}
+
+/* 로그인 박스 */
+
+.codrops-container {
+	text-align: center;
+}
+
+.loging-box{
+	border: 1px solid black;
+	height: 40px;
+    width: 100%;
+    font: normal 11px;
+}
+
+.loging-box ul {
+	float: right;
+}
+
+.loging-box li {
+    float: left;
+    color: #585858;
+	font-size: 12px;
+	box-sizing: border-box;
+	text-align: center;
+	line-height: 38px;
+	padding-left: 3px;
+	padding-right: 3px;
+}
+
+/* 카테고리 박스 */
+
+.category-box{
+    border: 1px solid black;
+	height: 30px;
+    width: 100%;
+    padding-top: 20px;
+}
+.category-box ul {
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+}
+.category-box li{
+    float: left;
+    font-size: 15px;
+    font-weight: 500;
+    padding-left: 5px;
+    padding-right: 5px;
+    border: 1px solid royalblue;
+    border-right: none;
+}
+
+.category-box li:nth-of-type(4){
+    border-right: 1px solid royalblue;;
+}
+
+/* 게시판 */
+
+.board-box{
+    border: 1px solid black;
+}
+.board-list{
+    width: 100%;
+    margin-left: -10px;
+    padding-left: 0;
+    padding-right: 0;
+    /* border: 1px solid red; */
+    margin: 0 auto;
+    padding-bottom: 30px;
+
+}
+
+.board-item {
+    position: relative;
+    width: 230px;
+    margin: 35px 21px 26px 22px;
+    display: inline-block;
+    vertical-align: top;
+    /* border: 1px solid black; */
+}
+
+.itemImage {
+    width: 230px;
+    height: 230px;
+    overflow: hidden;
+}
+
+.board-item a:hover .itemMeta .itemName span {
+    text-decoration: underline;
+}
+
+.itemImage .imageWrap {
+    overflow: hidden;
+}
+
+.imageWrap img {
+    display: block;
+    width: auto;
+    height: 230px;
+}
+
+.itemMeta {
+    position: relative;
+    margin-top: 15px;
+    padding-top: 31px;
+}
+
+.itemMeta .itemTags {
+    position: absolute;
+    top: -6px;
+    left: 0;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.itemTags .tag {
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 1px;
+    padding: 1px 10px 3px;
+    font-size: 12px;
+    line-height: 18px;
+    color: #666;
+}
+
+.itemMeta .titleWrap {
+    height: 95px;
+    overflow: hidden;
+}
+
+.titleWrap .itemName {
+    display: -webkit-box;
+    overflow: hidden;
+    word-break: break-all;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    height: auto;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 300;
+    color: #333;
+}
+
+.titleWrap .features {
+    margin-top: 9px;
+    height: 40px;
+    overflow: hidden;
+}
+
+.titleWrap .features ul li {
+    position: relative;
+    padding-left: 10px;
+    font-size: 15px;
+    line-height: 20px;
+    color: #999;
+}
+
+.features ul li:before {
+    content: "";
+    position: absolute;
+    top: 8px;
+    left: 0;
+    width: 4px;
+    height: 4px;
+    background: #999;
+}
+
+
+
+.itemMeta .priceWrap {
+    position: relative;
+    padding-top: 22px;
+    margin-top: 13px;
+}
+
+.priceWrap .originPriceWrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.originPriceWrap .grade {
+    margin-right: 3px;
+    font-size: 18px;
+    line-height: 24px;
+    color: #000000;
+}
+
+.salePriceWrap em {
+    font-size: 26px;
+    line-height: 28px;
+    color: #000;
+}
+
+.salePriceWrap .currency {
+    margin-right: 10px;
+    font-size : 18px;
+    line-height: 28px;
+    color: #000;
+}
+
+
+
+/* 왼쪽 메뉴  */
 .left-container {
     z-index:999;
     width: 250px;
     height: 100%;
-    background: #373a47;
-    color: #b8b7ad;
+    background: #f5f6f7;
+    color: #3D4449;
     position: fixed;
     top:0; 
     left:0;
 
 }
 
+/* 검색창 */
 .search-box {
+    position: relative;
     height: 40px;
     box-sizing: border-box;
-    border: 1px solid #dadada;
+    border: solid 1px rgba(210, 215, 217, 0.75);
     background-color: white;
-    padding: 10px 30px 10px 10px;
-    margin: 40px 20px 20px 20px;
+    padding: 0px 30px 0px 10px;
+    margin: 50px 20px 10px 20px;
+    border-radius: 3px;
 }
 
 .search-box>input {
+    position: relative;
     width: 100%;
-    height: 18px;
+    height: 38px;
+    border:none;
+    color: #7F888f;
+
+}
+
+.search-box>input:focus {outline:none;}
+
+.btn-search{
+    background: transparent;
     border: none;
+    top: 10px;
+    left: 180px;
+    position: absolute;
+}
+
+.btn-search > i {
+    font-size: 18px;
+    color: #adaea6;
 }
 
 .nav-list {
     list-style: none;
     margin: 0;
-    padding: 20px 20px 20px 30px;
+    padding: 20px 20px 20px 20px;
 }
 
 .nav-item {
@@ -73,27 +309,36 @@ ol,ul {
     display: block;
     text-decoration: none;
     padding: 4px 10px;
-    color: #b8b7ad;
+    color: #3D4449;
     font-weight: 700;
 }
 
+.nav-text{
+    display: block;
+    text-decoration: none;
+    padding: 4px 10px;
+    color: #3D4449;
+    font-weight: 700;
+    font-size: 18px;
+}
+
 .nav-link:hover {
-    color: #c94e50;
+    color: #e8787a;
 
 }
 
 /* 메인화면 슬라이더 */
 
+.swiper-box{
+    width: 100%;
+    /* border: 1px solid red; */
+    position: relative;
+    top : calc((100vh - 480px) / 2) 
+}
 
 .swiper-container {
-    width: 1000px;
-    height: 400px
-  }
-
-  .swiper-box{
-      border: 1px solid black;
-      margin-top: 130px;
-  }
+    height: 400px;    
+}
 
   .swiper-slide {
     text-align: center;
@@ -125,5 +370,5 @@ ol,ul {
   }
 
   .swiper-slide:nth-child(4){
-    background: black;
-    background: url("slider4.png") center 0px no-repeat;  }
+    background: url("http://ticketimage.interpark.com/TCMS4/Main/202008/MainVisual_55f28919-6360-4216-9d93-c1db5edb9a47.jpg") center 0px no-repeat;  }
+
