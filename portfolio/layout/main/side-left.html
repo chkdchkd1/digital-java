@@ -11,8 +11,8 @@
     <!-- Link Swiper's CSS -->
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 </head>
-
-    <div class="frame">
+<body>
+  <div class="frame">
         <div class="left-container">
             <div class="search-box">
                 <input type="text" placeholder="  Search"/>
@@ -50,53 +50,50 @@
             </div>
             <!-- main-content -->
             <div class="main-content">
-            <!-- Swiper -->
-              <div class="swiper-box">
-                  <div class="swiper-container">
-                    <div class="swiper-wrapper">
-                      <div class="swiper-slide"></div>
-                      <div class="swiper-slide"></div>
-                      <div class="swiper-slide"></div>
-                      <div class="swiper-slide"></div>
-                  
+              <!-- Swiper -->
+                <div class="swiper-box">
+                    <div class="swiper-container">
+                      <div class="swiper-wrapper">
+                        <div class="swiper-slide"></div>
+                        <div class="swiper-slide"></div>
+                        <div class="swiper-slide"></div>
+                        <div class="swiper-slide"></div>
+                        <div class="swiper-slide"></div>
+                      </div>
+                      <!-- Add Pagination -->
+                      <div class="swiper-pagination"></div>
+                      <!-- Add Arrows -->
+                      <!-- <div class="swiper-button-next"></div>
+                      <div class="swiper-button-prev"></div> -->
                     </div>
-                    <!-- Add Pagination -->
-                    <div class="swiper-pagination"></div>
-                    <!-- Add Arrows -->
-                    <!-- <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div> -->
                   </div>
-                </div>
-            </div>
-                  <!-- Swiper JS -->
-                  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-                  <!-- Initialize Swiper -->
-                  <script>
-                    var swiper = new Swiper('.swiper-container', {
-                      spaceBetween: 30,
-                      centeredSlides: true,
-                      autoplay: {
-                        delay: 4000,
-                        disableOnInteraction: false,
-                      },
-                      pagination: {
-                        el: '.swiper-pagination',
-                        clickable: true,
-                      },
-                      navigation: {
-                        nextEl: '.swiper-button-next',
-                        prevEl: '.swiper-button-prev',
-                      },
-                    });
-                  </script>
+                    <!-- Swiper JS -->
+                    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+                    <!-- Initialize Swiper -->
+                    <script>
+                      var swiper = new Swiper('.swiper-container', {
+                        spaceBetween: 30,
+                        centeredSlides: true,
+                        autoplay: {
+                          delay: 4000,
+                          disableOnInteraction: false,
+                        },
+                        pagination: {
+                          el: '.swiper-pagination',
+                          clickable: true,
+                        },
+                        navigation: {
+                          nextEl: '.swiper-button-next',
+                          prevEl: '.swiper-button-prev',
+                        },
+                      });
+                    </script>
+              </div>
           </div>
+           <!-- //content -->
         </div>
         <!-- //right-container -->
-
-      </div>
-      <!-- //frame -->
-
-<body>
-    
+  </div>
+      <!-- //frame -->    
 </body>
 </html>
