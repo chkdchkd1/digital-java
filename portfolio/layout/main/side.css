@@ -321,7 +321,7 @@ ol,ul {
 
 .rn-02 .rn-product-short-data .ps-location {
     padding: 0 22px 0 13px;
-    background: url(http://tkfile.yes24.com/imgNew/common/rn-ico-location.png)no-repeat right top;
+    background: url(image/rn-ico-location.png)no-repeat right top;
 }
 
 
@@ -402,7 +402,7 @@ ol,ul {
     font-size: 15px;
     padding-right: 23px;
     margin-right: 24px;
-    background: url(http://tkfile.yes24.com/imgNew/common/rn-ico-btn-pop.png)no-repeat right 8px;
+    background: url(image/rn-ico-btn-pop.png)no-repeat right 8px;
 }
 
 .rn-03-right .rn-product-area3 {
@@ -447,11 +447,23 @@ ol,ul {
 .rn-04-left-tit {
     border-bottom: 2px solid #000;
     position: relative;
-    padding: 40px 0 18px 0;
+    padding: 40px 0 10px 0;
     letter-spacing: -0.07em;
 }
-.rn-04 .rn-04-left > div {
+
+.rn-04 .rn-04-left .rn-04-left-wrap {
     width: 500px;
+    margin: 26px auto 27px auto;
+    overflow: hidden;
+}
+
+.rn-04 .rn-04-left .rn-04-left-wrap > div {
+    float: left;
+    position: relative;
+}
+
+.rn-04 .rn-04-left > div {
+    width: 501px;
     margin: 0 auto;
     position: relative;
     z-index: 1;
@@ -463,14 +475,532 @@ p.rn-04-xtit {
     font-weight: bold;
 }
 
+.rn-04-left-cal {
+    width: 275px;
+    border-right: 1px solid #ddd;
+    overflow: hidden;
+}
+
+.rn-04-left-wrap .rn-04-left-calist {
+    width: 221px;
+    text-align: center;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+.rn-04 .rn-04-left .rn-04-left-wrap > div:last-child:before {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 212px;
+    background: #ddd;
+    position: absolute;
+    top: 0;
+    left: -1px;
+}
+
+.rn-04-left-calist a {
+    display: inline-block;
+    width: 158px;
+    height: 32px;
+    line-height: 35px;
+    border: 1px solid #ddd;
+    font-size: 15px;
+    color: #333;
+    text-align: center;
+    margin: 0 0 8px 7px;
+}
+
+.rn-04-left-calist a:focus{
+    background-color: #596065;
+    color: white;
+}
+
+
+.rn-04 .rn-04-right {
+    float: right;
+    height: 425px;
+    width: 453px;
+    position: relative;
+    left: -1px;
+    border-left: none;
+}
+
+
+.rn-04-right .rn-04-right-tit {
+    border-bottom: 2px solid #000;
+    letter-spacing: -0.07em;
+    width: 350px;
+    margin: 0 auto;
+    padding: 39px 0 10px 0;
+    font-size: 18px;
+    color: #333;
+    font-weight: bold;
+}
+
+.rn-04-right .rn-04-right-list {
+    width: 350px;
+    margin: 0 auto;
+    border: 1px solid #ddd;
+    margin-top: 25px;
+    padding: 33px 0;
+}
+
+
+.rn-04 .rn-04-right .rn-04-right-list dl {
+    padding: 0 33px;
+    font-size: 15px;
+    color: #333;
+    line-height: 30px;
+}
+
+.rn-04-right-list span:focus{
+    font-weight: bold;
+    color: #596065;
+}
+
+.rn-05 {
+    margin: 50px 0;
+    text-align: center;
+    font-size: 0;
+}
+
+
+.rn-05 a {
+    display: inline-block;
+    width: 236px;
+    height: 46px;
+    line-height: 46px;
+    margin: 0 5px;
+    vertical-align: top;
+}
+
+
+.rn-05 a.rn-bb03 {
+    font-size: 20px;
+    color: #fff;
+    background: #f43142;
+    border: 2px solid #f43142;
+}
+
+.rn-07 {
+    border-bottom: 2px solid #333;
+    font-size: 0;
+}
+
+.rn-07 a {
+    display: inline-block;
+    height: 55px;
+    line-height: 55px;
+    width: 180px;
+    border-top: 3px solid #fff;
+    text-align: center;
+}
+
+.rn-07 a.on{
+    border-top: 3px solid #ed4037;
+
+}
+.rn-07 a > span {
+    font-size: 18px;
+    color: #333;
+    letter-spacing: -0.09em;
+    font-weight: 600;
+}
+
+
+/* 탭박스 */
+
+.rn-tab-boxes {
+    position: relative;
+}
+
+.rn-tab-area {
+    position: relative;
+}
+
+.rn-08 {
+    text-align: center;
+}
+
+.rn-08 > div {
+    padding-bottom: 70px;
+}
+
+
+.rn-08 > div:first-child {
+    padding-top: 70px;
+}
+
+.rn-0801 .rn08-tit {
+    padding-top: 0;
+}
+.rn-08 div .rn08-tit {
+    font-size: 30px;
+    color: #333;
+    padding-bottom: 51px;
+    font-weight: bold;
+    letter-spacing: -0.07em;
+}
+
+.rn-08 div .rn08-txt > p {
+    font-size: 13px;
+    line-height: 28px;
+    color: #555;
+}
+
+.rn-red {
+    color: #ed4037 !important;
+}
+
+.rn-08 div .rn-0803-tbl {
+    margin-top: 90px;
+}
+.rn08-tbl table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.rn08-tbl table tr th.rn08-tbl-tit:first-child {
+    border-left: 0 none;
+}
+
+.rn-08 div .rn08-tbl table th {
+    font-size: 15px;
+    color: #333;
+    text-align: center;
+    height: 50px;
+    font-weight: bold;
+    vertical-align: middle;
+    border: 1px solid #ddd;
+}
+
+.rn-08 div .rn08-tbl table th.rn08-tbl-tit {
+    font-size: 18px;
+    color: #333;
+    background: #f6f6f6;
+}
+
+.rn-08 div .rn-0803-tbl table th {
+    height: 100px;
+}
+
+.rn-0804 .rn-0803-tbl table td {
+    text-align: left;
+    padding: 10px 0 10px 30px;
+    font-size: 14px;
+    color: #333;
+    line-height: 25px;
+}
+
+.rn08-tbl table td {
+    font-size: 15px;
+    color: #555;
+    text-align: center;
+    height: 50px;
+    vertical-align: middle;
+    border: 1px solid #ddd;
+}
+
+/* 탭박스 - 관람후기 */
+.rn-tab-area-tit {
+    margin: 60px 0 20px 0;
+    height: 50px;
+    text-align: left;
+}
+
+.rn-tab-area-tit span{
+    border-bottom: 4px solid #333;
+    font-size: 30px;
+}
+
+.rn-0903 {
+    padding: 14px 0 14px 48px;
+    background: url(image/rn-ico-dot.png)no-repeat left 14px;
+    position: relative;
+}
+
+
+.rn-0903 p {
+    font-size: 14px;
+    line-height: 20px;
+    color: #666;
+}
+
+.rn-0903 a {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 17px;
+}
+
+.rn-0904 {
+    border-top: 1px solid #000;
+}
+
+.rn-0904 li:last-child {
+    border-bottom: 1px solid #000;
+}
+.rn-0904 li {
+    max-height: 280px;
+    padding-bottom: 19px;
+    border-bottom: 1px solid #ddd;
+    overflow: hidden;
+    position: relative;
+}
+
+.rn-0904-ttbox {
+    width: 100%;
+    height: 40px;
+    position: relative;
+    margin-bottom: 21px;
+    font-size: 0;
+}
+
+.rn-0904-ttbox .rn-0904-tt2 {
+    top: 19px;
+    height: 20px;
+    line-height: 20px;
+    color: #333;
+    font-size: 13px;
+}
+
+.rn-0904 li .rn-0904-ttbox span {
+    display: inline-block;
+    position: relative;
+}
+
+.rn-0904-ttbox .rn-0904-tt3 {
+    top: 19px;
+    height: 20px;
+    line-height: 20px;
+    color: #333;
+    font-size: 13px;
+    padding-left: 18px;
+    margin-right: 5px;
+    letter-spacing: 0.05em;
+}
+
+.rn-0904 li .rn-0904-ttbox .rn-0904-tt3:before {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 12px;
+    background: #dadada;
+    position: absolute;
+    top: 3px;
+    left: 9px;
+}
+
+.rn-0904 li .rn-0904-ttbox .rn-0904-tt4 {
+    top: 19px;
+    height: 20px;
+    line-height: 20px;
+    color: #333;
+    font-size: 12px;
+    margin-right: 15px;
+}
+
+.rn-0904 li .rn-0904-ttbox .rn-0904-tt5 {
+    top: 19px;
+    height: 20px;
+    line-height: 20px;
+    color: #333;
+    font-size: 13px;
+    margin-right: 15px;
+}
+
+.rn-0904-ttbox .rn-0904-tt5 i.selected{
+    color: tomato;
+}
+
+.rn-0904 li .rn-0904-txt-wrap .rn-0904-txt {
+    font-size: 13px;
+    line-height: 22px;
+    color: #666;
+}
+
+
+
+/* 탭박스 예매 / 취소 */
+
+.rn-1201.rn-infos-1 {
+    margin-top: 85px;
+}
+.rn-1201 {
+    overflow: hidden;
+    position: relative;
+}
+
+.rn12-left-tit {
+    position: absolute;
+    width: 238px;
+    padding-left: 1px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #333;
+}
+
+.rn12-right-box {
+    margin-left: 240px;
+    clear: right;
+    font-size: 14px;
+    line-height: 28px;
+    color: #555;
+    padding: 0 0 85px 3px;
+    letter-spacing: -0.03em;
+}
+
+.rn12-right-underline {
+    border-bottom: 1px solid #555;
+}
+
+.rn12-tbl {
+    padding: 33px 0 15px 0;
+    margin-left: -3px;
+}
+
+.rn12-tbl table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.rn12-tbl table th {
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    background: #fbe5d5;
+    text-align: center;
+    font-size: 15px;
+    color: #333;
+    padding: 8px 0 3px 0;
+}
+
+.rn12-tbl table td {
+    border-bottom: 1px solid #eee;
+    text-align: center;
+    font-size: 14px;
+    color: #555;
+    padding: 6px 0 5px 0;
+    vertical-align: middle;
+}
+
+.rn12-line {
+    height: 5px;
+    border-bottom: 1px solid #333;
+}
+.rn-infos-2 .rn12-line {
+    margin-bottom: 39px;
+}
+
+.rn12-right-bold {
+    font-weight: bold;
+    color: #333;
+    display: block;
+}
+
+.rn-infos-5 .rn12-tbl table tr td:last-child {
+    text-align: left;
+}
+.rn-infos-5 .rn12-tbl table td {
+    vertical-align: top;
+    padding: 10px 0;
+}
+
+
+/* 제휴할인카드 팝업 */
+
+.pop-cards {
+    padding: 24px;
+    border: 1px solid #333;
+    background: #fff;
+    width: 400px;
+    right: 238px;
+}
+.rn-pop {
+    position: absolute;
+    z-index: 3;
+    display: none;
+    top: 250px;
+    right: 5px;
+}
+
+.rn-pop-tit2 {
+    font-size: 18px;
+    color: #333;
+    font-weight: 600;
+    padding-bottom: 17px;
+    border-bottom: 2px solid #333;
+}
+
+.pop-cards ul {
+    margin-bottom: 10px;
+}
+
+.pop-cards ul li {
+    border-bottom: 1px solid #ddd;
+    padding: 15px 0;
+    height: 43px;
+}
+
+.pop-cards ul li img {
+    float: left;
+    display: block;
+    margin: 0 20px 0 11px;
+    width: 69px;
+    height: 43px;
+}
+
+.pop-cards ul li div {
+    margin-left: 99px;
+}
+
+
+.pop-cards ul li div p:first-child {
+    font-size: 15px;
+    color: #333;
+    height: 20px;
+}
+.pop-cards ul li div p:last-child {
+    font-size: 13px;
+    color: #ed4037;
+}
+
+.pop-cards ul li div p span {
+    color: #999;
+    padding-left: 26px;
+    position: relative;
+}
+
+
+.pop-cards ul li div p span:before {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 12px;
+    background: #b4b4b4;
+    position: absolute;
+    top: 1px;
+    left: 16px;
+}
+
+
+.rn-pop .rn-pop-close {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 27px;
+}
+
+
+
+
 
 
 
 /*datepicker*/
 
-.ui-datepicker{
+.datepicker-here{
     padding: 0;
-    width: 260px;
     font-family: 'Gothic A1', sans-serif;
 }
 
@@ -580,7 +1110,7 @@ p.rn-04-xtit {
     text-align: center;
     font-size: 18px;
     background: #fff;
-    background: url("http://ticketimage.interpark.com/TCMS4/Main/202008/MainVisual_650299f5-d583-4a6d-8607-f7ed9b95e16e.jpg") center 0px no-repeat;
+    background: url("image/1.jpg") center 0px no-repeat;
 
     /* Center slide text vertically */
     display: -webkit-box;
@@ -598,18 +1128,18 @@ p.rn-04-xtit {
 }
 
 .swiper-slide:nth-child(2){
-    background: url("http://ticketimage.interpark.com/TCMS4/Main/202007/MainVisual_4975a2de-0796-4da0-9bd1-ddc6a9cd733c.jpg") center 0px no-repeat;
+    background: url("image/2.jpg") center 0px no-repeat;
 }
 
 .swiper-slide:nth-child(3){
-    background: url("http://ticketimage.interpark.com/TCMS4/Main/202006/MainVisual_ec60c0db-65a9-481f-b300-dfcc73779491.jpg") center 0px no-repeat;
+    background: url("image/3.jpg") center 0px no-repeat;
 }
 
 .swiper-slide:nth-child(4){
-    background: url("http://ticketimage.interpark.com/TCMS4/Main/202008/MainVisual_55f28919-6360-4216-9d93-c1db5edb9a47.jpg") center 0px no-repeat;  
+    background: url("image/4.jpg") center 0px no-repeat;  
 }
 
 .swiper-slide:nth-child(5){
-    background: url("http://ticketimage.interpark.com/TCMS4/Main/202005/MainVisual_b5177404-a574-49f4-a2fa-76df6fac6812.jpg") center 0px no-repeat;
+    background: url("image/5.jpg") center 0px no-repeat;
 }
 
