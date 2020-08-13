@@ -38,6 +38,10 @@
 https://myhappyman.tistory.com/135 (air- datepicker) 
 https://coolpiz-em.tistory.com/61 (air- datepicker) 
 
+http://t1m0n.name/air-datepicker/docs/
+https://mingmi-programming.tistory.com/86 (함수)
+https://offbyone.tistory.com/230
+https://jongjongbari.tistory.com/entry/jquery-Datepicker-Option-%EC%A0%9C%EC%9D%B4%EC%BF%BC%EB%A6%AC-%EB%8B%AC%EB%A0%A5-%EC%98%B5%EC%85%98
   X 예약창 
   X 상품 등록폼 구현 
   -> 게시판 상세보기 화면구현 참고 사이트 http://ticket.yes24.com/Perf/36734?Gcode=009_700
@@ -45,6 +49,25 @@ https://coolpiz-em.tistory.com/61 (air- datepicker)
  ※ 게시판 상세보기 (상시상품, 회차가 1인 상품, 여러 회차가 있는 상품) 
  ※  당일 예매 안되도록 해놓긔 
 
+
+
+= 2020.08.13 = 
+  O 상품 상세 정보 게시판 
+    ㄴ O 제휴 할인 카드 팝업
+    ㄴ △ 탭버튼에 따라 탭박스 화면 전환
+    ㄴ X 관람후기 등록 폼 
+    ㄴ X 관람후기내용 일정 높이 이상 넘으면 더보기 버튼 구현
+    ㄴ O 관람후기 공감버튼 달기
+    ㄴ X 여유되면 별점도 구현 해보기 
+
+  X 예약창 
+  X 상품 등록폼 구현
+  X 제휴 할인 옆 버튼 클릭시 팝업 이미지 보이기  
+  ※ <!-- 1) 상시상품+상시상품(회차) (총매표수만관리)  날짜지정X , 회차 X , 예매 가능 좌석 : 본 상품은 상시상품으로 날짜/좌석지정이 별도로 없습니다. -->
+           2) 회차상품 + 상시상품(회차) (하루에 매표수가 한정되어있는경우) 날짜지정 O, 회차 상시상품 , 예매가능 좌석 : 본 상품은 잔여석 안내서비스를 제공하지 않습니다.
+           3) 회차 상품 + 회차상품(회차) 날짜지정  O, 회차 표시 , 예매가능 좌석 : 잔여석 : nn석 
+  
+                                
 
 
 4. DB설계
