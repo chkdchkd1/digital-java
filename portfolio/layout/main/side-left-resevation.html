@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>예약하기 페이지</title>
+    <link rel="stylesheet" href="side.css">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>   
+
+    <!-- datepicker -->
+    <link href="dist/css/datepicker.min.css" rel="stylesheet">
+    <script src="dist/js/datepicker.min.js"></script>
+    <script src="dist/js/i18n/datepicker.en.js"></script>
+</head>
+<body>
+    <div id="warp">
+        <div id="all" style="display: block;">
+            <!--상단메뉴 -->
+            <div id="header" class="header">
+                <ul class="gnb">
+                    <li class="m01 on"><span>관람일/회차</span></li>
+                    <li class="m03"><span>가격/할인</span></li>
+                    <li class="m04"><span>수령방법</span></li>
+                    <li class="m05"><span>결제방법</span></li>
+                </ul>
+            </div>
+            <!--//상단메뉴 -->
+            <!-- 내용컨탠츠 -->
+            <div id="ContentsArea" class="reservation-container" style="display: block;">
+                <!-- 제 1 단계 : 관람일/회차 -->
+                <div id="step01" style="">
+                    <!-- 관람일선택 -->
+                    <div id="step01_date" class="step01_date" style="display: block;">
+                        <h2><span>관람일선택</span></h2>
+                        <div id="calendar" class="calendar">
+                            <div class="here" data-language='ko'></div>
+                        </div>                        
+                    </div>
+                    <!-- //관람일선택 -->
+                    <!--회차선택 -->
+                   <div id="step01_time" class="step01_time" style="display: block;">
+                        <div style="display: block;">
+                            <h2><span>회차선택</span></h2>
+                            <div class="choie_select">
+                                <div class="select_day">
+                                    <em class="tit">선택날짜</em><span>2020. 9. 11.</span>
+                                </div>
+                                <div class="number">
+                                    <em class="tit">회차선택</em>
+                                    <ul id="ulTime">
+                                        <li>
+                                            [1회] 10시 00분
+                                        </li>
+                                        <li>
+                                            [2회] 11시 00분
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="seat">
+                                    <em class="tit">좌석등급/잔여석</em>
+                                    <ul id="ulSeatSpace" class="hi">
+                                        <li class="grade">
+                                            <div>
+                                                <strong class="c_name">입장권</strong> <span class="c_price">25석</span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- //회차선택 -->
+                    <!-- 공연안내 -->
+                    <div id="step01_notice" class="step01_notice" style="display: block;">
+                        <h3><img src="image/h3_tit_notice.gif" alt="유의사항"></h3>
+                        <div id="guideview">
+                            <ul>
+                                <li>- 안내되어 있는 잔여석은 결제 진행 중인 좌석을 포함하고 있어 예매 가능 좌석과 다를 수 있습니다.</li>
+                                <li>- 할인은 자동선택 되지 않으니, <u>적용 받고자 하는 할인이 있는 경우 직접 선택</u>해주시기 바랍니다.</li>
+                                <li>- 장애인, 국가유공자, 학생 할인 등 증빙서류가 필요한 경우 현장수령만 가능하며, <u>현장에서 증빙서류 미지참 시 차액 지불</u>하셔야 합니다.</li>
+                                <li>- <u>관람 당일 공연 예매 시에는 변경/취소/환불이 불가</u>합니다.</li>
+                                <li>- 경우에 따라 ATM 기기에서 가상계좌 입금이 안 될 수 있으니 가급적 인터넷/폰뱅킹 등을 이용해주시기 바랍니다.</li>
+                            </ul>                            
+                        </div>
+                    </div>
+                    <!-- //공연안내 -->
+                </div>
+                <!-- //제 1 단계 : 관람일/회차 -->
+                <!-- 제 3 단계 : 가격/할인 -->
+                <div id="step02" class="step02" style="display: none;">
+                    <!-- 가격선택 -->
+                    <div class="step02_promotion">
+                        <h2>
+                            <span>가격</span>
+                        </h2>
+                            <div id="divPromotionList" class="scroll" style="height:228px !important">
+                                <div style="display: block;">
+                                    <table id="tblPromotionGroup1" border="0" cellpadding="0" cellspacing="0" class="sale_table" grpno="1" seatname="정가 기본할인" cusselseatcnt="1">
+                                        <colgroup>
+                                            <col width="55%">
+                                            <col width="15%">
+                                            <col width="20%">
+                                            <col width="10%">
+                                        </colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">입장권</th>
+                                                <th scope="col">금액</th>
+                                                <th scope="col">매수</th>
+                                                <th scope="col">설명</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="l">성인<br></td>
+                                                <td>1,000</td>
+                                                <td>
+                                                    <select>
+                                                        <option value="0">0매</option>
+                                                        <option value="1">1매</option>
+                                                    </select>
+                                                </td>
+                                                <td>&nbsp;</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="l">청소년<br></td>
+                                                <td>500</td>
+                                                <td>
+                                                    <select>
+                                                        <option value="0">0매</option>
+                                                        <option value="1">1매</option>
+                                                    </select>
+                                                </td>
+                                                <td>&nbsp;</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="l">어린이<br></td>
+                                                <td>무료</td>
+                                                <td>
+                                                    <select>
+                                                        <option value="0">0매</option>
+                                                        <option value="1">1매</option>
+                                                    </select>
+                                                </td>
+                                                <td>&nbsp;</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- //가격선택 -->
+                </div>
+                <!-- //제 3 단계 : 가격/할인 -->
+                <!-- 제 4 단계 : 수령방법 -->
+                <div class="step03" id="step03" style="display: none;">
+                    <h2><img src="http://tkfile.yes24.com/img/perfsale/h2_tit05.gif" alt="수령방법"><span><img src="http://tkfile.yes24.com/img/perfsale/icon_nt.gif" alt=""></span></h2>
+                    <div class="receipt_select">
+                        <!-- 수령방법선택 -->
+                        <div class="select_seat">
+                            <em class="tit">수령방법선택</em> 
+                            <span id="deliveryPos"></span>
+                            
+                        </div>
+                        <!-- //수령방법 -->
+                        <!-- 주문자확인 정보 -->
+                        <div id="step03_OrdererInfo" style="display: block;">
+                            <h4>주문자확인</h4>
+                            <ul>
+                                <li><em>이름</em><input id="ordererUserName" type="text" style="width: 110px;" maxlength="50" class="imekor" readonly="readonly"></li>
+                                <li><em>
+                               
+                                  긴급연락처
+                                
+                                </em>
+                                    <input id="ordererMobile1" type="text" style="width: 30px;" maxlength="3" class="imedisable">
+                                    -
+                                    <input id="ordererMobile2" type="text" style="width: 50px;" maxlength="4" class="imedisable">
+                                    -
+                                    <input id="ordererMobile3" type="text" style="width: 50px;" maxlength="4" class="imedisable">
+                                </li>
+                                <li><em>e-mail</em>
+                                    <input id="ordererMailH" type="text" style="width: 110px;" maxlength="50" class="imedisable" onclick="fdc_emailClick()" readonly="readonly">
+                                    @
+                                    <input id="ordererMailD" type="text" style="width: 110px;" maxlength="50" class="imedisable" onclick="fdc_emailClick()" readonly="readonly">
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- //주문자확인 정보 -->
+                        <!-- 배송지 정보 -->
+                        <div id="step03_DeliveryInfo" class="add_info" style="display: none;">
+                            <h4>배송지정보<span style="display:none;">2016년 8월 1일부터 5자리 우편번호 사용이 의무화됩니다.<br>도로명주소+5자리 우편번호로 등록하셔서 티켓 배송에 문제가 없도록 협조부탁드립니다.</span></h4>
+                            <ul>
+                                <li><em>받으시는분</em>
+                                    <input id="deliveryUserName" type="text" style="width: 110px;" maxlength="50" class="imekor">
+                                    <span>
+                                        <input id="deliveryInfoType0" name="deliveryInfoType" type="radio" value="0" onclick="fdc_DisplayUserInfo(this);"><label id="lblDelivery0">주문자정보와동일</label>
+                                        <input id="deliveryInfoType1" name="deliveryInfoType" type="radio" value="1" onclick="fdc_DisplayUserInfo(this);"><label id="lblDelivery1">최근배송지<a id="btnRecentAddress" style="cursor: pointer;"><img src="http://tkfile.yes24.com/img/perfsale/btn_more.gif" alt="더보기"></a></label>
+                                        <input id="deliveryInfoType2" name="deliveryInfoType" type="radio" value="2" onclick="fdc_DisplayUserInfo(this);"><label id="lblDelivery2">새로입력</label>
+                                    </span></li>
+                                <li><em>휴대폰/전화</em>
+                                    <input id="deliveryMobile1" type="text" style="width: 30px;" maxlength="3" class="imedisable">
+                                    -
+                                    <input id="deliveryMobile2" type="text" style="width: 50px;" maxlength="4" class="imedisable">
+                                    -
+                                    <input id="deliveryMobile3" type="text" style="width: 50px;" maxlength="4" class="imedisable">
+                                </li>
+                                <li><em>주소</em>
+                                    <input id="deliveryZipCode1" type="text" style="width: 80px;" maxlength="6" class="imedisable"> - 
+                                    <input id="deliveryAddress1" type="text" style="width: 240px;" maxlength="200" class="imekor" readonly="readonly">
+                                    <a id="btnSearchAddress" style="cursor: pointer;"><img src="http://tkfile.yes24.com/img/perfsale/btn_zip.gif" alt="우편번호검색"></a> 
+                                </li>
+                                <li id="lideliveryAddress2" style="display: block;"><em>상세주소</em>
+                                    <input id="deliveryAddress2" type="text" style="width: 330px;" maxlength="100" class="imekor">
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- //배송지 정보 -->
+                        <!-- 주의사항 -->
+                        <div class="caution" id="step04_DeliveryCaution" style="display: block;">
+                            <h5>주의사항 <em style="font-weight:normal;">* 부정확한 정보 입력으로 인한 문제 발생 시 예스24는 책임을 지지 않습니다.</em></h5>
+                            <ul>
+                             
+                                <li>1)<span class="red"> 배송 선택 시 티켓 수령자의 배송지 정보를 정확히 입력해주시기 바랍니다.</span></li>
+                                <li>2)<span class="red"> 티켓은 유가증권으로 본인에게 직접 전달해야하며, 분실된 티켓은 재발권 되지 않습니다.</span></li>
+                                <li>3)<span class="red"> 일괄배송의 경우 정해진 날짜에 티켓 배송이 시작되며, 주소 수정은 일괄배송일 2일 전까지 가능합니다.</span></li>
+                                <li>4)<span class="red"> 예매 티켓 배송은 예매완료일, 혹은 일괄배송일로부터 4~5일(영업일 기준) 이내 수령 가능합니다.</span> </li>
+                                <li>5) 긴급연락처는 공연 취소와 같은 유사 시 안내 받으실 연락처이므로 정확히 입력해주시기 바랍니다.</li>
+                                <li>6) 이메일 정보 미 입력 시 예매 관련 안내 메일을 받을 수 없으니 이메일 받기를 원하시는 경우 마이페이지에서<br>&nbsp;&nbsp;&nbsp;회원정보를 수정해주시기 바랍니다.</li>
+                                
+                            </ul>
+                        </div>
+                         <!-- //주의사항 -->
+                        <div id="step04_OverseasDeliveryInfo" style="display:none"> 
+                            <h4>Information for Delivery <span style="font-weight: normal; color: #888">Please fill all the element by English</span></h4>
+                            <ul>
+                                <li><em>Area</em>
+                                    <select name="" onchange="fdc_OverseasDeliveryChange(this)" id="selOverseasDeliveryArea" style="width: 116px;">
+                                    </select>
+                                </li>
+                                <li><em>Country</em>
+                                    <select name="" onchange="fdc_OverseasCountryChange(this)" id="selOverseasDeliveryCountry" style="width: 116px;">
+                                    </select>
+                                </li>
+                                <li><em>Name</em><input id="overseasDeliveryName" type="text" style="width: 110px;"></li>
+                                <li><em>Tel or Mobile</em>
+                                    <input id="overseasDeliveryMobile1" readonly="readonly" type="text" style="width: 30px; background-color: #81818147; " maxlength="3" class="imedisable">
+                                    -
+                                    <input id="overseasDeliveryMobile2" type="text" style="width: 30px;" maxlength="4" class="imedisable">
+                                    -
+                                    <input id="overseasDeliveryMobile3" type="text" style="width: 40px;" maxlength="4" class="imedisable">
+                                    -
+                                    <input id="overseasDeliveryMobile4" type="text" style="width: 40px;" maxlength="4" class="imedisable">
+                                    <span>Please fill with the Country code (ex)+82-010-000-0000</span> </li>
+                                <li><em>Zip code</em>
+                                    <input id="overseasDeliveryZipcode" type="text" style="width: 110px;" maxlength="10" class="imedisable">
+                                    <span class="overseasDeliveryZipcodeValid"></span> 
+                                </li>
+                                <li id="overseasDeliveryStateli" style="display: none;"><em>State</em>
+                                    <select id="overseasDeliveryState" name="" style="width:176px; height:20px;">
+                                    </select> 
+                                </li>
+                                <li id="overseasDeliveryCityli"><em>City</em>
+                                    <input id="overseasDeliveryCity" type="text" style="width: 240px;" maxlength="30">
+                                </li>
+                                <li><em>Address</em>
+                                    <input id="overseasDeliveryAddress1" type="text" style="width: 500px;" maxlength="130">
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="caution" id="step04_OverseasDeliveryCaution" style="display:none"> 
+                            <h5>Notice <em style="font-weight: normal;">* YES24 won’t be responsible for problems occur due to incorrect information entered.</em></h5>
+                            <ul>
+                                <li>1) Please fill correct recipient information when you choose the overseas delivery.</li>
+                                <li>2) In the case of bulk delivery, these tickets will be start at fixed dates and modification of address is
+                                    <br>
+                                    &nbsp;&nbsp;possible until 2 days before the starting date.</li>
+                            </ul>
+                        </div>
+                        <!-- //주의사항 -->
+                    </div>
+                </div>
+                <!-- //제 4 단계 : 수령방법 -->
+                <!-- 제 5 단계 : 결제방법 -->
+                <div class="step04" id="step04" style="display: none;">
+                    <h2 style=""><img src="http://tkfile.yes24.com/img/perfsale/h2_tit06.gif" alt="결제방법"><span><img src="http://tkfile.yes24.com/img/perfsale/icon_nt.gif" alt=""></span></h2>
+                    <div class="receipt_select receipt_pt0">
+                        <!-- 결제수단 & 결제방법선택 -->
+                        <div class="receipt_scroll receipt_hsize">
+                            <ul class="mb">
+                                <!-- YES머니 -->
+                                <li id="liYesMoney">
+                                    <em>YES머니</em> 
+                                    <span class="cont"><input id="txtYesMoney" type="text" style="width: 120px;" onchange="fdc_CheckYesMoney();" disabled="">원</span> 
+                                    <span><input id="cbxYesMoney" type="checkbox" onclick="fdc_UseFullYesMoney();" disabled="">전액사용 (총 <strong id="lblYesMoney">0</strong>원) </span>
+
+                                    <!-- YES포인트 -->
+                                    <span id="liYesPoint">
+                                        <span>/ YES포인트 <strong id="lblYesPoint">5,329</strong> 원</span>
+                                        <span>
+                                        <a id="imgExchangePoint" onclick="fdc_PopupExchangePoint()" style="cursor:pointer;cursor:hand;">   
+                                        <img src="http://tkfile.yes24.com/img/perfsale/btn_yes01.gif" alt="YES머니로 환전"></a></span> 
+                                    </span>
+                                    <!-- //YES포인트 -->
+                                </li>
+                                <!-- //YES머니 -->
+                                <!-- 예치금 -->
+                                <li id="liYesDeposit">
+                                    <em>예치금</em> 
+                                    <span class="cont"><input id="txtYesDeposit" type="text" style="width: 120px;" onchange="fdc_CheckYesDeposit();" disabled="">원</span> 
+                                    <span><input id="cbxYesDeposit" type="checkbox" onclick="fdc_UseFullYesDeposit();" disabled="">전액사용 (총 <strong id="lblYesDeposit">0</strong>원) </span>
+                                </li>
+                                <!-- //예치금 -->
+                                <!-- YES24상품권 -->
+                                <li id="liYesGift">
+                                    <em>YES24상품권</em> 
+                                    <span class="cont"><input id="txtYesGift" type="text" style="width: 120px;" usedgiftinfo="" onchange="fdc_CheckYesGift();" disabled="">원</span> 
+                                    <span><a id="imgYesGiftUse" onclick="fdc_PopupYesGiftUse()" style="cursor:pointer;cursor:hand;"><img src="http://tkfile.yes24.com/img/perfsale/btn_use.gif" alt="사용하기"></a> (총 <strong id="lblYesGiftAmt">0</strong>원 / 사용가능 <strong id="lblYesGiftCnt">0</strong>장) </span>
+                                </li>
+                                <!-- //YES24상품권 -->
+                                <!-- 외부상품권 -->
+                               
+                                <!-- //외부상품권 -->
+                                <!-- 공연예매권 -->
+                                <li id="liGiftTicket" class="d_line">
+                                    <em>공연예매권</em>
+                                    <span class="con">
+                                        사용가능 예매권[총 <strong id="lblGiftTicketUsable" class="blu">0</strong>장] 
+                                        <a id="imgGiftTicketRegUse" class="dcursor" onclick="fdc_PopupGiftTicketRegUse()"><img src="http://tkfile.yes24.com/img/perfsale/btn_yes02.gif" alt="예매권 번호 등록/사용하기"></a> 
+                                    </span>
+                                    <div id="divGiftTicketUsedView" style="display:none"></div>
+                                    
+                                </li>                                    
+                                <!-- //공연예매권 -->
+                                <!-- 베네피아포인트 -->
+                                <li id="liBenepiaPoint" class="d_line" style="">
+                                    <em>베네피아포인트</em> 
+                                    <span class="cont"><input id="txtBenepiaPoint" type="text" style="width: 120px;" usedbenepiainfo="" disabled="disabled">원</span>
+                                    <span><input id="cbxBenepiaPoint" type="checkbox" onclick="fdc_UseBenepiaPoint();"> 사용</span> 
+                                </li>
+                                <!-- //베네피아포인트 -->
+                                <!-- OK 캐쉬백 적립 -->
+                                <li id="liOKCashbag" class="d_line" style="display: none;">
+                                    <em>OK 캐쉬백 적립</em> 
+                                       <span class="cont" style="width:235px;">
+                                        <input id="txtOKCashbagCardNo1" type="text" style="width: 40px;" maxlength="4" class="imedisable">
+                                        -
+                                        <input id="txtOKCashbagCardNo2" type="text" style="width: 40px;" maxlength="4" class="imedisable">
+                                        -
+                                        <input id="txtOKCashbagCardNo3" type="text" style="width: 40px;" maxlength="4" class="imedisable">
+                                        -
+                                        <input id="txtOKCashbagCardNo4" type="text" style="width: 40px;" maxlength="4" class="imedisable">
+                                    </span> 
+                                    <input id="chkOKCashBAgree" type="checkbox"><label>OK캐쉬백 정보 제공 동의 <a href="javascript:fdc_PopOkCashBAgree()" style="vertical-align:middle;">[상세보기]</a></label>
+
+                                </li>
+                                <!-- //OK 캐쉬백 적립 -->
+                                <!-- 이제너두 포인트 -->
+                                <li id="liEXanaduPoint" class="d_line" style="">
+                                    <em>복지포인트</em> 
+                                    <span class="cont"><input id="txtEXanaduPoint" type="text" style="width: 120px;" usedexanaduinfo="" disabled="disabled">원</span>
+                                    <span><input id="cbxEXanaduPoint" type="checkbox" onclick="fdc_UseEXanaduPoint();"> 사용</span> 
+                                </li>
+                                <!-- //이제너두 포인트 -->
+                                <!-- 결제방법선택 -->
+                                <li class="d_line"><em class="blu">결제방법선택</em>
+                                    <div class="con conpd">
+                                        <ul id="paymethodPos"><li idcode="2"><input type="radio" name="rdoPays" id="rdoPays2" idgroup="2" value="2" datedifference="28" onclick="fdc_PayMethodChange(this);">신용카드 <a class="dcursor" onclick="fdc_PopupInstallment();" style="display:none;"><img src="http://tkfile.yes24.com/img/perfsale/btn_infor01.gif" alt="무이자할부안내"></a></li><li idcode="22"><input type="radio" name="rdoPays" id="rdoPays22" idgroup="22" value="22" datedifference="28" onclick="fdc_PayMethodChange(this);">무통장 입금 <select id="selBank"><option value="-1">입금은행 선택</option><option value="50">국민은행</option><option value="11631">기업은행</option><option value="57">농협중앙회</option><option value="11629">신한은행</option><option value="49">우리은행</option><option value="11634">우체국</option><option value="11630">하나은행</option><option value="11633">SC은행</option></select><a id="imgCashReceipt" class="dcursor" onclick="fdc_PopupCashReceiptInfo();" disabled="disabled"><img src="http://tkfile.yes24.com/img/perfsale/btn_infor04.gif" alt="현금영수증발행안내"></a></li></ul>
+                                        <a href="#" class="more" style="display:none;"><img src="http://tkfile.yes24.com/img/perfsale/btn_infor03.gif" alt="신용카드 및 무통장입급안내"></a>
+                                    </div>
+                                </li>
+                                
+                                <li class="d_line" id="liLiveRefundinfo" style="display:none;">
+                                <em class="blu">환불계좌입력</em>
+                                <div class="con">
+                                <ul>
+                                <li><select id="selLiveRefundBank" disabled="disabled" style="height:20px;">
+                                <option value="0" selected="">환불은행 선택</option>
+                                </select>
+                                </li>
+                                <li><input id="txtLiveRefundAccount" type="text" maxlength="14" disabled="disabled" style="width:120px;"></li>
+                                <li>예금주명 <input id="txtLiveRefundUserName" type="text" disabled="disabled" maxlength="50" style="width:120px;"></li>
+                                </ul>	
+                                <div class="conpd">* 함께 볼 사람이 목표에 도달하지 못 할 경우 예스24 라이브는 취소되며 전액 환불 됩니다.</div>					            
+                                </div>
+                                </li>
+                                
+                                
+                                <!-- //결제방법선택 -->
+                            </ul>
+                            <!-- 결제수단 & 결제방법선택 -->
+                            <!-- SM Fanclub //-->
+                            <div class="cancelSMFanclubInfo" style="display:none;">
+                                <div class="caution">
+                                    <h5>ACE 회원 코드 구매/취소 유의사항 </h5>
+                                    <ul>
+                                    <li><em class="bl_rnd"></em>  ACE 회원 코드 유효기간은 발급일로부터 30일입니다. 유효기간 만료 시 사용 불가하며, MY공연에서 직접 취소하셔야 환불 받을 수 있습니다.</li>
+                                    <li><em class="bl_rnd"></em>  ACE 회원으로의 전환을 위하여 ACE 회원코드를 Lysn 내에서 등록 및 인증 절차를 완료하기 전에는 별도 취소수수료 없이 YES24의 환불정책에 따라 ACE 회원 코드 구매를 취소할 수 있습니다.</li>
+                                    <li><em class="bl_rnd"></em>  Lysn 에 등록 및 인증 절차가 완료된 후(ACE 회원으로의 전환 완료)에는 일정 금액의 위약금이 발생하며, 이를 제외하고 남은 ACE 회원 자격의 유효기간에 비례한 금액을 산정하여 환불합니다.</li>
+                                    <li><em class="bl_rnd"></em>  환불 절차를 진행하기 위해서는, ACE 회원 코드를 구매한 분들의 경우 ACE 회원 코드를 구매한 시점부터 ACE 회원 자격이 유지되는 동안 YES24의 회원자격 또한 유지하여야 합니다.</li>
+                                    <li><em class="bl_rnd"></em>  ACE 회원에게 주어지는 혜택 중 아티스트의 콘서트, 유료 팬미팅 등에 관한 티켓 선예매 혜택이 제공된 시점 또는 Welcome Kit 제작이 시작된 경우 전액 환불이 불가합니다.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- SM Fanclub //-->
+                            <!-- 취소수수료 안내 및 약관동의 -->
+                            <div class="caution bgbrn" id="cancelFeeInfo">
+                                <!--h5>취소수수료 안내 및 이용 약관</h5-->
+                                
+                                <div class="box">
+                                    <em>취소 가능 마감 시간 : </em><span id="lblCancelTimeInfo" class="red">2020년 09월 10일 17:00 까지</span>
+                                </div>
+                                    
+                                    <table class="boardListTypeB tb_w">
+                                    <colgroup>
+                                    <col width="33%" align="center">
+                                    <col width="38%" align="center">
+                                    <col width="*">
+                                    </colgroup>
+                                    <thead>
+                                      <tr>
+                                        <th>내용</th>
+                                        <th>취소수수료</th>
+                                        <th>비고</th>
+                                      </tr>
+                                     </thead>
+                                     <tbody>
+                                      <tr>
+                                        <td>예매 후 7일 이내</td>
+                                        <td>없음</td>
+                                        <td rowspan="5" class="bl_p alignLeft">- 취소 시 예매수수료는 예매 당일 밤 12시 이전까지만 환불됩니다. <br>
+                                    - 예매 후 7일 이내라도 취소시점이 관람일로부터 10일 이내라면 그에 해당하는 취소수수료가 부과됩니다.  <br>
+                                    - 관람 당일 취소 가능 상품의 경우 관람 당일 취소 시 티켓금액의 90%가 취소수수수료로 부과됩니다.
+                                    </td>
+                                      </tr>
+                                      <tr>
+                                        <td>예매 후 8일 ~ 관람일 10일 전까지</td>
+                                        <td>뮤지컬, 콘서트, 클래식 등: <span class="red">장당 4,000원</span> /<br> 연극, 전시 등: <span class="red">장당 2,000원</span> <br>(단, 티켓 금액의 10% 이내)</td>
+                                      </tr>
+                                      <tr>
+                                        <td>관람일 9일 전 ~ 관람일 7일 전까지</td>
+                                        <td>티켓금액의 <em class="red">10%</em></td>
+                                      </tr>
+                                      <tr>
+                                        <td>관람일 6일 전 ~ 관람일 3일 전까지</td>
+                                        <td>티켓금액의 <em class="red">20%</em></td>
+                                      </tr>
+                                      <tr>
+                                        <td>관람일 2일 전 ~ 관람일 1일 전까지</td>
+                                        <td>티켓금액의 <em class="red">30%</em></td>
+                                      </tr>  
+                                    </tbody>
+                                    </table>
+                                    
+                            </div>                                
+                        </div>                            
+                    </div>
+                    <!-- //취소수수료 안내 및 약관동의 -->
+                        <span class="chkbox">
+                        <input id="cbxCancelFeeAgree" type="checkbox"><label id="chkCancelFeeAgreeText">취소수수료 및 취소기한을 확인하였으며, 동의합니다.</label>
+                        <input id="chkinfoAgree" type="checkbox"><label>제3자 정보제공 내용에 동의합니다. <a href="javascript:fdc_PopupSaleAgree('36568')">[상세보기]</a></label>
+                        </span>
+                </div>
+                <!-- //제 5 단계 : 결제방법 -->
+            </div>
+            <!--// 내용컨탠츠 -->
+            <!-- 상황판 -->
+            <div id="StateBoard">
+                <div class="result">
+                    <div id="perfboard" class="title"><p><img src="https://stkfile.yes24.com/upload2/PerfBlog/202008/20200806/20200806-365681.jpg" width="79" height="98" alt=""></p>
+                        <span id="ptitle" class="tit">코리아비건페어</span>
+                        <span class="date">2020. 09. 11 ~ 2020. 09. 13</span>
+                        <span id="ptheatername" class="date">서울 코엑스 C홀</span>
+                    </div>
+                    <div class="select_infor">
+                        <h3>선택내용</h3>
+                        <ul>
+                            <li><em>날짜</em><span id="tk_day">2020.09.11 (금)</span></li>
+                            <li><em>시간</em><span id="tk_time">[1회] 10시 00분</span></li>
+                            <li><em>매수</em><span id="tk_count">1매</span></li>
+                            <li><em>좌석</em>
+                                <div id="tk_seat"><span>비지정석</span></div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="pay_infor">
+                        <h3>결제내용</h3>
+                        <div class="link01">
+                            <ul>
+                                <li class="tk_price">
+                                    <em>
+                                        티켓금액
+                                    </em>
+                                    <span>5,000</span>
+                                </li>
+                                <li class="tk_charge">
+                                    <em>
+                                        예매수수료
+                                    </em>
+                                    <span>300</span>
+                                </li>
+                                <li class="tk_sumplus">
+                                    <em>
+                                       총 금액
+                                    </em>
+                                    <span>5,300</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <span class="t_result">최종결제 금액 5,300<span>원</span></span>
+                    <div class="btn">
+                        <div id="StepCtrlBtnPanel" class="tc">
+                            <div id="StepCtrlBtn01" style="display: block;">
+                                <a class="dcursor" href="javascript:void(0)" onclick="fdc_VerifySelSeatNumber();"><img src="http://tkfile.yes24.com/img/perfsale/btn_next04.gif" alt="다음단계"></a>
+                            </div>
+                            <div id="StepCtrlBtn03" style="display: none;">
+                                <a class="dcursor" href="javascript:void(0)" onclick="fdc_GoPrevStep(jcSTEP1);"><img src="http://tkfile.yes24.com/img/perfsale/btn_prev.gif" alt="이전단계"></a>
+                                <a class="dcursor" onclick="fdc_PromotionEnd();"><img src="http://tkfile.yes24.com/img/perfsale/btn_next02.gif" alt="다음단계"></a>
+                            </div>
+                            <div id="StepCtrlBtn04" style="display: none;">
+                                <a class="dcursor" onclick="fdc_GoPrevStep(jcSTEP3);"><img src="http://tkfile.yes24.com/img/perfsale/btn_prev.gif" alt="이전단계"></a>
+                                <a class="dcursor" onclick="fdc_DeliveryEnd();"><img src="http://tkfile.yes24.com/img/perfsale/btn_next02.gif" alt="다음단계"></a>
+                            </div>
+                            <div id="StepCtrlBtn05" style="display: none;">
+                                <a class="dcursor" onclick="fdc_GoPrevStep(jcSTEP4);"><img src="http://tkfile.yes24.com/img/perfsale/btn_prev.gif" alt="이전단계"></a>
+                                <a class="dcursor" onclick="fdc_PrePayCheck();"><img id="imgPayEnd" src="http://tkfile.yes24.com/img/perfsale/btn_succ.gif" alt="결제하기"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--// 상황판 -->
+        </div>
+    </div>
+    <script>
+        $('.here').datepicker({
+            showOtherMonths: false
+        });
+
+        function fdc_VerifySelSeatNumber(){
+            // step01, step03의 display의 속성 바꾸고 li에있는 on속성을 제거하고 그 다음 li로 on클래스 붙이기 
+            $('#step01').css('display','none');
+            $('#step02').css('display','block');
+            $('.m01').removeClass('on');
+            $('.m03').addClass('on');
+            $('#StepCtrlBtn01').css('display','none');
+            $('#StepCtrlBtn03').css('display','block');
+        }
+
+     
+     
+        const container = document.querySelector("#StepCtrlBtnPanel");
+        const jcSTEP1 = {
+            main : document.querySelector("#step02"),
+            btn : document.querySelector("#StepCtrlBtn03")
+        }
+        const jcSTEP2 = document.querySelector("#step03")
+
+
+       function fdc_GoPrevStep(jcSTEP){
+        jcSTEP.main.previousElementSibling.style.display = 'block';
+        jcSTEP.main.style.display = 'none';
+        jcSTEP.btn.previousElementSibling.style.display = 'block';
+        jcSTEP.btn.style.display = 'none';
+       }
+
+
+
+    </script>
+</body>
+</html>

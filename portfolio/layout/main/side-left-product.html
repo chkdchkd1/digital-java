@@ -140,7 +140,7 @@
                                 </div>
                             </div>
                             <div class="rn-05"><!--예매하기 버튼--> 
-                                <a href="#" class="rn-bb03">예매하기</a>
+                                <a href="javascript:void(0)" class="rn-bb03" onclick="openRservation();">예매하기</a>
                             </div>
                             <div class="rn-07"><!--하단탭버튼-->
                                 <a href="#" class=""><span>상세정보</span></a>
@@ -356,6 +356,11 @@
             // 특정 위치로 스크롤 마저 구현
             // }
             // tapclick();
+
+            // 예약하기 새창열기 
+            function openRservation(){
+                window.open("side-left-resevation.html", "예약페이지", "width=999,height=650");
+            }
 
     </script>
 </body>
