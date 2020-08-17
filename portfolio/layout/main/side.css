@@ -1075,7 +1075,7 @@ em{
     width: 230px;
 }
 
-.container h2 {
+.reservation-container h2 {
     /* padding: 4px 4px 4px 12px;
     background-color: teal;
     border-bottom: 1px solid #bebebe;
@@ -1083,6 +1083,8 @@ em{
     height: 17px;
     padding: 4px 0 0 0;
 }
+
+
 
 h2 span{
     margin: 0 0 0 18px;
@@ -1284,7 +1286,267 @@ table.sale_table tbody td select{
 .scroll{
     margin-left: 18px;
     width: 650px;
+    margin-top: 20px;
 }
+
+/*예약페이지 (3) */
+
+.receipt_select {
+    padding: 30px 20px 10px 20px;
+    overflow: auto;
+    overflow-x: hidden;
+    min-height: 510px;
+}
+
+.select_seat {
+    margin-bottom: 10px;
+}
+
+.receipt_select em.tit {
+    font: bold 11px 'doTum';
+    color: #000;
+    margin-right: 10px;
+    vertical-align: top;
+}
+
+.select_seat span {
+    padding: 8px 10px 8px 20px;
+    width: 520px;
+    font-size: 11px;
+    letter-spacing: -1px;
+    display: inline-block;
+    background-color: #f5f4f494;
+}
+
+.select_seat span input[type="radio"] {
+    margin: 0 3px;
+}
+
+input[type=radio], input[type=checkbox] {
+    width: 13px;
+    height: 13px;
+    position: relative;
+    top: 2px;
+}
+
+.select_seat span label {
+    margin: 0 20px 0 1px;
+}
+
+
+.receipt_select h4 {
+    border-bottom: 1px solid #e3e3e3;
+    font: bold 11px 'doTum';
+    color: #000;
+    padding-bottom: 5px;
+    margin-top: 30px;
+}
+
+.receipt_select ul {
+    margin-top: 10px;
+    margin-left: 5px;
+    margin-bottom: 25px;
+}
+
+.receipt_select ul li {
+    margin-bottom: 5px;
+    font-size: 11px;
+    vertical-align: text-top;
+}
+
+.receipt_select ul li em {
+    width: 85px;
+    margin-top: 5px;
+    display: block;
+    float: left;
+    vertical-align: middle;
+    font-family: 'doTum';
+}
+
+input[type=text] {
+    border: 1px solid #aaaaaa;
+    padding: 2px;
+    font-size: 12px;
+}
+
+input {
+    color: #888888;
+}
+
+.caution {
+    border: 1px solid #dddddd;
+    padding: 5px 7px 0px 7px;
+    background-color: #f7f7f8;
+    margin-bottom: 3px;
+}
+
+.caution h5 {
+    font: bold 11px 돋움;
+    margin-bottom: 8px;
+}
+
+.caution ul li {
+    line-height: 1.3em;
+    padding: 0 !important;
+}
+
+.caution span.red {
+    margin-left: 0 !important;
+}
+
+.red {
+    color: #ea4955;
+}
+
+.receipt_select ul.mb {
+    margin-bottom: 0px !important;
+}
+.receipt_select ul {
+    margin-top: 10px;
+    margin-left: 5px;
+    margin-bottom: 25px;
+}
+
+.receipt_select ul li {
+    margin-bottom: 5px;
+    font-size: 11px;
+    vertical-align: text-top;
+}
+
+
+#step03_OrdererInfo .BirthEx{
+    font-weight: normal;
+}
+
+.receipt_select ul li.d_line {
+    padding-bottom: 5px;
+}
+
+.receipt_select ul li em {
+    width: 85px;
+    margin-top: 5px;
+    display: block;
+    float: left;
+    vertical-align: middle;
+    font-weight: bold;
+    font-family: 'doTum';
+}
+
+
+
+/*예약페이지 (4)*/
+/* 
+.receipt_select {
+    padding: 20px 20px 10px 20px;
+    overflow: auto;
+    overflow-x: hidden;
+    min-height: 510px;
+} */
+
+.receipt_hsize {
+    height: 470px !important;
+}
+
+.receipt_pt0{
+    min-height: 470px;
+}
+
+
+.receipt_select ul li div.conpd {
+    padding: 3px !important;
+}
+.receipt_select ul li div.con {
+    margin-left: 102px;
+    position: relative;
+}
+
+
+.receipt_select ul li div.con ul li {
+    display: inline;
+    padding-right: 10px;
+}
+
+.receipt_select ul li a {
+    margin: 0 3px;
+}
+.receipt_select ul li select, .receipt_select ul li a {
+    vertical-align: top;
+    font-size: 12px;
+}
+
+
+.caution.bgbrn {
+    border: none !important;
+    background: none !important;
+}
+
+.caution div.box {
+    padding: 4px 8px 2px;
+    border: 1px solid #dddddd;
+    background-color: #f4f4f4;
+    margin-bottom: 5px;
+    width: 320px;
+    font: bold 12px 돋움;
+}
+.caution span.red {
+    margin-left: 0 !important;
+}
+
+.tb_w {
+    width: 100%;
+}
+.boardListTypeB {
+    margin-top: 11px;
+    table-layout: fixed;
+    width: 650px;
+    border: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
+    font-size: 11px;
+}
+
+.boardListTypeB thead th {
+    height: 23px;
+    background: #f8f2f3;
+    border-top: 1px solid #666;
+    border-bottom: 1px solid #d3d3d3;
+    color: #666;
+}
+
+.tb_w tbody {
+    background: #fff;
+    text-align: center;
+}
+
+.boardListTypeB tbody td {
+    padding: 6px 0 4px 0;
+    line-height: 14px;
+    border-bottom: 1px solid #d3d3d3;
+    color: #888;
+}
+
+.tb_w .bl_p {
+    border-left: 1px solid #d3d3d3;
+    padding: 0 8px;
+}
+
+.alignLeft {
+    text-align: left;
+}
+
+.chkbox {
+    float: right;
+    vertical-align: middle;
+    margin-right: 20px;
+}
+
+.chkbox label {
+    font-size: 11px;
+    margin-left: 3px;
+}
+
+
+
 
 
 
@@ -1412,6 +1674,364 @@ table.sale_table tbody td select{
     text-align: center;
 }
 
+/*예매 성공시 내역 */
+
+#warp .PayInfoSendForm {
+    z-index: 100;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 0px;
+    height: 0px;
+    background: #373635;
+}
+
+.success {
+    border: 4px solid #727171;
+    width: 780px;
+    height: 540px;
+    background-color: #FFF;
+    margin: 0 auto;
+    position: relative;
+    top: 50px;
+}
+
+.suc_tit {
+    padding: 15px;
+    margin-bottom: 6px;
+}
+
+.succ {
+    float: left;
+    width: 285px;
+    margin-left: 20px;
+}
+
+.succ h4 {
+    border-bottom: 1px solid black;
+    padding-bottom: 6px;
+}
+
+
+.succ ul {
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-bottom: 15px;
+}
+
+.succ ul li {
+    margin-bottom: 5px;
+    font-size: 11px;
+}
+
+.succ ul li em {
+    width: 80px;
+    display: block;
+    float: left;
+    vertical-align: middle;
+}
+
+.succ ul li div {
+    display: inline-block;
+    width: 180px;
+    height: 65px;
+    background-color: #f6f6f8;
+    overflow: scroll;
+    overflow-x: hidden;
+    padding: 5px;
+    border: 1px solid #b4b4b4;
+}
+
+.succ ul.pay {
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-bottom: 25px;
+}
+
+.succ ul.pay li {
+    margin-bottom: 2px;
+    font-size: 11px;
+}
+
+.succ ul.pay li.total {
+    background-color: #0076a3;
+    padding: 5px;
+    margin: 5px 0;
+}
+
+.succ ul.pay li.total em {
+    vertical-align: middle;
+}
+
+.succ ul.pay li.gry {
+    background-color: #f3f5f6;
+    padding: 3px;
+}
+
+.succ ul.pay li em {
+    width: 85px;
+    display: block;
+    float: left;
+    vertical-align: middle;
+}
+
+.succ ul.pay li span {
+    display: inline-block;
+    text-align: right;
+    width: 180px;
+}
+
+.succ ul.pay li span strong {
+    margin-right: 3px;
+    letter-spacing: -1px;
+}
+
+.succ ul.pay li.total em, .succ ul.pay li.total span {
+    color: #FFF;
+}
+
+.confirm {
+    clear: both;
+}
+
+#BannerCtrl{
+    width: 650px;
+    height: 380px;
+    margin: 0 auto;
+    /* border: 1px solid black; */
+}
+
+
+
+
+/*예약 내역 리스트 */
+
+.mypage_contain {
+    width: 900px;
+    position: relative;
+    margin-bottom: 40px;
+    margin-left: 20px;
+}
+
+.mypage_contain h1 {
+    margin-bottom: 16px;
+    margin-top: 2px;
+}
+
+.date_list p.tit {
+    margin-bottom: 10px;
+    padding-left: 3px;
+}
+
+.date_list.bg {
+    background: url(image/bg_date02.gif) no-repeat;
+    height: 56px;
+    margin-bottom: 25px;
+    padding: 18px 22px;
+}
+
+.date_list ul li {
+    float: left;
+    margin-bottom: 7px;
+}
+
+
+.date_list ul li.sec {
+    margin-left: 30px;
+    position: relative;
+    top: -3px;
+}
+
+.date_list ul li input.date {
+    border: 1px solid #CCC;
+    height: 16px;
+    margin-right: 3px;
+    vertical-align: middle;
+}
+
+.mycont {
+    clear: both;
+    margin-bottom: 30px;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.mycont h2 span {
+    margin-left: 10px;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.fr {
+    float: right !important;
+}
+.btn_mt30 {
+    float: right;
+    margin-top: -30px;
+}
+
+.mycont .point ul {
+    padding-top: 5px;
+    padding-bottom: 3px;
+}
+
+.mycont .point li {
+    display: inline-block;
+    color: #666;
+    background: url(image/ic_hdot.gif) no-repeat 0px 2px;
+    padding: 0px 3px 3px 10px;
+    *display: inline;
+    font-size: 12px;
+}
+
+.mycont .point li.bgn {
+    background: none;
+}
+.mycont .point li.ov {
+    font-weight: bold;
+}
+.mycont .point li img {
+    margin: -3px 2px 0 2px;
+}
+
+
+.mycont table {
+    margin-bottom: 25px;
+}
+.tmypage {
+    width: 100%;
+    margin-bottom: 15px;
+    table-layout: fixed;
+    border-top: 2px solid #4e7ad1;
+    border-collapse: collapse;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.tmypage th {
+    font-weight: normal;
+}
+
+.divOrderList th {
+    font-weight: bold;
+    vertical-align: middle;
+}
+
+.tmypage th.fst {
+    border-left: 1px solid #d3d3d3;
+}
+.tmypage th {
+    padding: 8px 5px;
+    border-bottom: 1px solid #d3d3d3;
+    border-left: 1px solid #eeeeee;
+    border-right: 1px solid #eeeeee;
+}
+.tmypage th {
+    color: #666;
+    letter-spacing: -1px;
+    font-weight: normal;
+    background-color: #f9f9fb;
+    text-align: center;
+}
+
+.tmypage td.le {
+    border-left: none;
+}
+
+.tmypage td {
+    border-left: 1px solid #eeeeee;
+    border-right: 1px solid #eeeeee;
+    font-size: 12px;
+    text-align: center;
+    color: #666666;
+}
+
+.tmypage td {
+    padding: 8px 5px;
+    border-bottom: 1px solid #eeeeee;
+    text-align: center;
+}
+
+.tmypage td.tit {
+    text-align: left;
+    padding-left: 15px;
+}
+
+.mypage_contain a {
+    font-size: 12px;
+}
+
+.tmypage td.ri {
+    border-right: none;
+}
+
+
+.mypage_contain img {
+    vertical-align: middle;
+}
+
+.mycont div.paging {
+    margin: 15px 0 0 0;
+}
+
+.paging {
+    overflow: hidden;
+    clear: both;
+    margin: 0 auto;
+    margin-top: -20px;
+    padding-bottom: 30px;
+    text-align: center;
+}
+
+.paging a.on span {
+    font-weight: bold;
+    color: #333;
+}
+
+.paging a span {
+    display: inline-block;
+    width: 12px;
+    font-size: 12px;
+    text-align: center;
+    vertical-align: middle;
+    padding-right: 3px;
+}
+
+.paging span.bunch {
+    display: inline-block;
+    height: 12px;
+    font-size: 12px;
+    text-align: center;
+    vertical-align: top;
+    padding-right: 3px;
+    font-family: Verdana;
+}
+
+.mycont h2 {
+    margin-bottom: 7px;
+}
+
+.gray_box03 {
+    border: 1px solid #d3d3d3;
+    border-right: none;
+    border-left: none;
+    border-top: 2px solid #666;
+    position: relative;
+    margin-bottom: 20px;
+    padding: 20px 10px;
+}
+
+.gray_box03 ul li.red {
+    font-weight: bold;
+}
+.gray_box03 ul li {
+    font-size: 11px;
+    letter-spacing: -1px;
+    margin-bottom: 9px;
+}
 
 
 /* 왼쪽 메뉴  */
