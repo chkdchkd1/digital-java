@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+</head>
+<body>
+    
+    <select id="aa" name="aa"> //선택자
+        <option value="A" etc="1">A</option>
+        <option value="B" etc="2">B</option>
+      </select>
+      <select id="aa" name="aa"> //선택자
+        <option value="C" etc="3">C</option>
+        <option value="D" etc="4">D</option>
+      </select>
+
+      <script>
+          var etcs = '';
+        $('select[name=aa] option:selected').each(function(index){
+        etcs += $(this).attr('value') +',';
+        });
+        etcs = etcs.substring(0,etcs.length-1);
+        //console.log(etcs);
+        alert(etcs);
+
+      </script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상세 예약 게시판</title>
+    <link rel="stylesheet" href="side.css">
+    <script src="https://kit.fontawesome.com/c2a1b202c0.js" crossorigin="anonymous"></script>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+</head>
+<body>
+
+    <div class="frame">
+        <div class="left-container">
+            <div class="search-box">
+                <input type="text" placeholder="  Search"/>
+                <button class="btn-search"><i class="fas fa-search"></i></button>
+            </div>
+            <ul class="nav-list">
+                <li class="nav-item"><a href="/main/side-left.html" class="nav-link"><span>메인페이지</span></a></li>
+                <li class="nav-item"><a href="/main/side-left-board.html" class="nav-link"><span>전시</span></a></li>
+                <li class="nav-item"><a href="#" class="nav-link"><span>행사 / 축제</span></a></li>
+                <li class="nav-item"><a href="#" class="nav-link"><span>티켓오픈공지</span></a></li>
+                <li><span class="nav-text">예매 정보</span></li>
+                    <ul>
+                        <li class="nav-item2"><a href="#" class="nav-link">날짜별 예매</a></li>
+                        <li class="nav-item2"><a href="#" class="nav-link">지역별 예매</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="#" class="nav-link"></i><span>고객센터</span></a>
+            </ul>
+          </div>
+          <!-- //left-container -->
+        <div class="right-container">
+          <div class="content">
+            <!-- login-box -->
+            <div class="codrops-container">
+              <nav class="loging-box">
+                <ul>
+                  <li>로그인</li>
+                  <li>회원가입</li>
+                  <li>로그아웃</li>
+                  <li>관리자페이지</li>
+                  <li>회원정보</li>
+                  <li>예매확인/취소</li>
+                </ul>
+              </nav>
+            </div>
+            <!-- main-content -->
+            <div class="main-content">
+                <div class="csCenter_subRgt">
+                    <!-- #####00000 폼 시작 00000##### -->
+                      <form id="inquireForm" class="inquireForm" action="#" method="post" enctype="multipart/form-data">
+                            <div id="inquireTb" class="yesTb">
+                                <table class="tb_nor tb_vertical" width="100%">
+                                    <colgroup>
+                                        <col width="140">
+                                        <col width="*">
+                                    </colgroup>
+                                    <tbody class="xb_size">
+                                            <th class="txt" scope="row">문의제목</th>
+                                            <td class="inpArea lastCol">
+                                                <div class="inpRow">
+                                                    <span class="yesIpt m_size ipt_wSizeF">
+                                                        <label for="txtTitle"></label>
+                                                        <input id="txtTitle" name="txtTitle" type="text" autocomplete="off" maxlength="1000"> 
+                                                    </span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th class="txt" scope="row">문의내용</th>
+                                            <td class="inpArea lastCol">
+                                                <div class="inpRow">
+                                                    <span class="yesTxtArea m_size botIptMsg txtA_wSizeF row_7">
+                                                        <textarea id="txtContent" name="txtContent"></textarea>
+                                                    </span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th class="txt" scope="row">파일첨부</th>
+                                            <td class="inpArea lastCol">
+                                                <div class="inpRow">
+                                                    <div class="yesFileInpAra yesComLoadingArea clearfix">
+                                                        <div id="yesComLoading" style="display:none;"></div>
+                                                        <div class="yesFileIpt">
+                                                            <label class="button" for="fileElem"><div class="btnC m_size w_80" id="divFileBtn"><span class="bWrap"><em class="txt">파일선택</em></span></div></label>                                       
+                                                        </div>
+                                                        <div class="yesFileIpt_files">
+                                                            <ul id="newfile-wrap">
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="inpRowAlert">
+                                                    <ul class="yesAlertLi">
+                                                        <li><em class="bl_dot bgYUI">&nbsp;</em>첨부가능 용량은 파일당 5MB 미만이며, 최대 6개까지 가능합니다.                                                     </li>
+                                                        <li><em class="bl_dot bgYUI">&nbsp;</em>첨부가능 파일 확장자 : jpg, gif, bmp, png, hwp, doc, ppt, xls, zip, pdf, txt                                      </li>
+                                                        <li><em class="bl_dot bgYUI">&nbsp;</em>첨부파일 중 개인 정보가 포함되어있는 파일은 상담 완료 후 즉각 파기하며, 상담 외의 목적으로는 사용되지 않습니다.</li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="csCenter_rowBtn">
+                                <a href="/Mall/Help/CS" class="btnC b_size w_180"><span class="bWrap"><em class="txt">취소</em></span></a>
+                                <a href="javascript:void(0);" id="btnAdviceSubmit" onclick="return adviceSubmit();" class="btnC b_size btn_blue w_180"><span class="bWrap"><em class="txt">등록</em></span></a>
+                            </div>
+                    </form>
+                </div>
+            </div>
+            <!-- //main-content -->
+        </div>
+        <!-- //right-container -->
+      </div>
+      <!-- //frame -->
+    
+</body>
+</html>

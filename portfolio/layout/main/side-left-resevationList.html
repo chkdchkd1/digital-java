@@ -61,26 +61,46 @@
                                 <a href="#" term="m6"><img src="image/btn_6m.gif" alt="최근 6개월"></a> 
                             </li>
                             <li class="sec">
-                                <img src="image/th_06.gif" alt="주문일자별 조회">
-                                <input id="txtStart" type="text" class="date imedisable w70 hasDatepicker" style="width: 90px; z-index: 999;" autocomplete="off"><img class="ui-datepicker-trigger" src="http://tkfile.yes24.com/img/mypage/btn_cal.gif" alt="날짜를 선택하세요.
-
-<달력콘트롤>
-년(年)단위 이동: Ctrl + PgUp/PgDn 키
-월(月)단위 이동: PgUp/PgDn 키" title="날짜를 선택하세요.
-
-<달력콘트롤>
-년(年)단위 이동: Ctrl + PgUp/PgDn 키
-월(月)단위 이동: PgUp/PgDn 키"> ~
-                                <input id="txtEnd" type="text" class="date imedisable w70 hasDatepicker" style="width: 90px; z-index: 999; position: relative;" autocomplete="off"><img class="ui-datepicker-trigger" src="http://tkfile.yes24.com/img/mypage/btn_cal.gif" alt="날짜를 선택하세요.
-
-<달력콘트롤>
-년(年)단위 이동: Ctrl + PgUp/PgDn 키
-월(月)단위 이동: PgUp/PgDn 키" title="날짜를 선택하세요.
-
-<달력콘트롤>
-년(年)단위 이동: Ctrl + PgUp/PgDn 키
-월(月)단위 이동: PgUp/PgDn 키"> 
-                                <a id="imgSearch" href="#"><img src="image/btn_srch.gif" alt="조회"></a>
+                                    <ul>
+                                        <li><img src="image/th_06.gif" alt="주문일자별 조회"></li>
+                                        <li>
+                                            <select name="Option" id="Option" style="width:65px; height:19px;" class="select">
+                                                <option value="B" selected="">예매일</option>
+                                                <option value="P">공연일</option>
+                                            </select>
+                                        </li>
+                                        <li>
+                                            <select name="BYear" id="BYear" style="width:53px; height:19px;" class="select">
+                                                <option value="">-----</option>
+                                                <option value="2021">2021</option>
+                                                <option value="2020">2020</option>
+                                                <option value="2019">2019</option>
+                                                <option value="2018">2018</option>
+                                                <option value="2017">2017</option>
+                                                <option value="2016">2016</option>						
+                                            </select>
+                                            년 </li>
+                                        <li>
+                                            <select name="BMonth" id="BMonth" style="width:38px; height:19px;" class="select">
+                                                <option value="">-----</option>
+                                                <option value="01">1</option>
+                                                <option value="02">2</option>
+                                                <option value="03">3</option>
+                                                <option value="04">4</option>
+                                                <option value="05">5</option>
+                                                <option value="06">6</option>
+                                                <option value="07">7</option>
+                                                <option value="08">8</option>
+                                                <option value="09">9</option>
+                                                <option value="10">10</option>
+                                                <option value="11">11</option>
+                                                <option value="12">12</option>
+                                            </select>
+                                            월 </li>
+                                        <li>
+                                            <a id="imgSearch" href="#"><img src="image/btn_srch.gif" alt="조회"></a>
+                                        </li>
+                                    </ul>
                             </li>
                         </ul>
                     </div>
@@ -101,7 +121,7 @@
                                 <col width="13%">
                                 <col width="13%">
                                 <col width="*">
-                                <col width="18%">
+                                <col width="20%">
                                 <col width="10%">
                                 <col width="15%">
                             </colgroup>
@@ -118,7 +138,7 @@
                             <tbody>
                                 <tr>
                                     <td class="le">2020.08.17</td>
-                                    <td><strong><a href="#" class="orderticketview" idorder="1533679135">197624826</a></strong></td>
+                                    <td><strong><a href="/main/side-left-reservationDetail.html" class="orderticketview" idorder="1533679135">197624826</a></strong></td>
                                     <td class="tit"><a href="#" title="K-핸드메이드페어 2020">K-핸드메이드페어 2020</a></td>
                                     <td>2020.11.19-2020.12.21</td>
                                     <td>1</td>
@@ -166,8 +186,6 @@
         <!-- //right-container -->
       </div>
       <!-- //frame -->
+    
 </body>
 </html>
-
-
-<!-- 조회기간 참고 https://cloud0477.tistory.com/124 -->
